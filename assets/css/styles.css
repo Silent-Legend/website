@@ -1,0 +1,1694 @@
+/* -----------------------------------
+   Global Reset
+----------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output,
+ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent; /* Remove default background colors */
+}
+
+/* HTML and Box-Sizing Settings */
+html {
+    box-sizing: border-box; /* Use border-box sizing for the entire document */
+    scroll-behavior: smooth; /* Smooth scrolling for in-page navigation */
+}
+
+/* Inherit box-sizing for all elements and pseudo-elements */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Body settings: font, line height, colors */
+body {
+    padding-top: 3.5em; /* Top padding for fixed headers */
+    line-height: 1.75; /* Comfortable line height for readability */
+    font-family: 'Raleway', Helvetica, Arial, sans-serif; /* Base font family */
+    background-color: #eaeaea; /* Light background color */
+    color: #646464; /* Default text color */
+    -webkit-text-size-adjust: none; /* Prevent text scaling in landscape mode */
+    -ms-text-size-adjust: none; /* Prevent text scaling */
+    overflow-x: hidden; /* Prevent horizontal scrolling on all elements */
+}
+
+/* Image settings */
+img {
+    max-width: 100%; /* Images should not exceed their container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline-block spacing */
+}
+
+/* Lists: remove default styles */
+ul, ol {
+    list-style: none; /* Remove default list bullets or numbers */
+}
+
+/* Tables: remove spacing and collapse borders */
+table {
+    border-collapse: collapse; /* Collapse table borders */
+    border-spacing: 0; /* Remove space between cells */
+    width: 100%; /* Tables should use full available width */
+}
+
+/* Anchor (link) settings */
+a {
+    background-color: transparent; /* Remove background color */
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit color from parent */
+    border-bottom: none; /* Remove default border */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover state for links */
+a:hover {
+    border-bottom-color: transparent; /* No underline on hover */
+    color: #2ebaae; /* Change color on hover */
+}
+
+/* Blockquote settings */
+blockquote, q {
+    quotes: none; /* Remove default quotes */
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: ''; /* Remove quote marks */
+}
+
+/* Reset figure margins */
+figure {
+    margin: 0; /* Remove default margins */
+}
+
+/* Form element reset */
+input, button, select, textarea {
+    font-family: inherit; /* Inherit font from parent */
+    font-size: inherit; /* Inherit size from parent */
+    margin: 0; /* Remove default margins */
+}
+
+/* Remove default styles for address element */
+address {
+    font-style: normal; /* Remove italic style */
+}
+
+
+/* Ensure hidden elements stay hidden */
+[hidden] {
+    display: none !important; /* Force hidden elements to not display */
+}
+
+
+/* -----------------------------------
+   Typography
+----------------------------------- */
+
+/* Font Family */
+input, button, h1, h2, h3, h4, h5, h6, p, blockquote, pre {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+}
+
+/* Base styles for headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #3c3b3b; /* Darker gray for headings */
+    text-transform: uppercase; /* Uppercase for headings */
+    margin-bottom: 0; /* Remove bottom margin */
+    font-weight: bold; /* Ensure bold font weight */
+}
+
+/* Paragraph styles */
+p {
+    margin: 0 0 1.5em 0; /* Space below paragraphs */
+    line-height: 1.75; /* Maintain comfortable line height */
+}
+
+/* Base styles for blockquotes */
+blockquote {
+    font-style: normal; /* Ensure normal font style */
+    margin: 0 0 1.5em; /* Space below blockquotes */
+    padding: 0 1.5em; /* Add padding to left and right */
+    border-left: 4px solid #ff6e00; /* Left border for blockquote */
+    color: #646464; /* Default text color */
+}
+
+/* Address element styling */
+address {
+    font-style: normal; /* Remove italic styling */
+    line-height: 1.5; /* Adjust line height */
+}
+
+/* -----------------------------------
+   Shared Element Styling
+----------------------------------- */
+
+/* Section header styling */
+.section-header {
+    text-align: center; /* Center-align text */
+    padding-bottom: 30px; /* Space below section headers */
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 1.5em; /* Base font size for section titles */
+    margin-bottom: 15px; /* Space below section titles */
+    font-weight: bold; /* Bold font weight */
+    letter-spacing: 1.5px; /* Adjusted letter spacing */
+    text-transform: uppercase; /* Uppercase text */
+    color: #3c3b3b; /* Default title color */
+}
+
+/* Styling for the span inside section titles */
+.section-title span {
+    display: inline-block; /* Inline-block for alignment */
+    position: relative; /* Relative positioning */
+}
+
+/* Decorative line after section title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px; /* Adjusted width of decorative line */
+    height: 3px; /* Adjusted height of decorative line */
+    background-color: #151515; /* Default color */
+    margin: 15px auto; /* Center align the line */
+}
+
+/* Styles for highlighted text inside paragraphs */
+.lead p ins {
+    color: #ff6e00; /* Highlight color */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Motto paragraph styling */
+.lead.motto p {
+    font-size: 1.2em; /* Slightly larger font size */
+    margin: 0; /* Remove default margins */
+    letter-spacing: 1px; /* Increase letter spacing */
+    font-weight: 300; /* Light font weight */
+    margin-top: 15px; /* Space above motto */
+    color: #646464; /* Text color for motto */
+}
+
+
+
+/* -----------------------------------
+   Header Section
+----------------------------------- */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+    height: 3.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    padding: 0 1.5em;
+}
+
+/* Logo Link Styling */
+#header h1 a {
+    color: #3c3b3b;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.7em;
+    position: relative;
+    transition: color 0.2s;
+}
+
+#header h1 a:hover {
+    color: #ff6e00; /* Hover effect for the logo */
+}
+
+/* Navbar Link Styling */
+#header .links ul,
+#header .main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+#header .links ul li,
+#header .main ul li {
+    margin-left: 1em; /* Space between links */
+}
+
+#header .links ul li a,
+#header .main ul li a {
+    color: #3c3b3b;
+    text-decoration: none;
+    font-size: 0.7em;
+    transition: color 0.2s;
+    position: relative;
+}
+
+/* Link Hover Effect */
+#header .links ul li a:hover:before,
+#header .main ul li a:hover:before {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+#header .links ul li a:before,
+#header .main ul li a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 18px;
+    height: 2px;
+    opacity: 0;
+    background-color: #ff6e00;
+    transform: translateX(100px);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+#header .links ul li a:hover,
+#header .main ul li a:hover {
+    color: #ff6e00; /* Change color on hover */
+}
+
+
+
+/* -----------------------------------
+   Hamburger Button
+----------------------------------- */
+.hamburger {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10001; /* Ensure it stays on top of the content */
+    display: none; /* Hidden on larger screens */
+}
+
+.bar {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: background-color 0.5s ease;
+    transform-origin: center;
+}
+
+/* Bar Positions */
+.top-bar {
+    top: 0;
+}
+
+.middle-bar {
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.bottom-bar {
+    bottom: 0;
+}
+
+/* Hover Effect */
+.hamburger:hover .bar {
+    background-color: #ff6e00;
+}
+
+/* Display on Small Screens */
+@media screen and (max-width: 980px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+/* -----------------------------------
+   Keyframes for Opening Animations
+----------------------------------- */
+@keyframes moveTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(9px);
+    }
+}
+
+@keyframes moveBottom {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes rotateTop {
+    0% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(45deg);
+    }
+}
+
+@keyframes rotateBottom {
+    0% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+@keyframes shrinkMiddle {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+/* -----------------------------------
+   Keyframes for Closing Animations
+----------------------------------- */
+@keyframes reverseRotateTop {
+    0% {
+        transform: translateY(9px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(0deg);
+    }
+}
+
+@keyframes reverseRotateBottom {
+    0% {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+}
+
+@keyframes reverseMoveTop {
+    0% {
+        transform: translateY(9px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes reverseMoveBottom {
+    0% {
+        transform: translateY(-9px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes growMiddle {
+    0% {
+        visibility: hidden;
+        transform: scaleX(0);
+    }
+    100% {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+}
+
+/* -----------------------------------
+   Hamburger Active and Reverse States
+----------------------------------- */
+/* Active State */
+.hamburger.active .middle-bar {
+    animation: shrinkMiddle 0.3s forwards;
+    visibility: hidden; /* Hide the middle bar */
+}
+
+.hamburger.active .top-bar {
+    animation: moveTop 0.3s 0.3s forwards, rotateTop 0.3s 0.6s forwards;
+}
+
+.hamburger.active .bottom-bar {
+    animation: moveBottom 0.3s 0.3s forwards, rotateBottom 0.3s 0.6s forwards;
+}
+
+/* Reverse State */
+.hamburger:not(.active) .middle-bar {
+    animation: growMiddle 0.3s 0.6s forwards;
+    visibility: visible; /* Show the middle bar */
+}
+
+.hamburger:not(.active) .top-bar {
+    animation: reverseRotateTop 0.3s forwards, reverseMoveTop 0.3s 0.3s forwards;
+}
+
+.hamburger:not(.active) .bottom-bar {
+    animation: reverseRotateBottom 0.3s forwards, reverseMoveBottom 0.3s 0.3s forwards;
+}
+
+
+/* -----------------------------------
+   Menu Section
+----------------------------------- */
+
+/* Overall Menu Container */
+.menu-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none; /* Disable interaction when inactive */
+}
+
+/* Active State: Enable interaction */
+.menu-container.active {
+    pointer-events: auto;
+}
+
+/* Hidden State: Hide background when menu is inactive */
+.menu-container.hidden .menu-bg {
+    visibility: hidden;
+}
+
+/* Menu Background Layer */
+.menu-bg {
+    position: fixed;
+    display: block;
+    width: 1px; /* Start as a thin line */
+    height: 1px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Diagonal line */
+    visibility: hidden; /* Initially hidden */
+    z-index: 5; /* Behind menu content */
+    pointer-events: none; /* Non-interactive */
+    transition: width 0.6s ease-in-out, height 0.8s ease; /* Sequential transitions */
+}
+
+/* Opening Animation: Expand diagonally and fill screen */
+.menu-container.active .menu-bg {
+    visibility: visible;
+    width: 4000px; /* Expand width first */
+    height: 4400px; /* Then expand height */
+    transition: width 0.6s ease-in-out, height 0.8s ease 0.6s; /* Staggered height expansion */
+}
+
+/* Closing Animation: Reverse the transitions */
+.menu-container.closing .menu-bg {
+    height: 1px; /* Shrink height first */
+    width: 1px; /* Then shrink width */
+    visibility: visible; /* Keep visible during shrink */
+    transition: height 0.6s ease-in-out, width 0.8s ease 0.6s; /* Staggered width shrink */
+}
+
+/* Menu Content */
+.menu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20; /* Above background */
+    background-color: rgba(255, 255, 255, 0); /* Start transparent */
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s, background-color 0.5s ease 0.6s;
+}
+
+/* Menu Content Active: Fade in */
+.menu-container.active .menu-content {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 1); /* Solid background when visible */
+}
+
+/* Menu Content Closing: Fade out */
+.menu-container.closing .menu-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease; /* Fade out before closing */
+}
+
+/* Menu Links */
+.menu-links {
+    display: block;
+    padding: 20%;
+    list-style: none; /* Remove default list styles */
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease 1.4s; /* Delay showing after background expands */
+}
+
+/* Menu Links Active: Fade in */
+.menu-container.active .menu-links {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu Links Closing: Fade out */
+.menu-container.closing .menu-links {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
+/* Menu Link Items */
+.menu-links li {
+    padding: 15px 0; /* Space between links */
+}
+
+/* Menu Link Styling */
+.menu-links a {
+    text-decoration: none;
+    color: #636363;
+    position: relative;
+    padding: 10px 0;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect for Links */
+.menu-links a:hover:before {
+    opacity: 1;
+    transform: translateX(0px); /* Reset translation on hover */
+}
+
+/* Decorative Line Under Links */
+.menu-links a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 18px;
+    height: 2px;
+    opacity: 0;
+    background-color: #ff6e00;
+    transform: translateX(100px); /* Slide in from right */
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1); /* Smooth slide in */
+}
+
+/* Hamburger Active State */
+.hamburger.active .menu-trigger-bar.top {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotate top bar */
+    width: 100%;
+}
+
+.hamburger.active .menu-trigger-bar.middle {
+    opacity: 0; /* Hide middle bar */
+}
+
+.hamburger.active .menu-trigger-bar.bottom {
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotate bottom bar */
+    width: 100%;
+}
+
+/* Hamburger Inactive State */
+.hamburger:not(.active) .menu-trigger-bar.top,
+.hamburger:not(.active) .menu-trigger-bar.bottom {
+    transform: rotate(0) translate(0); /* Reset rotation and position */
+}
+
+.hamburger:not(.active) .menu-trigger-bar.middle {
+    opacity: 1; /* Show middle bar */
+}
+
+
+
+
+/* -----------------------------------
+   Hero Section
+----------------------------------- */
+
+#hero {
+    position: relative;
+    height: 100vh; /* Full viewport height for immersive experience */
+    width: 100vw; /* Full viewport width to match screen size */
+    background-image: url('/images/Hero/Hero-BG.png'); /* Background image path */
+    background-size: cover; /* Cover entire hero section */
+    background-position: center bottom; /* Center image horizontally and position bottom */
+    background-repeat: no-repeat; /* No image repetition */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    overflow: hidden; /* Prevent overflow from spilling out */
+    color: white; /* Default text color for hero section */
+}
+
+/* Hero Logo Styling */
+.hero-logo {
+    position: relative; /* Relative positioning for fine-tuning */
+    transform: translateY(-100px); /* Move logo up by 100px */
+    width: 20%; /* Width of logo relative to hero section */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the logo */
+    z-index: 2; /* Ensure logo stays above background */
+}
+
+/* Hero Title Styling */
+.hero-title {
+    position: relative; /* Position relative for z-index */
+    transform: translateY(-100px); /* Move title up by 100px */
+    font-size: 2.5em; /* Font size for the title */
+    text-align: center; /* Center align the text */
+    z-index: 2; /* Ensure title is above background */
+    color: white; /* Text color for title */
+    letter-spacing: 0.1em; /* Letter spacing for better readability */
+}
+
+/* Link inside Hero Title */
+.hero-title a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit current text color */
+    cursor: pointer; /* Pointer cursor for interactive feel */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.hero-title a:hover {
+    color: #ff6e00; /* Change color on hover */
+}
+
+/* Highlighted Text in Hero Title */
+.re-imagined {
+    color: #ff6e00; /* Special color for highlighted text */
+}
+
+/* Style for Small-Caps Text */
+.small-caps {
+    text-transform: none; /* Ensure normal text case */
+    font-size: 1.1em; /* Slightly larger font size */
+}
+
+
+/* -----------------------------------
+   Services Section 
+----------------------------------- */
+
+/* Service section container */
+.service-section {
+    padding: 4em 2em; /* Default padding */
+    padding-bottom: 6em; /* Extra padding for bottom to ensure visibility */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center-aligns text */
+    min-height: 100vh; /* Ensure the section covers the full viewport height */
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Vertical stacking */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Adjusting margin for services header */
+#services-header {
+    margin-bottom: 60px; /* Adjust margin as requested */
+}
+
+/* Adjusting margin for section title */
+.section-title {
+    margin-bottom: 20px; /* Adjust margin as requested */
+}
+
+
+/* Service row layout */
+.services-row {
+    display: flex; /* Flex layout for service rows */
+    flex-wrap: wrap; /* Allows wrapping to next line if necessary */
+    justify-content: space-between; /* Space between columns */
+    margin: 0 -15px; /* Negative margins to balance the column padding */
+}
+
+/* Service column layout */
+.service-column {
+    padding: 0 15px; /* Inner padding for each column */
+    box-sizing: border-box; /* Ensure box-sizing includes padding */
+    flex: 1 1 30%; /* Flex properties to maintain 3 columns layout */
+    max-width: 30%; /* Maximum width for each column */
+    margin-bottom: 50px; /* Keep margin to maintain spacing between columns */
+}
+
+/* Service post styling */
+.service-post {
+    background: none; /* Remove background */
+    box-shadow: none; /* Remove shadow */
+    margin-bottom: 30px; /* Space below each post, adjust as necessary */
+    padding: 0; /* Remove inner padding */
+    display: flex; /* Flex layout for post content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+    position: relative; /* Position relative for any overlay effects */
+    overflow: hidden; /* Hide any overflow */
+}
+
+/* Adjusting margin for service post titles */
+.service-post h3 {
+    margin-bottom: 30px; /* Adjust margin for titles within service posts */
+}
+
+/* Image wrapper styling */
+.service-image-wrap {
+    position: relative; /* For overlay positioning */
+    overflow: hidden; /* Hide any overflow from images */
+    margin-bottom: 40px; /* Space below image */
+    display: block; /* Ensure the block-level container */
+}
+
+/* Image styling */
+.service-image-wrap img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container */
+}
+
+/* Custom zoom effect */
+.service-image-wrap:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+    transition: transform 0.8s ease-in-out; /* Smoother and slower zoom */
+}
+
+
+
+/* Orange Rectangle Animation */
+.service-image-wrap {
+    position: relative; /* Ensure positioning context for pseudo-elements */
+}
+
+.service-image-wrap::before, /* Top Line */
+.service-image-wrap::after {  /* Bottom Line */
+    content: '';
+    position: absolute;
+    left: 50%; /* Start from the center horizontally */
+    width: 0; /* Initial width */
+    height: 1px; /* Line thickness */
+    background: #ff6e00; /* Orange color */
+    transition: width 0.5s ease, left 0.5s ease; /* Smooth transition */
+    transform: translateX(-50%); /* Center the line */
+}
+
+/* Top Horizontal Line */
+.service-image-wrap::before {
+    content: '';
+    position: absolute;
+    top: 5%; /* Position near the top */
+    left: 50%;
+    width: 0;
+    height: 1px; /* Line thickness */
+    background: #ff6e00; /* Orange color */
+    transform: translateX(-50%);
+    transition: width 0.5s ease, left 0.5s ease; /* Smooth transition */
+    z-index: 1; /* Ensure it’s on top */
+    visibility: visible; /* Always visible */
+}
+
+.service-image-wrap::after {
+    bottom: 5%; /* Position near the bottom */
+}
+
+.service-image-wrap .left-line, /* Left Line */
+.service-image-wrap .right-line { /* Right Line */
+    content: '';
+    position: absolute;
+    top: 50%; /* Start from the center vertically */
+    height: 0; /* Initial height */
+    width: 1px; /* Line thickness */
+    background: #ff6e00; /* Orange color */
+    transition: height 0.5s ease, top 0.5s ease; /* Smooth transition */
+    transform: translateY(-50%); /* Center the line */
+    
+}
+
+.service-image-wrap .left-line {
+    left: 5%; /* Position near the left edge */
+}
+
+.service-image-wrap .right-line {
+    right: 5%; /* Position near the right edge */
+}
+
+/* Animate on Hover */
+.service-image-wrap:hover::before, 
+.service-image-wrap:hover::after {
+    width: 90%; /* Expand width on hover */
+    left: 50%; /* Keep centered */
+}
+
+.service-image-wrap:hover .left-line, 
+.service-image-wrap:hover .right-line {
+    height: 90%; /* Expand height on hover */
+    top: 50%; /* Keep centered */
+}
+
+
+/* General Blockquote Styling */
+.service-post blockquote {
+    position: relative; /* Ensure positioning context for pseudo-elements */
+    margin: 1.5em 0; /* Space around the blockquote */
+    padding: 1em; /* Inner padding for the blockquote */
+    border-left: 2px solid #ff6e00; /* Left border in orange for emphasis */
+    background: #f9f9f9; /* Light background color */
+    font-style:normal; /* Italic text style */
+    color: #646464; /* Default text color */
+    font-size: 1.2em;
+}
+
+
+
+/* Text styling for service post description */
+.service-post p {
+    margin-top: 1.5em; /* Space above paragraph */
+    text-align: justify; /* Justify text for clean layout */
+    color: #646464; /* Default text color */
+    line-height: 1.75; /* Comfortable line height */
+}
+
+
+
+
+
+
+
+
+/* -----------------------------------
+   Quote Section as Hero Section
+----------------------------------- */
+
+#parallax-quote {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url('/images/Snowy_Cabin.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.parallax-overlay {
+    background-color: rgba(44, 62, 80, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    padding: 2em;
+}
+
+.quote-icon i {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-size: 1.88em;
+    line-height: 2.5em;
+    font-weight: 400;
+}
+
+blockquote ins {
+    color: #ff6e00;
+    text-decoration:none;
+}
+
+.quote-author {
+    font-size: 0.75em;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* -----------------------------------
+   About Section
+----------------------------------- */
+
+/* Overall about section container with padding and background */
+#about {
+    padding: 4em 2em; /* Adds padding around the about section for extra spacing */
+    background-color: #151515; /* Dark background for the about section */
+    text-align: center; /* Center-aligns all text within the section */
+}
+
+/* Header specific to the about section */
+#about-header {
+    padding-bottom: 30px; /* Space below the header */
+    color: #fff; /* White text color to contrast against the dark background */
+}
+
+/* Section-specific override: title text color is white for the about section */
+#about-header .section-title {
+    color: #fff; /* White color for the about section title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+/* Underline after the section title */
+#about-header .section-title::after {
+    content: ''; /* Adds an underline after the title */
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #ff6e00; /* Orange underline to match the theme */
+    margin: 15px auto; /* Centered underline */
+}
+
+/* Styling for the lead paragraph in the about section's motto */
+#about-header .lead.motto p {
+    font-size: 1.1em; /* Slightly smaller font for balance */
+    color: #fff; /* White text color for the motto */
+    margin: 0; /* Reset margin */
+    letter-spacing: 1px; /* Adds spacing between letters for a cleaner look */
+    font-weight: 300; /* Lighter font weight for an elegant appearance */
+    margin-top: 15px; /* Adds space above the paragraph */
+}
+
+/* Styling for the emphasized text (orange highlights) in the paragraph */
+.lead p ins {
+    color: #ff6e00; /* Orange text for emphasized words */
+    font-weight: bold; /* Bold font for emphasis */
+    text-decoration: none; /* Removes underline from <ins> */
+}
+
+/* About section container for content layout */
+.about-container {
+    display: flex; /* Uses flexbox to align items */
+    justify-content: space-between; /* Space items evenly across the section */
+    align-items: center; /* Vertically aligns the items */
+    text-align: left; /* Aligns text to the left inside the columns */
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+    max-width: 1200px; /* Sets the maximum width for the container */
+    margin: 0 auto; /* Centers the container */
+    color: #fff; /* Ensures that text inside this container is white */
+}
+
+/* Individual columns inside the about section */
+.about-column {
+    width: 48%; /* Each column takes up 48% of the container width */
+    padding: 1em; /* Adds padding around the content inside each column */
+    box-sizing: border-box; /* Ensure padding is included in total width */
+}
+
+/* Styling for image wrapper inside the about section */
+.image-wrapper {
+    text-align: center; /* Centers the image inside the column */
+}
+
+/* Styling for images in the about section */
+.about-image {
+    max-width: 100%; /* Ensures the image doesn't exceed the column width */
+    width: 768px; /* Default width for the image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image scales correctly without distortion */
+    margin: 0 auto; /* Centers the image within the container */
+}
+
+/* About Feature Styling (for each feature in the about section) */
+.about-feature {
+    margin-bottom: 2em; /* Adds space below each feature */
+    display: flex; /* Uses flexbox to align the icon and text */
+    align-items: flex-start; /* Aligns items at the top */
+    text-align: left; /* Aligns text to the left */
+    flex-wrap: wrap; /* Allows text to wrap for smaller screens */
+}
+
+/* Feature icon inside the about section */
+.about-feature figure {
+    margin-right: 20px; /* Adds space between the icon and the text */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 64px; /* Sets a fixed width for the icon container */
+}
+
+/* Icon styling for each feature (large orange icons) */
+.about-feature i {
+    font-size: 2.5em; /* Slightly smaller icon size for balance */
+    color: #ff6e00; /* Orange color for the feature icons */
+}
+
+/* Layout for the text content inside each feature */
+.about-feature .feature-text {
+    display: flex;
+    flex-direction: column; /* Stacks the text vertically */
+    justify-content: flex-start; /* Aligns the text at the top */
+}
+
+/* Feature heading (title) styling */
+.about-feature h3 {
+    font-size: 1.25em; /* Medium font size for the feature titles */
+    margin-bottom: 0.5em; /* Adds space below the feature title */
+    font-weight: normal; /* Regular font weight */
+    color: #fff; /* White color for the feature titles */
+    margin-top: 0; /* No margin above the title */
+}
+
+/* Feature description text styling */
+.about-feature p {
+    color: #ccc; /* Light gray text color for feature descriptions */
+    line-height: 1.75; /* Adds line height for readability */
+    margin-top: 0; /* No margin above the paragraph */
+}
+
+
+
+
+/* -----------------------------------
+   Portfolio Section
+----------------------------------- */
+
+#portfolio {
+    padding: 4em 2em;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#portfolio-header {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#portfolio-header .section-title {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #151515;
+}
+
+#portfolio-header .section-title span {
+    display: inline-block;
+    position: relative;
+    color: #151515;
+}
+
+#portfolio-header .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #151515;
+    margin: 15px auto;
+}
+
+#portfolio-header .lead.motto p {
+    font-size: 1.2em;
+    color: #151515;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+#portfolio-header .lead p ins {
+    color: #ff6e00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.portfolio-filters {
+    margin-bottom: 2em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-filters.active {
+    display: flex;
+}
+
+/* Filter Toggle Button for Small Screens */
+.filter-toggle {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto 20px auto;
+}
+
+/* Filter Button Styles */
+.filter-btn {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+    max-width: 320px;
+}
+
+.filter-btn:hover {
+    border-color: #ff6e00;
+    color: #ff6e00;
+}
+
+.filter-btn.active {
+    background-color: transparent;
+    color: #ff6e00;
+    border-color: #ff6e00;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+.portfolio-overlay p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* -----------------------------------
+   Footer Section
+----------------------------------- */
+
+#footer {
+    padding: 2em 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+#footer .copyright {
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* -----------------------------------
+   Consolidated Media Queries
+----------------------------------- */
+
+/* -----------------------------------
+   Navbar Adjustments
+----------------------------------- */
+@media screen and (max-width: 980px) {
+    /* Hide the links section for larger tablets and small desktops */
+    #header .links {
+        display: none; /* Hide navbar links */
+    }
+
+    .hamburger {
+        display: block; /* Display hamburger menu */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjustments for tablets and smaller screens */
+    #header {
+        height: 3.5em; /* Consistent header height */
+        line-height: 3.5em; /* Vertically center content */
+        padding: 0 1em; /* Reduce side padding for smaller screens */
+    }
+
+    #header h1 {
+        font-size: 0.8em; /* Adjust font size for readability */
+    }
+
+    .menu-trigger, .close-trigger {
+        width: 32px; /* Make the hamburger and close icon smaller */
+        height: 32px;
+    }
+
+    #menu {
+        right: -100vw;
+        width: 80%; /* Shrink the menu on smaller screens */
+        transition: right 0.3s ease-in-out; /* Smooth transition for menu */
+    }
+
+    #menu.active {
+        right: 0; /* Show the menu when active */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjustments for small devices like phones */
+    #header {
+        height: 3.5em; /* Reduce header height */
+        padding: 0 1em; /* Reduce padding for smaller screens */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #header h1 {
+        font-size: 0.7em; /* Keep the logo size small */
+        padding: 0 0 0 1em;
+    }
+
+    /* Adjust the size of the hamburger and close icons */
+    .menu-trigger, .close-trigger {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Full screen width for the menu */
+    #menu {
+        width: 100%;
+        right: -100vw;
+        transition: right 0.3s ease-in-out;
+    }
+
+    #menu.active {
+        right: 0; /* Slide the menu in on smaller screens */
+    }
+
+    /* Make menu links more touch-friendly */
+    #menu ul.menu-links li a {
+        font-size: 1.5em; /* Larger font size for better readability */
+        padding: 15px 20px; /* Increase padding for larger touch target */
+    }
+}
+
+/* -----------------------------------
+   Hero Section Responsive Adjustments
+----------------------------------- */
+
+/* Mobile Devices (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .hero-logo {
+        transform: translateY(-40px); /* Adjust logo position */
+        width: 60%; /* Increase logo width for visibility */
+        max-width: 180px; /* Maximum width for logo */
+        margin-bottom: 10px; /* Reduce space below logo */
+    }
+
+    .hero-title {
+        transform: translateY(-60px); /* Adjust title position */
+        font-size: 1.4em; /* Reduce font size */
+        padding: 12px 20px; /* Adjust padding */
+    }
+}
+
+/* Tablets and Small Laptops (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .hero-logo {
+        transform: translateY(-70px); /* Adjust logo position */
+        width: 35%; /* Adjust width */
+        max-width: 250px; /* Set maximum width */
+        margin-bottom: 15px; /* Space below logo */
+    }
+
+    .hero-title {
+        transform: translateY(-70px); /* Adjust title position */
+        font-size: 1.8em; /* Adjust font size */
+        padding: 14px 24px; /* Adjust padding */
+    }
+}
+
+/* Medium to Large Tablets and Smaller Desktops (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hero-logo {
+        transform: translateY(-80px); /* Adjust logo position */
+        width: 25%; /* Adjust width */
+        max-width: 300px; /* Set maximum width */
+        margin-bottom: 20px; /* Space below logo */
+    }
+
+    .hero-title {
+        transform: translateY(-80px); /* Adjust title position */
+        font-size: 2.2em; /* Adjust font size */
+        padding: 16px 28px; /* Adjust padding */
+    }
+}
+
+
+/* -----------------------------------
+   Services Section Adjustments
+----------------------------------- */
+
+/* Responsive Styles for Tablets (768px to 1024px) */
+@media (max-width: 1024px) {
+    .services-row {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center columns within the row */
+        padding: 0 10px; /* Add padding for better spacing on tablet devices */
+    }
+
+    .service-column {
+        flex: 1 1 100%; /* Full width for each column */
+        max-width: 100%; /* Ensure full width */
+        padding: 0 10px; /* Adjust padding within each column */
+        margin-bottom: 40px; /* Space between each column */
+    }
+
+    .service-post {
+        margin-bottom: 30px; /* Reduce space below each post */
+        padding: 20px; /* Adjust padding within each post */
+    }
+
+    .service-image-wrap {
+        margin-bottom: 15px; /* Reduce space below image */
+    }
+}
+
+/* Responsive Styles for Mobile Devices (480px to 767px) */
+@media (max-width: 768px) {
+    .services-row {
+        flex-direction: column; /* Ensure stacking of columns vertically */
+        padding: 0 10px; /* Add padding for mobile devices */
+    }
+
+    .service-column {
+        flex: 1 1 100%; /* Full width for each column */
+        max-width: 100%; /* Maximum width is full width */
+        padding: 0 10px; /* Adjust padding within each column */
+        margin-bottom: 25px; /* Space between each column */
+    }
+
+    .service-post {
+        padding: 15px; /* Further reduce padding within each post */
+        margin-bottom: 20px; /* Adjust space below each post */
+    }
+
+    .service-image-wrap {
+        margin-bottom: 15px; /* Space below image */
+    }
+}
+
+/* Additional Styles for Small Mobile Devices (Up to 479px) */
+@media (max-width: 480px) {
+    .service-section {
+        padding: 3em 1em; /* Reduce padding around the section */
+    }
+
+    .service-column {
+        flex: 1 1 100%; /* Ensure full width */
+        max-width: 100%; /* Maximum width is full width */
+        padding: 0 5px; /* Minimize padding for small devices */
+        margin-bottom: 20px; /* Space between each column */
+    }
+
+    .service-post {
+        padding: 10px; /* Reduce padding within each post */
+        margin-bottom: 20px; /* Adjust space below each post */
+    }
+
+    .service-post p {
+        font-size: 0.95em; /* Slightly smaller font size */
+        line-height: 1.5; /* Adjust line height for readability */
+    }
+}
+
+/* -----------------------------------
+   Quote Section Adjustments
+----------------------------------- */
+@media screen and (max-width: 480px) {
+    blockquote {
+        font-size: 1.5em; /* Adjust font size for quote section */
+    }
+
+    .quote-author {
+        font-size: 1.2em; /* Adjust font size for author name */
+    }
+}
+
+/* -----------------------------------
+   About Section Adjustments
+----------------------------------- */
+
+/* Mobile Devices (480px and below) */
+@media screen and (max-width: 480px) {
+    /* About Section Columns */
+    .about-column {
+        width: 100%; /* Full width for each column */
+        margin-bottom: 1.5em; /* Space between columns */
+        padding: 0 10px; /* Add padding to columns */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+
+    /* About Header Adjustments */
+    #about-header .section-title {
+        font-size: 32px; /* Slightly smaller font size for better fit */
+        margin-bottom: 20px; /* Add space below title */
+    }
+
+    #about-header .lead {
+        font-size: 0.9em; /* Slightly smaller font size for better readability */
+        margin-top: 10px; /* Space above the lead paragraph */
+    }
+
+    /* About Features Adjustments */
+    .about-feature {
+        flex-direction: column; /* Stack icons and text vertically */
+        align-items: center; /* Center icons and text */
+        text-align: center; /* Center align text */
+        margin-bottom: 20px; /* Space between each feature */
+    }
+
+    .about-feature figure {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Space below the icon */
+        text-align: center; /* Center the figure content */
+    }
+
+    .about-feature i {
+        margin-bottom: 10px; /* Space below icon */
+        font-size: 2em; /* Slightly smaller icon size */
+    }
+
+    .about-feature .feature-text {
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    /* Image Adjustments */
+    .about-image {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Space below image */
+    }
+
+    /* Remove unnecessary overflow adjustments */
+    .about-container {
+        padding: 0 15px; /* Add padding to container */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+}
+
+/* Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* About Section Columns */
+    .about-column {
+        width: 100%; /* Full width for each column */
+        margin-bottom: 2em; /* Increase space between columns */
+        padding: 0 15px; /* Add padding to columns */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+
+    /* About Header Adjustments */
+    #about-header .section-title {
+        font-size: 36px; /* Medium font size for better fit */
+        margin-bottom: 25px; /* Space below title */
+    }
+
+    #about-header .lead {
+        font-size: 1em; /* Slightly larger font size */
+        margin-top: 15px; /* Space above the lead paragraph */
+    }
+
+    /* About Features Adjustments */
+    .about-feature {
+        flex-direction: column; /* Stack icons and text vertically */
+        align-items: center; /* Center icons and text */
+        text-align: center; /* Center align text */
+        margin-bottom: 25px; /* Space between each feature */
+    }
+
+    .about-feature figure {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 15px; /* Space below the icon */
+    }
+
+    .about-feature i {
+        font-size: 2.5em; /* Medium icon size */
+    }
+
+    .about-feature .feature-text {
+        text-align: center; /* Center text for tablet devices */
+    }
+
+    /* Image Adjustments */
+    .about-image {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 30px; /* Space below image */
+    }
+
+    /* Remove unnecessary overflow adjustments */
+    .about-container {
+        padding: 0 20px; /* Add padding to container */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+}
+
+/* Small Desktops and Tablets (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* About Section Columns */
+    .about-column {
+        width: 48%; /* Half width for each column */
+        margin-bottom: 2em; /* Space between columns */
+        padding: 0 20px; /* Add padding to columns */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+
+    /* About Header Adjustments */
+    #about-header .section-title {
+        font-size: 40px; /* Larger font size for better fit */
+        margin-bottom: 30px; /* Space below title */
+    }
+
+    #about-header .lead {
+        font-size: 1.1em; /* Larger font size */
+        margin-top: 20px; /* Space above the lead paragraph */
+    }
+
+    /* About Features Adjustments */
+    .about-feature {
+        flex-direction: row; /* Align icons and text horizontally */
+        align-items: flex-start; /* Align content to the start */
+        text-align: left; /* Align text to the left */
+        margin-bottom: 30px; /* Space between each feature */
+    }
+
+    .about-feature figure {
+        margin-right: 20px; /* Add right margin */
+        margin-bottom: 0; /* Remove space below the icon */
+    }
+
+    .about-feature i {
+        font-size: 3em; /* Larger icon size */
+    }
+
+    .about-feature .feature-text {
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Image Adjustments */
+    .about-image {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 35px; /* Space below image */
+    }
+
+    /* Remove unnecessary overflow adjustments */
+    .about-container {
+        padding: 0 30px; /* Add padding to container */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+}
+
+
+
+
+
+/* -----------------------------------
+   Portfolio Section Adjustments
+----------------------------------- */
+@media screen and (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack portfolio items in a single column */
+    }
+}
+
+/* -----------------------------------
+   Footer Adjustments
+----------------------------------- */
+@media screen and (max-width: 480px) {
+    #footer {
+        padding: 1.5em 0;
+    }
+
+    #footer .copyright {
+        font-size: 0.7em;
+    }
+}

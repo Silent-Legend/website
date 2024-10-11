@@ -1,0 +1,536 @@
+<!-- Services Section -->
+<section id="services">
+    <header id="services-header" class="section-header">
+        <h2 data-title="Our Services" class="section-title">
+            <span>Our Services</span>
+        </h2>
+        <div class="lead motto">
+            <p>Our quality standards apply also in terms of service, technical expertise, and advice.<br>
+                Our dedicated employees are happy to assist you with <ins>know-how</ins>, <ins>experience</ins>, and <ins>innovation</ins> in your <ins>daily business</ins>.
+            </p>
+        </div>
+    </header>
+    <div class="services-container">
+        <article class="service-post">
+            <header>
+                <h3><a href="services.html" aria-label="Visual Effects and Motion Graphics Services">Visual Effects | Motion Graphics</a></h3>
+                <a href="services.html" class="image" aria-label="Explore Visual Effects Services">
+                    <img src="images/Digital_Focus.png" alt="Motion Graphics Services">
+                </a>
+                <p>Elevate your content with our cutting-edge visual effects and motion graphics. We blend art and technology to craft immersive visuals that captivate and resonate.</p>
+            </header>
+        </article>
+
+        <article class="service-post">
+            <header>
+                <h3><a href="services.html" aria-label="Web Design Services">Web Design</a></h3>
+                <a href="services.html" class="image" aria-label="Explore Web Design Services">
+                    <img src="images/Laptop.png" alt="Web Design Services">
+                </a>
+                <p>Transform your online presence with our expert web design services. We craft user-friendly, aesthetically pleasing websites tailored to your brand.</p>
+            </header>
+        </article>
+
+        <article class="service-post">
+            <header>
+                <h3><a href="services.html" aria-label="Photography Services">Photography</a></h3>
+                <a href="services.html" class="image" aria-label="Explore Photography Services">
+                    <img src="images/lens.png" alt="Photography Services">
+                </a>
+                <p>Capture moments with precision and artistry through our professional photography services. From candid shots to studio sessions, we bring your vision to life.</p>
+            </header>
+        </article>
+    </div>
+</section>
+
+
+/* -----------------------------------
+   Services Section
+----------------------------------- */
+
+/* The overall styling for the services section container, setting padding and background */
+#services {
+    padding: 4em 2em; /* Adds padding around the services section */
+    background-color: #f9f9f9; /* Light background color to differentiate this section */
+    text-align: center; /* Center aligns text within the section */
+}
+
+/* Header styling specifically for the services section */
+#services-header {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* Section header styles globally shared between sections, to maintain consistency across headers */
+.section-header .section-title {
+    font-size: 1.25em; /* Ensures that the title has a uniform size across sections */
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px; /* Adds spacing between letters for a cleaner, bolder look */
+    text-transform: uppercase;
+    color: #151515; /* Dark gray color for the service section title text */
+}
+
+/* Styling for the span inside the section titles globally */
+.section-header .section-title span {
+    display: inline-block;
+    position: relative;
+    color: #151515; /* Ensures the span text color remains the same as the main title */
+}
+
+/* Adds a horizontal underline effect after the title globally */
+.section-header .section-title::after {
+    content: ''; /* Empty content for the underline */
+    display: block;
+    width: 50px; /* Underline width */
+    height: 2px; /* Underline thickness */
+    background-color: #151515; /* Dark gray underline to match the title color */
+    margin: 15px auto; /* Centers the underline below the title */
+}
+
+/* Motto paragraph specific to services */
+.lead.motto p {
+    font-size: 1.2em; /* Slightly larger font for emphasis */
+    color: #151515; /* Dark gray text color */
+    margin: 0;
+    letter-spacing: 1px; /* Adds a slight spacing between letters */
+    font-weight: 300; /* Light font weight for a more elegant look */
+    margin-top: 15px;
+}
+
+/* Style for emphasized text inside the paragraphs (orange color and no underline) */
+.lead p ins {
+    color: #ff6e00; /* Highlighted orange text */
+    font-weight: bold;
+    text-decoration: none; /* Removes default underline from <ins> elements */
+}
+
+/* Services container: setting up a flexbox layout for the service posts */
+.services-container {
+    display: flex;
+    justify-content: space-between; /* Distributes items evenly with space between them */
+    flex-wrap: wrap; /* Allows the items to wrap into multiple lines if needed */
+    max-width: 1200px; /* Ensures the content doesn't exceed a specific width */
+    margin: 0 auto;
+    padding: 0 20px; /* Adds padding to the sides of the container */
+}
+
+/* Styling for individual service posts */
+.service-post {
+    background-color: #fff; /* White background for each service post */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow to give depth to the service cards */
+    width: calc(33.333% - 40px); /* Each service post takes one-third of the container width, with space between */
+    margin-bottom: 2em; /* Spacing below each post */
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content to the top of each post */
+    align-items: center;
+}
+
+/* Styling for the image container within the service post */
+.service-post .image {
+    width: 100%; /* Image container spans the full width of the post */
+    height: 220px; /* Fixed height for the image */
+    overflow: hidden; /* Ensures any excess content (image overflow) is hidden */
+    border: solid 5px white; /* White border around the image */
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the image within the service post */
+.service-post .image img {
+    width: 100%; /* The image fills the container */
+    height: 100%; /* Ensures the image maintains its container size */
+    object-fit: cover; /* Ensures the image scales correctly without distorting */
+    transition: transform 0.6s ease-out; /* Smooth zoom effect on hover */
+}
+
+/* Hover effect to zoom in on the image */
+.service-post:hover .image img {
+    transform: scale(1.1); /* Zooms in slightly when the user hovers */
+}
+
+/* Styling for the text content within the service post */
+.service-post p {
+    margin-top: 1.5em;
+    text-align: justify; /* Justifies the text for a clean, professional look */
+}
+
+
+/* -----------------------------------
+   Hamburger Button
+----------------------------------- */
+
+.hamburger {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10001; /* Ensure it stays on top of the content */
+    display: none; /* Hidden on larger screens */
+}
+
+.bar {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: background-color 0.5s ease;
+    transform-origin: center;
+}
+
+/* Initial positioning */
+.top-bar {
+    top: 0;
+}
+
+.middle-bar {
+    top: 45%; /* Adjusted per your preference */
+    transform: translateY(-50%);
+}
+
+.bottom-bar {
+    bottom: 0;
+}
+
+/* Change color on hover */
+.hamburger:hover .bar {
+    background-color: #ff6e00;
+}
+
+/* Show hamburger only on small screens */
+@media screen and (max-width: 980px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+/* -----------------------------------
+   Keyframes for Opening (Hamburger to X)
+----------------------------------- */
+
+/* Moving the top bar down */
+@keyframes moveTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(9px);
+    }
+}
+
+/* Moving the bottom bar up */
+@keyframes moveBottom {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-9px);
+    }
+}
+
+/* Rotating the top bar */
+@keyframes rotateTop {
+    0% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(45deg);
+    }
+}
+
+/* Rotating the bottom bar */
+@keyframes rotateBottom {
+    0% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* Shrinking the middle bar */
+@keyframes shrinkMiddle {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+/* -----------------------------------
+   Keyframes for Closing (X to Hamburger)
+----------------------------------- */
+
+/* Reversing the rotation of the top bar */
+@keyframes reverseRotateTop {
+    0% {
+        transform: translateY(9px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(0deg); /* Rotate back to straight line */
+    }
+}
+
+/* Reversing the rotation of the bottom bar */
+@keyframes reverseRotateBottom {
+    0% {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(0deg); /* Rotate back to straight line */
+    }
+}
+
+/* Moving the top bar back to the original position */
+@keyframes reverseMoveTop {
+    0% {
+        transform: translateY(9px);
+    }
+    100% {
+        transform: translateY(0); /* Move top bar back to original position */
+    }
+}
+
+/* Moving the bottom bar back to the original position */
+@keyframes reverseMoveBottom {
+    0% {
+        transform: translateY(-9px);
+    }
+    100% {
+        transform: translateY(0); /* Move bottom bar back to original position */
+    }
+}
+
+/* Growing the middle bar */
+@keyframes growMiddle {
+    0% {
+        visibility: hidden; /* Keep it hidden until fully ready to expand */
+        transform: scaleX(0);
+    }
+    100% {
+        visibility: visible; /* Make it visible when it expands */
+        transform: scaleX(1);
+    }
+}
+
+/* -----------------------------------
+   Active State (Hamburger to X)
+----------------------------------- */
+
+.hamburger.active .middle-bar {
+    animation: shrinkMiddle 0.3s forwards;
+}
+
+.hamburger.active .top-bar {
+    animation: moveTop 0.3s 0.3s forwards, rotateTop 0.3s 0.6s forwards;
+}
+
+.hamburger.active .bottom-bar {
+    animation: moveBottom 0.3s 0.3s forwards, rotateBottom 0.3s 0.6s forwards;
+}
+
+/* -----------------------------------
+   Reverse State (X to Hamburger)
+----------------------------------- */
+
+.hamburger:not(.active) .top-bar {
+    animation: reverseRotateTop 0.3s forwards, reverseMoveTop 0.3s 0.3s forwards; /* Rotate first, then move up */
+}
+
+.hamburger:not(.active) .bottom-bar {
+    animation: reverseRotateBottom 0.3s forwards, reverseMoveBottom 0.3s 0.3s forwards; /* Rotate first, then move down */
+}
+
+.hamburger:not(.active) .middle-bar {
+    visibility: hidden; /* Ensure middle bar remains hidden */
+    animation: growMiddle 0.3s 0.6s forwards; /* Middle bar expands after the top/bottom bars have moved */
+}
+
+
+/* -----------------------------------
+   Menu Section
+----------------------------------- */
+
+/* Overall Menu Container */
+.menu-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    pointer-events: none; /* Disable clicks when inactive */
+    
+}
+
+/* Menu Content */
+.menu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0); /* Background starts transparent */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+/* Menu Links */
+.menu-links {
+    display: block;
+    padding: 20%;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease 1.4s; /* Delay to show after background expands */
+}
+
+.menu-links li {
+    padding: 15px 0;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #636363;
+    position: relative;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.menu-links a:hover:before {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.menu-links a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 18px;
+    height: 2px;
+    opacity: 0;
+    background-color: #ff6e00;
+    transform: translateX(100px);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* Menu Background Layers */
+.menu-bg {
+    position: fixed;
+    display: block;
+    width: 1px; /* Start as a thin line */
+    height: 1px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Diagonal line */
+    transition: width 0.6s ease-in-out, height 0.8s ease; /* Sequential transitions */
+    visibility: hidden; /* Initially hidden */
+    z-index: 5; /* Keep behind the menu content */
+    pointer-events: none; /* Ensure no clicks go through it */
+}
+
+.menu-container.active {
+    pointer-events: auto; /* Enable interaction when menu is active */
+}
+
+/* Opening animation: Expand diagonally and fill screen */
+.menu-container.active .menu-bg {
+    visibility: visible;
+    width: 4000px; /* Expand width first */
+    height: 4400px; /* After the width has expanded, fill the screen vertically */
+    transition: width 0.6s ease-in-out, height 0.8s ease 0.6s; /* Staggered height expansion */
+    pointer-events: none; /* Menu-bg remains non-interactive */
+}
+
+
+/* Closing animation: Reverse the transitions (like the hamburger) */
+.menu-container.closing .menu-bg {
+    height: 1px; /* Shrink height first (reverse of the expand) */
+    transition: height 0.6s ease-in-out, width 0.8s ease 0.6s; /* Then shrink the width */
+    width: 1px;
+    visibility: visible; /* Keep it visible during shrink */
+}
+
+/* After the line shrinks back, hide the background */
+.menu-container.hidden .menu-bg {
+    visibility: hidden; /* Hide the background after shrinking */
+}
+
+/* Menu Content */
+.menu-container.active .menu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20; /* Keep high enough to be above the hero section */
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 1; /* WTF */
+    visibility: hidden;
+    transition: background-color 0.5s ease 0.6s, visibility 0s linear 0.5s;
+}
+
+.menu-container.closing .menu-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease; /* Fade out content before closing */
+}
+
+/* Menu Links fade in after background expands */
+.menu-container.active .menu-links {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-container.closing .menu-links {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
+/* Hamburger Active State */
+.hamburger.active .menu-trigger-bar.top {
+    transform: rotate(45deg) translate(5px, 5px);
+    width: 100%;
+}
+
+.hamburger.active .menu-trigger-bar.middle {
+    opacity: 0;
+}
+
+.hamburger.active .menu-trigger-bar.bottom {
+    transform: rotate(-45deg) translate(5px, -5px);
+    width: 100%;
+}
+
+/* Hamburger Revert (like the hamburger logic) */
+.hamburger:not(.active) .menu-trigger-bar.top {
+    transform: rotate(0) translate(0);
+}
+
+.hamburger:not(.active) .menu-trigger-bar.middle {
+    opacity: 1;
+}
+
+.hamburger:not(.active) .menu-trigger-bar.bottom {
+    transform: rotate(0) translate(0);
+}

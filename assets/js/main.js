@@ -1,0 +1,262 @@
+document.addEventListener("DOMContentLoaded", function () {
+// -----------------------------------
+// Hamburger and Menu Toggle
+// -----------------------------------
+
+const hamburger = document.querySelector('.hamburger');
+const menuContainer = document.querySelector('.menu-container'); // Reference to the menu container
+const menuLinks = document.querySelectorAll('.menu-links a'); // Reference to the menu links
+
+// Add click event listener to the hamburger button
+hamburger.addEventListener('click', function() {
+    if (this.classList.contains('active')) {
+        // Start closing animation
+        menuContainer.classList.remove('active'); // Remove active to start reverse animation
+        menuContainer.classList.add('closing'); // Add closing class for reverse
+        setTimeout(function() {
+            menuContainer.classList.remove('closing'); // Remove closing class after animation finishes
+            menuContainer.classList.add('hidden'); // Hide the line after shrinking is complete
+        }, 1400); // Total animation time (width + height shrink)
+    } else {
+        // Start opening animation
+        menuContainer.classList.remove('hidden'); // Remove hidden class to start showing the line
+        menuContainer.classList.add('active'); // Add active class to expand the menu
+    }
+
+    // Toggle hamburger 'active' state to trigger animation
+    this.classList.toggle('active');
+});
+
+// Close menu when any menu link is clicked
+menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Close the menu the same way as when the hamburger is clicked
+        hamburger.classList.remove('active'); // Revert hamburger icon
+        menuContainer.classList.remove('active'); // Close the menu
+        menuContainer.classList.add('closing'); // Start reverse animation
+        setTimeout(function() {
+            menuContainer.classList.remove('closing');
+            menuContainer.classList.add('hidden'); // Ensure the menu is hidden
+        }, 1400); // Time matches the reverse animation duration
+    });
+});
+
+
+    // -----------------------------------
+    // Add Animation Class on Scroll
+    // -----------------------------------
+    const servicePosts = document.querySelectorAll('.service-post');
+    const servicesHeader = document.querySelector('#services-header');
+    const servicesSection = document.querySelector('#services');
+
+    // Calculate the height of the services header
+    const headerHeight = servicesHeader.getBoundingClientRect().height;
+    // Calculate the top position of the services section
+    const sectionTop = servicesSection.getBoundingClientRect().top + window.scrollY;
+
+    // Helper function to debounce events
+    const debounce = (func, wait = 20, immediate = true) => {
+        let timeout;
+        return function () {
+            const context = this, args = arguments;
+            const later = () => {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    // Function to add animation class when posts come into view
+    const animateOnScroll = () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY > sectionTop - headerHeight) {
+            servicePosts.forEach((post) => {
+                // Check if the element already has the class to avoid repeated work
+                if (!post.classList.contains('animate-in')) {
+                    const postTop = post.getBoundingClientRect().top + scrollY;
+                    const windowHeight = window.innerHeight;
+
+                    // If the top of the post is less than the window height minus 50px
+                    if (postTop < scrollY + windowHeight - 50) {
+                        post.classList.add('animate-in');
+                    }
+                }
+            });
+        }
+    };
+
+    // Add scroll event listener with debounce
+    window.addEventListener('scroll', debounce(animateOnScroll));
+
+    // Trigger animation on page load to animate visible elements
+    animateOnScroll();
+
+
+
+    // -----------------------------------
+    // Parallax Effect
+    // -----------------------------------
+    const parallaxElement = document.querySelector('.parallax-background');
+    if (parallaxElement) {
+        window.addEventListener('scroll', function () {
+            let offset = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            parallaxElement.style.transform = 'translateY(' + offset * 0.5 + 'px)';
+        });
+    }
+
+
+    // -----------------------------------
+// Lightbox Functionality
+// -----------------------------------
+const lightbox = document.querySelector("#lightbox");
+const lightboxImage = document.querySelector("#lightbox-image");
+const lightboxTitle = document.querySelector("#lightbox-title");
+const lightboxDescription = document.querySelector("#lightbox-description");
+const lightboxPrev = document.querySelector("#lightbox-prev");
+const lightboxNext = document.querySelector("#lightbox-next");
+const lightboxClose = document.querySelector("#lightbox-close");
+
+// Declare portfolioItems once
+const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+let images = [];
+let titles = [];
+let descriptions = [];
+let currentIndex = -1;
+
+portfolioItems.forEach(item => {
+    let imageSrc = item.querySelector("img").getAttribute("src");
+    let titleElement = item.querySelector(".portfolio-overlay h3");
+    let descriptionElement = item.querySelector(".portfolio-overlay p");
+    let title = titleElement ? titleElement.textContent : "";
+    let description = descriptionElement ? descriptionElement.textContent : "";
+    images.push(imageSrc);
+    titles.push(title);
+    descriptions.push(description);
+});
+
+function updateLightboxContent() {
+    lightboxImage.src = images[currentIndex];
+    lightboxTitle.textContent = titles[currentIndex];
+    lightboxDescription.textContent = descriptions[currentIndex];
+}
+
+if (lightbox && lightboxImage && portfolioItems.length > 0) {
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+            currentIndex = index;
+            updateLightboxContent();
+            lightbox.classList.add("active");
+        });
+    });
+
+    lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove("active");
+        }
+    });
+}
+
+if (lightboxClose) {
+    lightboxClose.addEventListener("click", function () {
+        lightbox.classList.remove("active");
+    });
+}
+
+if (lightboxPrev && lightboxNext) {
+    lightboxPrev.addEventListener("click", function () {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightboxContent();
+    });
+
+    lightboxNext.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightboxContent();
+    });
+}
+
+
+// -----------------------------------
+// Filter Toggle and Filtering
+// -----------------------------------
+const filterToggleButton = document.querySelector('.filter-toggle');
+const filtersContainer = document.querySelector('.portfolio-filters');
+
+// Ensure that both filterToggleButton and filtersContainer exist before proceeding
+if (filterToggleButton && filtersContainer) {
+    filterToggleButton.addEventListener("click", function () {
+        // Toggle the 'active' class on the filters container
+        filtersContainer.classList.toggle('active');
+
+        // Update the button text to indicate show/hide state
+        filterToggleButton.textContent = filtersContainer.classList.contains('active') ? "Hide Filters" : "Show Filters";
+    });
+}
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+// Ensure we have filter buttons and portfolio items before proceeding
+if (filterButtons.length > 0 && portfolioItems.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const category = button.getAttribute("data-filter");
+
+            // Remove 'active' class from all buttons and add it to the clicked one
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Show/hide portfolio items based on the selected filter category
+            portfolioItems.forEach(item => {
+                // If the filter is set to "*" (all) or if the item has the matching class, show it
+                if (category === "*" || item.classList.contains(category.substring(1))) {
+                    item.style.display = "block"; // Show matching items
+                } else {
+                    item.style.display = "none"; // Hide non-matching items
+                }
+            });
+        });
+    });
+}
+
+    
+
+
+
+    // Smooth Scroll Functionality for all anchor links except those in the menu
+const smoothScrollLinks = document.querySelectorAll('a[href^="#"]:not(.menu a)');
+
+smoothScrollLinks.forEach(link => {
+    link.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default behavior
+
+        const targetId = this.getAttribute("href").substring(1); // Get the ID from href
+        const targetElement = document.getElementById(targetId); // Find the target element by ID
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth" // Smooth scrolling behavior
+            });
+        }
+    });
+});
+
+// Ensure logo link scrolls to the top of the page
+const logoLink = document.querySelector('h1 a');
+
+if (logoLink) {
+    logoLink.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default behavior
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Smooth scroll to the top
+        });
+    });
+}
+});
