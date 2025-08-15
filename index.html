@@ -63,7 +63,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="service-section"> <!-- Added class="service-section" -->
+    <section id="services" class="service-section section-format">
         <header id="services-header" class="section-header">
             <h2 data-title="Our Services" class="section-title">
                 <span>Our Services</span>
@@ -75,8 +75,8 @@
                 </p>
             </div>
         </header>
-        <div class="services-row"> <!-- Service Row -->
-            <div class="service-column"> <!-- Service Column -->
+        <div class="services-row">
+            <div class="service-column">
                 <article class="service-post">
                     <header>
                         <h3><a href="services.html" aria-label="Visual Effects and Motion Graphics Services">Visual
@@ -89,9 +89,7 @@
                              images/Services/Digital-Focus-1000x542.png 1000w,
                              images/Services/Digital-Focus-1500x813.png 1500w,
                              images/Services/Digital-Focus-2500x1354.png 2500w"
-                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw"
-                             >
-                            <!-- Adding Vertical Line Elements Inside the Wrapper -->
+                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw">
                             <div class="left-line"></div>
                             <div class="right-line"></div>
                         </a>
@@ -99,9 +97,9 @@
                             and technology to craft immersive visuals that captivate and resonate.</blockquote>
                     </header>
                 </article>
-            </div> <!-- End of Service Column -->
-
-            <div class="service-column"> <!-- Service Column -->
+            </div>
+    
+            <div class="service-column">
                 <article class="service-post">
                     <header>
                         <h3><a href="services.html" aria-label="Web Design Services">Web Design</a></h3>
@@ -113,9 +111,7 @@
                              images/Services/Laptop-1000x542.png 1000w,
                              images/Services/Laptop-1500x813.png 1500w,
                              images/Services/Laptop-2500x1354.png 2500w"
-                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw"
-                             >
-                            <!-- Adding Vertical Line Elements Inside the Wrapper -->
+                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw">
                             <div class="left-line"></div>
                             <div class="right-line"></div>
                         </a>
@@ -123,9 +119,9 @@
                             aesthetically pleasing websites tailored to your brand.</blockquote>
                     </header>
                 </article>
-            </div> <!-- End of Service Column -->
-
-            <div class="service-column"> <!-- Service Column -->
+            </div>
+    
+            <div class="service-column">
                 <article class="service-post">
                     <header>
                         <h3><a href="services.html" aria-label="Photography Services">Photography</a></h3>
@@ -137,9 +133,7 @@
                              images/Services/lens-1000x542.png 1000w,
                              images/Services/lens-1500x813.png 1500w,
                              images/Services/lens-2500x1354.png 2500w"
-                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw"
-                             >
-                            <!-- Adding Vertical Line Elements Inside the Wrapper -->
+                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw">
                             <div class="left-line"></div>
                             <div class="right-line"></div>
                         </a>
@@ -147,9 +141,10 @@
                             From candid shots to studio sessions, we bring your vision to life.</blockquote>
                     </header>
                 </article>
-            </div> <!-- End of Service Column -->
-        </div> <!-- End of Services Row -->
+            </div>
+        </div>
     </section>
+    
 
 
 
@@ -161,9 +156,9 @@
         <div class="parallax-background"></div>
         <div class="parallax-overlay"></div>
         <div class="parallax-content">
-            <div class="quote-icon">
+            <!--<div class="quote-icon">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
-            </div>
+            </div>-->
             <blockquote>
                 "DESIGN IS INTELLIGENCE MADE <ins>VISIBLE</ins>."
             </blockquote>
@@ -174,7 +169,7 @@
     </section>
 
     <!-- About Us Section -->
-<section id="about">
+<section id="about" class="about-section section-format">
     <header id="about-header" class="section-header">
         <h2 data-title="About Us" class="section-title">
             <span>About Us</span>
@@ -231,81 +226,80 @@
 </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
-        <header id="portfolio-header" class="section-header">
-            <h2 data-title="Our Work" class="section-title">
-                <span>Our Work</span>
-            </h2>
-            <div class="lead motto">
-                <p>We believe our work speaks for itself. Browse our most recent projects below<br>
-                    and enjoy our <ins>handmade work</ins> with love for every detail.
-                </p>
+<section id="portfolio" class="portfolio-section section-format">
+    <header id="portfolio-header" class="section-header">
+        <h2 data-title="Our Work" class="section-title">
+            <span>Our Work</span>
+        </h2>
+        <div class="lead motto">
+            <p>We believe our work speaks for itself. Browse our most recent projects below<br>
+                and enjoy our <ins>handmade work</ins> with love for every detail.
+            </p>
+        </div>
+    </header>
+
+    <!-- Filter Toggle Button (for small screens) -->
+    <button class="filter-toggle">Show Filters</button>
+
+    <!-- Portfolio Filters -->
+    <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="*">All</button>
+        <button class="filter-btn" data-filter=".visual-effects">Visual Effects</button>
+        <button class="filter-btn" data-filter=".motion-graphics">Motion Graphics</button>
+        <button class="filter-btn" data-filter=".graphic-design">Graphic Design</button>
+        <button class="filter-btn" data-filter=".photography">Photography</button>
+        <button class="filter-btn" data-filter=".photo-manipulation">Photo Manipulation</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+        <!-- Portfolio Item: Visual Effects -->
+        <article class="portfolio-item visual-effects">
+            <img src="images/Explosion.jpeg" alt="Visual Effects Project" loading="lazy">
+            <div class="portfolio-overlay">
+                <h3>Visual Effects</h3>
+                <p>Amazing Visual Effects Project</p>
             </div>
-        </header>
+        </article>
 
-        <!-- Filter Toggle Button (for small screens) -->
-        <button class="filter-toggle">Show Filters</button>
+        <!-- Portfolio Item: Motion Graphics -->
+        <article class="portfolio-item motion-graphics">
+            <img src="images/Digital_Iris.jpeg" alt="Motion Graphics Project" loading="lazy">
+            <div class="portfolio-overlay">
+                <h3>Motion Graphics</h3>
+                <p>Stunning Motion Graphics Project</p>
+            </div>
+        </article>
 
-        <!-- Portfolio Filters -->
-        <div class="portfolio-filters">
-            <button class="filter-btn active" data-filter="*">All</button>
-            <button class="filter-btn" data-filter=".visual-effects">Visual Effects</button>
-            <button class="filter-btn" data-filter=".motion-graphics">Motion Graphics</button>
-            <button class="filter-btn" data-filter=".graphic-design">Graphic Design</button>
-            <button class="filter-btn" data-filter=".photography">Photography</button>
-            <button class="filter-btn" data-filter=".photo-manipulation">Photo Manipulation</button>
-        </div>
+        <!-- Portfolio Item: Graphic Design -->
+        <article class="portfolio-item graphic-design">
+            <img src="images/KW Typographic Portrait.png" alt="Graphic Design Project" loading="lazy">
+            <div class="portfolio-overlay">
+                <h3>Graphic Design</h3>
+                <p>Creative Graphic Design Project</p>
+            </div>
+        </article>
 
-        <!-- Portfolio Grid -->
-        <div class="portfolio-grid">
-            <!-- Portfolio Item: Visual Effects -->
-            <article class="portfolio-item visual-effects">
-                <img src="images/Explosion.jpeg" alt="Visual Effects Project" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Visual Effects</h3>
-                    <p>Amazing Visual Effects Project</p>
-                </div>
-            </article>
+        <!-- Portfolio Item: Photography -->
+        <article class="portfolio-item photography">
+            <img src="images/Sattelite_View.jpeg" alt="Photography Project" loading="lazy">
+            <div class="portfolio-overlay">
+                <h3>Photography</h3>
+                <p>Stunning Photography Project</p>
+            </div>
+        </article>
 
-            <!-- Portfolio Item: Motion Graphics -->
-            <article class="portfolio-item motion-graphics">
-                <img src="images/Digital_Iris.jpeg" alt="Motion Graphics Project" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Motion Graphics</h3>
-                    <p>Stunning Motion Graphics Project</p>
-                </div>
-            </article>
+        <!-- Portfolio Item: Photo Manipulation -->
+        <article class="portfolio-item photo-manipulation">
+            <img src="images/Soldier.jpeg" alt="Photo Manipulation Project" loading="lazy">
+            <div class="portfolio-overlay">
+                <h3>Photo Manipulation</h3>
+                <p>Incredible Photo Manipulation Project</p>
+            </div>
+        </article>
+    </div>
+</section>
 
-            <!-- Portfolio Item: Graphic Design -->
-            <article class="portfolio-item graphic-design">
-                <img src="images/KW Typographic Portrait.png" alt="Graphic Design Project" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Graphic Design</h3>
-                    <p>Creative Graphic Design Project</p>
-                </div>
-            </article>
-
-            <!-- Portfolio Item: Photography -->
-            <article class="portfolio-item photography">
-                <img src="images/Sattelite_View.jpeg" alt="Photography Project" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Photography</h3>
-                    <p>Stunning Photography Project</p>
-                </div>
-            </article>
-
-            <!-- Portfolio Item: Photo Manipulation -->
-            <article class="portfolio-item photo-manipulation">
-                <img src="images/Soldier.jpeg" alt="Photo Manipulation Project" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Photo Manipulation</h3>
-                    <p>Incredible Photo Manipulation Project</p>
-                </div>
-            </article>
-
-            <!-- Add more portfolio items here as needed -->
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer id="footer">

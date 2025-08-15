@@ -881,7 +881,7 @@ address {
     border-left: 2px solid #ff6e00; /* Left border in orange for emphasis */
     background: #f9f9f9; /* Light background color */
     font-style:normal; /* Italic text style */
-    color: #646464; /* Default text color */
+    color: #ffffff; /* Default text color */
     font-size: 1.2em;
 }
 
