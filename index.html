@@ -1,25 +1,68 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Silent Legend</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Silent Legend - Design Re-imagined | Visual Effects, Motion Graphics & Web Design</title>
+    <meta name="title" content="Silent Legend - Design Re-imagined | Visual Effects, Motion Graphics & Web Design" />
     <meta name="description"
-        content="Silent Legend - Design re-imagined. Explore our services in visual effects, motion graphics, web design, and photography.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,Raleway:400,800,900" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/Fav/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/Fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/Fav/favicon-16x16.png">
-    <link rel="manifest" href="/images/Fav/site.webmanifest">
-    <link rel="mask-icon" href="/images/Fav/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+        content="Silent Legend - Design re-imagined. Explore our services in visual effects, motion graphics, web design, AI art, and photography. Professional creative solutions." />
+    <meta name="keywords" content="visual effects, motion graphics, web design, AI art, photography, graphic design, creative agency" />
+    <meta name="author" content="Silent Legend" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://silentlegend.com/" />
+    <meta property="og:title" content="Silent Legend - Design Re-imagined" />
+    <meta property="og:description" content="Explore our services in visual effects, motion graphics, web design, AI art, and photography." />
+    <meta property="og:image" content="/images/Hero/logo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://silentlegend.com/" />
+    <meta property="twitter:title" content="Silent Legend - Design Re-imagined" />
+    <meta property="twitter:description" content="Explore our services in visual effects, motion graphics, web design, AI art, and photography." />
+    <meta property="twitter:image" content="/images/Hero/logo.png" />
+    
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Preload critical hero images with fetchpriority -->
+    <link rel="preload" as="image" href="images/Hero/Hero-BG.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/Hero/logo.png" fetchpriority="high" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Raleway:wght@400;800;900&display=swap" 
+        rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/Fav/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/Fav/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/Fav/apple-touch-icon.png" />
+    <!-- Manifest will be loaded conditionally via script to avoid CORS errors with file:// protocol -->
+    <link rel="mask-icon" href="images/Fav/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 </head>
 
 <body class="is-preload">
+    <!-- Loading Bar -->
+    <div id="loading-bar" class="loading-bar" aria-hidden="false" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="loading-bar-progress"></div>
+    </div>
+    
     <!--Header-->
     <header id="header">
         <h1><a href="#" class="logo">Silent Legend</a></h1>
@@ -32,17 +75,17 @@
             </ul>
         </nav>
         <!-- Hamburger Menu Button -->
-        <div class="hamburger" aria-label="Toggle menu">
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu-container">
             <span class="bar top-bar"></span>
             <span class="bar middle-bar"></span>
             <span class="bar bottom-bar"></span>
-        </div>
+        </button>
     </header>
 
     <!-- Menu Section -->
-    <div class="menu-container"> <!-- Was inner-container -->
+    <nav id="menu-container" class="menu-container hidden" aria-label="Main navigation" aria-hidden="true">
         <div class="menu-bg"></div>
-        <div class="menu-content"> <!-- Was menu-container -->
+        <div class="menu-content">
             <ul class="menu-links">
                 <li><a href="#services">SERVICES</a></li>
                 <li><a href="#about">ABOUT</a></li>
@@ -50,14 +93,15 @@
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="hero">
-        <img src="images/Hero/logo.png" alt="Silent Legend Logo" class="hero-logo">
+        <img src="images/Hero/logo.png" alt="Silent Legend Logo" class="hero-logo" fetchpriority="high" width="400" height="400" />
         <h3 class="hero-title">
             <a href="#services" class="scroll-button" aria-label="Scroll to Services">
-                DESIGN <span class="re-imagined"><span class="small-caps">re</span>-IMAGINED</span>
+            <span class="design-text" data-text="DESIGN">DESIGN</span>
+            <span class="re-imagined"><span class="small-caps">re</span>-IMAGINED</span>
             </a>
         </h3>
     </section>
@@ -66,22 +110,21 @@
     <section id="services" class="service-section section-format">
         <header id="services-header" class="section-header">
             <h2 data-title="Our Services" class="section-title">
-                <span>Our Services</span>
+                <span>Services</span>
             </h2>
             <div class="lead motto">
-                <p>Our quality standards apply also in terms of service, technical expertise, and advice.<br>
-                    Our dedicated employees are happy to assist you with <ins>know-how</ins>, <ins>experience</ins>, and
-                    <ins>innovation</ins> in your <ins>daily business</ins>.
-                </p>
+                <p>Each service is crafted with a commitment to quality, technical skill, and creative integrity.<br />
+                With <ins>expertise</ins>, <ins>experience</ins>, and <ins>innovation</ins>, 
+                I deliver solutions designed to elevate your vision and bring ideas to life.</p>
+
             </div>
         </header>
         <div class="services-row">
             <div class="service-column">
                 <article class="service-post">
                     <header>
-                        <h3><a href="services.html" aria-label="Visual Effects and Motion Graphics Services">Visual
-                                Effects | Motion Graphics</a></h3>
-                        <a href="services.html" class="service-image-wrap" aria-label="Explore Visual Effects Services">
+                        <h3><a href="#services-visual-effects" class="service-link" aria-label="Visual Effects and Motion Graphics Services">Visual Effects | Motion Graphics</a></h3>
+                        <a href="#services-visual-effects" class="service-image-wrap service-link" aria-label="Explore Visual Effects Services">
                             <img src="images/Services/Digital-Focus.png" alt="Motion Graphics Services" srcset="
                              images/Services/Digital-Focus-300x163.png 300w,
                              images/Services/Digital-Focus-500x271.png 500w,
@@ -89,7 +132,7 @@
                              images/Services/Digital-Focus-1000x542.png 1000w,
                              images/Services/Digital-Focus-1500x813.png 1500w,
                              images/Services/Digital-Focus-2500x1354.png 2500w"
-                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw">
+                                sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw" />
                             <div class="left-line"></div>
                             <div class="right-line"></div>
                         </a>
@@ -98,12 +141,12 @@
                     </header>
                 </article>
             </div>
-    
+
             <div class="service-column">
                 <article class="service-post">
                     <header>
-                        <h3><a href="services.html" aria-label="Web Design Services">Web Design</a></h3>
-                        <a href="services.html" class="service-image-wrap" aria-label="Explore Web Design Services">
+                        <h3><a href="#services-web-design" class="service-link" aria-label="Web Design Services">Web Design</a></h3>
+                        <a href="#services-web-design" class="service-image-wrap service-link" aria-label="Explore Web Design Services">
                             <img src="images/Services/Laptop.png" alt="Web Design Services" srcset="
                              images/Services/Laptop-300x163.png 300w,
                              images/Services/Laptop-500x271.png 500w,
@@ -111,7 +154,7 @@
                              images/Services/Laptop-1000x542.png 1000w,
                              images/Services/Laptop-1500x813.png 1500w,
                              images/Services/Laptop-2500x1354.png 2500w"
-                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw">
+                                sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw" />
                             <div class="left-line"></div>
                             <div class="right-line"></div>
                         </a>
@@ -120,12 +163,12 @@
                     </header>
                 </article>
             </div>
-    
+
             <div class="service-column">
                 <article class="service-post">
                     <header>
-                        <h3><a href="services.html" aria-label="Photography Services">Photography</a></h3>
-                        <a href="services.html" class="service-image-wrap" aria-label="Explore Photography Services">
+                        <h3><a href="#services-photography" class="service-link" aria-label="Photography Services">Photography</a></h3>
+                        <a href="#services-photography" class="service-image-wrap service-link" aria-label="Explore Photography Services">
                             <img src="images/Services/lens.png" alt="Photography Services" srcset="
                              images/Services/lens-300x163.png 300w,
                              images/Services/lens-500x271.png 500w,
@@ -133,7 +176,7 @@
                              images/Services/lens-1000x542.png 1000w,
                              images/Services/lens-1500x813.png 1500w,
                              images/Services/lens-2500x1354.png 2500w"
-                             sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw">
+                                sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 1024px) 80vw, 33vw" />
                             <div class="left-line"></div>
                             <div class="right-line"></div>
                         </a>
@@ -142,14 +185,225 @@
                     </header>
                 </article>
             </div>
+
+            <!-- New AI Art Service -->
+            <div class="service-column">
+                <article class="service-post">
+                    <header>
+                        <h3><a href="#services-ai-art" class="service-link" aria-label="AI Art Services">AI Art</a></h3>
+                        <a href="#services-ai-art" class="service-image-wrap service-link" aria-label="Explore AI Art Services">
+                            <img src="images/Portfolio/AI_Art_and_Prompt_Design/Royalty.png" alt="AI Art Services" loading="lazy" />
+                            <div class="left-line"></div>
+                            <div class="right-line"></div>
+                        </a>
+                        <blockquote>
+                            Leverage intelligent and creative AI-powered art generation. Harness custom prompt engineering and automation pipelines to produce stunning media assets tailored to your vision.
+                        </blockquote>
+                    </header>
+                </article>
+            </div>
+        </div>
+
+        <!-- Expandable Service Detail Sections -->
+        <div class="service-details-container">
+            <div class="service-details-backdrop"></div>
+            <!-- Visual Effects Service Details -->
+            <section id="services-visual-effects" class="service-detail-section">
+                <div class="service-detail-content">
+                    <button class="service-detail-close-btn" aria-label="Close service details">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="service-detail-header">
+                        <h2>Visual Effects & Motion Graphics</h2>
+                        <p class="service-detail-tagline">Elevate your content with cutting-edge visual effects and motion graphics</p>
+                    </div>
+                    <div class="service-detail-body">
+                        <div class="service-detail-image">
+                            <img src="images/Services/Digital-Focus.png" alt="Visual Effects & Motion Graphics" />
+                        </div>
+                        <div class="service-detail-text">
+                            <div class="service-detail-description">
+                                <p>We blend art and technology to craft immersive visuals that captivate and resonate. Our visual effects and motion graphics services transform your ideas into stunning animated content that engages audiences and elevates your brand.</p>
+                                <p>From explosive action sequences to elegant motion graphics, we deliver cinematic-quality visuals that bring your creative vision to life. Our expertise spans the entire post-production pipeline, ensuring seamless integration and flawless execution.</p>
+                            </div>
+                            <div class="service-detail-features">
+                                <h3>What We Offer</h3>
+                                <ul>
+                                    <li>Advanced particle systems and compositing</li>
+                                    <li>3D animation and motion graphics</li>
+                                    <li>Color grading and post-production</li>
+                                    <li>Visual effects integration with live-action</li>
+                                    <li>Motion graphics for branding and marketing</li>
+                                    <li>Cinematic visual storytelling</li>
+                                    <li>Explosion and environmental effects</li>
+                                    <li>Green screen compositing and keying</li>
+                                    <li>Motion tracking and stabilization</li>
+                                </ul>
+                            </div>
+                            <div class="service-detail-process">
+                                <h3>Our Process</h3>
+                                <p>We begin by understanding your creative vision and technical requirements. Through collaborative planning, we develop a comprehensive approach that combines artistic direction with technical precision. Our workflow includes pre-visualization, asset creation, compositing, and final delivery in your preferred format.</p>
+                            </div>
+                            <div class="service-detail-cta">
+                                <a href="#contact" class="service-cta-button">Get Started</a>
+                                <a href="#portfolio" class="service-cta-button-secondary" data-filter=".visual-effects">View Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Web Design Service Details -->
+            <section id="services-web-design" class="service-detail-section">
+                <div class="service-detail-content">
+                    <button class="service-detail-close-btn" aria-label="Close service details">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="service-detail-header">
+                        <h2>Web Design</h2>
+                        <p class="service-detail-tagline">Transform your online presence with expert web design services</p>
+                    </div>
+                    <div class="service-detail-body">
+                        <div class="service-detail-image">
+                            <img src="images/Services/Laptop.png" alt="Web Design Services" />
+                        </div>
+                        <div class="service-detail-text">
+                            <div class="service-detail-description">
+                                <p>Our expert team crafts aesthetically pleasing, user-friendly websites tailored to your brand identity. We combine seamless UI/UX with advanced development technologies to create responsive multi-device experiences that convert visitors into customers.</p>
+                                <p>Every website we design is built with performance, accessibility, and user engagement in mind. From initial concept to final deployment, we ensure your digital presence reflects the quality and professionalism of your brand while delivering exceptional user experiences across all platforms.</p>
+                            </div>
+                            <div class="service-detail-features">
+                                <h3>What We Offer</h3>
+                                <ul>
+                                    <li>Responsive web design for all devices</li>
+                                    <li>User experience (UX) and interface (UI) design</li>
+                                    <li>Custom website development</li>
+                                    <li>E-commerce solutions and online stores</li>
+                                    <li>Performance optimization and speed enhancement</li>
+                                    <li>SEO-friendly design and structure</li>
+                                    <li>Content management system integration</li>
+                                    <li>Interactive elements and animations</li>
+                                    <li>Accessibility compliance (WCAG standards)</li>
+                                </ul>
+                            </div>
+                            <div class="service-detail-process">
+                                <h3>Our Process</h3>
+                                <p>We start with a comprehensive discovery phase to understand your business goals, target audience, and brand identity. Through wireframing and prototyping, we create a user-centered design that balances aesthetics with functionality. Our development process emphasizes clean code, responsive design, and thorough testing to ensure your website performs flawlessly across all devices and browsers.</p>
+                            </div>
+                            <div class="service-detail-cta">
+                                <a href="#contact" class="service-cta-button">Get Started</a>
+                                <a href="#portfolio" class="service-cta-button-secondary">View Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photography Service Details -->
+            <section id="services-photography" class="service-detail-section">
+                <div class="service-detail-content">
+                    <button class="service-detail-close-btn" aria-label="Close service details">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="service-detail-header">
+                        <h2>Photography</h2>
+                        <p class="service-detail-tagline">Capture moments with precision and artistry</p>
+                    </div>
+                    <div class="service-detail-body">
+                        <div class="service-detail-image">
+                            <img src="images/Services/lens.png" alt="Photography Services" />
+                        </div>
+                        <div class="service-detail-text">
+                            <div class="service-detail-description">
+                                <p>Professional photography services that capture your brand story with precision and artistry. From studio sessions to candid captures, we provide beautiful images that resonate and inspire, helping you tell your story through compelling visual narratives.</p>
+                                <p>Our photography approach combines technical expertise with creative vision. Whether capturing the perfect product shot, documenting a corporate event, or creating stunning landscape imagery, we ensure every photograph tells a story and elevates your visual communication.</p>
+                            </div>
+                            <div class="service-detail-features">
+                                <h3>What We Offer</h3>
+                                <ul>
+                                    <li>Product and commercial photography</li>
+                                    <li>Portrait and lifestyle photography</li>
+                                    <li>Event and corporate photography</li>
+                                    <li>Aerial and landscape photography</li>
+                                    <li>Post-processing and retouching</li>
+                                    <li>Image optimization for web and print</li>
+                                    <li>Studio and location photography</li>
+                                    <li>Photo editing and color correction</li>
+                                    <li>High-resolution image delivery</li>
+                                </ul>
+                            </div>
+                            <div class="service-detail-process">
+                                <h3>Our Process</h3>
+                                <p>We begin with a consultation to understand your vision and requirements. Through careful planning and preparation, we ensure optimal lighting, composition, and timing. Our post-production workflow includes professional editing, color grading, and retouching to deliver images that exceed expectations. Final images are delivered in your preferred formats, optimized for their intended use.</p>
+                            </div>
+                            <div class="service-detail-cta">
+                                <a href="#contact" class="service-cta-button">Get Started</a>
+                                <a href="#portfolio" class="service-cta-button-secondary" data-filter=".photography">View Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Art Service Details -->
+            <section id="services-ai-art" class="service-detail-section">
+                <div class="service-detail-content">
+                    <button class="service-detail-close-btn" aria-label="Close service details">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="service-detail-header">
+                        <h2>AI Art & Consulting</h2>
+                        <p class="service-detail-tagline">Leverage intelligent and creative AI-powered art generation</p>
+                    </div>
+                    <div class="service-detail-body">
+                        <div class="service-detail-image">
+                            <img src="images/Portfolio/AI_Art_and_Prompt_Design/Royalty.png" alt="AI Art Services" />
+                        </div>
+                        <div class="service-detail-text">
+                            <div class="service-detail-description">
+                                <p>With over 15 years of multidisciplinary expertise, I fuse AI prompt engineering, multimedia design, and cutting-edge automation pipelines to craft innovative visual content and dynamic user experiences. Whether building custom persona memory systems or deploying privacy-first AI tools, my work is at the forefront of creative technology.</p>
+                                <p>AI Art represents the convergence of artificial intelligence and creative expression. Through sophisticated prompt engineering and iterative refinement, we generate unique visual assets that push the boundaries of digital creativity. Our approach combines technical understanding of AI systems with artistic vision to produce stunning, one-of-a-kind imagery.</p>
+                            </div>
+                            <div class="service-detail-features">
+                                <h3>What We Offer</h3>
+                                <ul>
+                                    <li>Custom AI art generation and prompt engineering</li>
+                                    <li>AI automation pipeline development</li>
+                                    <li>Creative AI consulting and strategy</li>
+                                    <li>Custom persona memory systems</li>
+                                    <li>Privacy-first AI tool development</li>
+                                    <li>AI-powered visual content creation</li>
+                                    <li>Style transfer and image manipulation</li>
+                                    <li>AI workflow optimization</li>
+                                    <li>Multi-model AI art generation</li>
+                                </ul>
+                            </div>
+                            <div class="service-detail-process">
+                                <h3>Our Process</h3>
+                                <p>We start by understanding your creative goals and technical requirements. Through iterative prompt refinement and model selection, we develop a tailored approach to AI art generation. Our process includes concept development, prompt engineering, iterative generation, post-processing, and final asset delivery. We work with various AI models and techniques to achieve the desired aesthetic and conceptual outcome.</p>
+                            </div>
+                            <div class="service-detail-cta">
+                                <a href="#contact" class="service-cta-button">Get Started</a>
+                                <a href="#portfolio" class="service-cta-button-secondary" data-filter=".ai-art">View Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </section>
-    
 
-
-
-
-
+    <!-- Optional AI Art Info Section -->
+    <section id="ai-art" class="section-format ai-art-section">
+        <header class="section-header">
+        <h2 data-title="AI Art & Consulting" class="section-title">
+            <span>AI Art & Consulting</span>
+        </h2>
+        </header>
+        <div class="lead motto">
+        <p>With over 15 years of multidisciplinary expertise, I fuse AI prompt engineering, multimedia design, and cutting-edge automation pipelines to craft innovative visual content and dynamic user experiences. Whether building custom persona memory systems or deploying privacy-first AI tools, my work is at the forefront of creative technology.</p>
+        </div>
+    </section>
 
     <!-- Parallax Quote Section -->
     <section id="parallax-quote">
@@ -169,160 +423,852 @@
     </section>
 
     <!-- About Us Section -->
-<section id="about" class="about-section section-format">
-    <header id="about-header" class="section-header">
-        <h2 data-title="About Us" class="section-title">
-            <span>About Us</span>
-        </h2>
-        <div class="lead motto">
-            <p>Legend, More Than A Brand. <ins>It’s The Standard</ins>.</p>
-        </div>
-    </header>
+    <section id="about" class="about-section section-format">
+        <header id="about-header" class="section-header">
+            <h2 data-title="About Us" class="section-title">
+                <span>About</span>
+            </h2>
+            <div class="lead motto">
+                <p>Legend, More Than A Brand. <ins>It’s The Standard</ins>.</p>
+            </div>
+        </header>
 
-    <div class="about-container">
-        <div class="about-column image-wrapper">
-            <img src="images/About/Digital_Eye.jpeg" 
-                 alt="About Us" 
-                 class="about-image"
-                 srcset="
-                 images/About/Digital_Eye-300x169.png 300w,
-                 images/About/Digital_Eye-500x281.png 500w,
-                 images/About/Digital_Eye-750x422.png 750w,
-                 images/About/Digital_Eye-1000x562.png 1000w,
-                 images/About/Digital_Eye-1500x843.png 1500w,
-                 images/About/Digital_Eye-2500x1354.png 2500w"
-                 sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw">
+        <div class="about-container">
+            <div class="about-column image-wrapper">
+                <img src="images/About/Digital_Eye.jpeg" alt="About Us" class="about-image" srcset="
+                     images/About/Digital_Eye-300x169.png 300w,
+                     images/About/Digital_Eye-500x281.png 500w,
+                     images/About/Digital_Eye-750x422.png 750w,
+                     images/About/Digital_Eye-1000x562.png 1000w,
+                     images/About/Digital_Eye-1500x843.png 1500w,
+                     images/About/Digital_Eye-2500x1354.png 2500w"
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" />
+            </div>
+            <div class="about-column">
+                <div class="about-feature">
+                    <figure class="feature-icon">
+                        <i class="fa fa-robot"></i>
+                    </figure>
+                    <div class="feature-text">
+                        <h3>Innovation at the Core</h3>
+                        <p>We harness the power of AI, machine learning, and advanced technologies to create forward-thinking
+                            solutions that not only meet today’s needs but anticipate tomorrow’s challenges.</p>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <figure class="feature-icon">
+                        <i class="fa fa-laptop-code"></i>
+                    </figure>
+                    <div class="feature-text">
+                        <h3>Design & Development Expertise</h3>
+                        <p>Our team of designers and developers crafts seamless, user-focused experiences, blending art and
+                            technology to create stunning visual identities and functional digital solutions.</p>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <figure class="feature-icon">
+                        <i class="fa fa-handshake"></i>
+                    </figure>
+                    <div class="feature-text">
+                        <h3>Client-Centric Approach</h3>
+                        <p>We are more than just a service provider—we are a partner in your success. From concept to completion,
+                            we work closely with you to bring your vision to life while delivering the highest level of quality
+                            and professionalism.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="about-column">
-            <div class="about-feature">
-                <figure class="feature-icon">
-                    <i class="fa fa-robot"></i>
-                </figure>
-                <div class="feature-text">
-                    <h3>Innovation at the Core</h3>
-                    <p>We harness the power of AI, machine learning, and advanced technologies to create forward-thinking solutions that not only meet today’s needs but anticipate tomorrow’s challenges.</p>
-                </div>
-            </div>
-            <div class="about-feature">
-                <figure class="feature-icon">
-                    <i class="fa fa-laptop-code"></i>
-                </figure>
-                <div class="feature-text">
-                    <h3>Design & Development Expertise</h3>
-                    <p>Our team of designers and developers crafts seamless, user-focused experiences, blending art and technology to create stunning visual identities and functional digital solutions.</p>
-                </div>
-            </div>
-            <div class="about-feature">
-                <figure class="feature-icon">
-                    <i class="fa fa-handshake"></i>
-                </figure>
-                <div class="feature-text">
-                    <h3>Client-Centric Approach</h3>
-                    <p>We are more than just a service provider—we are a partner in your success. From concept to completion, we work closely with you to bring your vision to life while delivering the highest level of quality and professionalism.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section section-format">
-    <header id="portfolio-header" class="section-header">
-        <h2 data-title="Our Work" class="section-title">
-            <span>Our Work</span>
-        </h2>
-        <div class="lead motto">
-            <p>We believe our work speaks for itself. Browse our most recent projects below<br>
-                and enjoy our <ins>handmade work</ins> with love for every detail.
-            </p>
+    <section id="portfolio" class="portfolio-section section-format">
+        <header id="portfolio-header" class="section-header">
+            <h2 data-title="Our Work" class="section-title">
+                <span>Our Work</span>
+            </h2>
+            <div class="lead motto">
+                <p>We believe our work speaks for itself. Browse our most recent projects below<br />
+                    and enjoy our <ins>handmade work</ins> with love for every detail.
+                </p>
+            </div>
+        </header>
+
+        <!-- Filter Toggle Button (for small screens) -->
+        <button class="filter-toggle">Show Filters</button>
+
+        <!-- Portfolio Filters -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="*">All</button>
+            <button class="filter-btn" data-filter=".visual-effects">Visual Effects</button>
+            <button class="filter-btn" data-filter=".motion-graphics">Motion Graphics</button>
+            <button class="filter-btn" data-filter=".graphic-design">Graphic Design</button>
+            <button class="filter-btn" data-filter=".photography">Photography</button>
+            <button class="filter-btn" data-filter=".retouching-and-restoration">Retouching and Restoration</button>
+            <button class="filter-btn" data-filter=".ai-art-and-prompt-design">AI Art and Prompt Design</button>
+            <button class="filter-btn" data-filter=".branding-and-identity">Branding and Identity</button>
         </div>
-    </header>
 
-    <!-- Filter Toggle Button (for small screens) -->
-    <button class="filter-toggle">Show Filters</button>
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid" role="list">
+            <!-- 
+                TO ADD A NEW PORTFOLIO ITEM:
+                1. Copy one of the article blocks below
+                2. Update the image src and alt text
+                3. Update the overlay h3 and p text
+                4. Add/update the data attributes for detail view:
+                   - data-detail-name: Project name (displayed in detail view)
+                   - data-detail-role: Project role/category
+                   - data-detail-description: Full project description (OVERVIEW section)
+                   - data-detail-characteristics: Additional project details (CHARACTERISTICS section)
+                   - data-detail-client: Client name
+                   - data-detail-date: Project date/year
+                   - data-detail-project-url: Project URL (optional, defaults to #)
+                   - data-detail-category: Project category
+                   - data-detail-skills: JSON array of skills (see example format below)
+                5. Add the category class (visual-effects, motion-graphics, graphic-design, photography, retouching-and-restoration, ai-art-and-prompt-design, branding-and-identity)
+                
+                Skills format example:
+                data-detail-skills='[{"name":"Skill Name","percent":95},{"name":"Another Skill","percent":90}]'
+            -->
+            <!-- Portfolio Item: Visual Effects -->
+            <article class="portfolio-item visual-effects" role="listitem" tabindex="0"
+                data-detail-name="EXPLOSION COMPOSITE"
+                data-detail-role="Visual Effects"
+                data-detail-description="A high-impact visual effects project featuring dynamic explosion compositing with advanced particle systems and realistic lighting integration. This project showcases expertise in post-production techniques, blending multiple layers to create a seamless and dramatic visual narrative."
+                data-detail-characteristics="This project required extensive compositing expertise, working with particle simulations, color grading, and seamless integration with live-action footage. The final result demonstrates mastery of visual effects pipelines and attention to cinematic detail."
+                data-detail-client="Creative Agency"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Visual Effects"
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Visual_Effects/Explosion.jpg" alt="Visual Effects Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Visual Effects</h3>
+                    <p class="portfolio-overlay-description">Dynamic explosion compositing with particle systems and realistic lighting integration</p>
+                </div>
+            </article>
 
-    <!-- Portfolio Filters -->
-    <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="*">All</button>
-        <button class="filter-btn" data-filter=".visual-effects">Visual Effects</button>
-        <button class="filter-btn" data-filter=".motion-graphics">Motion Graphics</button>
-        <button class="filter-btn" data-filter=".graphic-design">Graphic Design</button>
-        <button class="filter-btn" data-filter=".photography">Photography</button>
-        <button class="filter-btn" data-filter=".photo-manipulation">Photo Manipulation</button>
+            <!-- Portfolio Item: Motion Graphics -->
+            <article class="portfolio-item motion-graphics" role="listitem" tabindex="0"
+                data-detail-name="DIGITAL IRIS"
+                data-detail-role="Motion Graphics"
+                data-detail-description="An abstract digital eye animation featuring fluid transitions and chromatic effects. This motion graphics piece explores the intersection of organic forms and digital aesthetics, creating a mesmerizing visual experience through carefully choreographed animations."
+                data-detail-characteristics="Created using advanced motion graphics techniques, this project combines organic animation principles with digital effects. The chromatic transitions and fluid movements were achieved through careful keyframe animation and color grading to create a cohesive visual narrative."
+                data-detail-client="Design Studio"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Motion Graphics"
+                data-detail-skills='[{"name":"Creative Direction","percent":93},{"name":"Technical Execution","percent":90},{"name":"Client Satisfaction","percent":96}]'>
+                <img src="images/Portfolio/Motion_Graphics/Digital_Iris.jpg" alt="Motion Graphics Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Motion Graphics</h3>
+                    <p class="portfolio-overlay-description">Abstract digital eye animation featuring fluid transitions and chromatic effects</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Graphic Design - Kate Winslet Typographic Portrait -->
+            <article class="portfolio-item graphic-design" role="listitem" tabindex="0"
+                data-detail-name="KATE WINSLET"
+                data-detail-role="Typographic Portrait"
+                data-detail-description="The task was to create a typographic portrait of the illustrious actress, Kate Winslet, that not only captured her physical likeness but also encapsulated the essence of her life's journey and narrative."
+                data-detail-objective="To transform a conventional image of Kate Winslet into a dynamic typographic representation, using her very words from her autobiography to contour and shape her face."
+                data-detail-process='{"BASE IMAGE PREPARATION":"The original image of Kate Winslet was selected and then desaturated to serve as the foundational layer for the typographic overlay.","LUMINANCE DISPLACEMENT TECHNIQUE":"Leveraging the luminance values of the desaturated image, text was displaced over Kate\u0027s face to ensure that the words seamlessly contoured around her facial features. This technique helped to maintain the integrity of her likeness while infusing it with the depth and texture of typography.","TEXT SELECTION":"Passages from Kate Winslet\u0027s autobiography were chosen for the typography. These passages not only provided the visual texture but also added a deeply personal narrative layer to the portrait, making it resonate with authenticity.","LAYERING & FONT CHOICES":"Three layers of a cursive font were utilized, each at varying weights. This layering technique provided depth to the portrait, making it appear almost three-dimensional.","FINAL VISUALIZATION":"The base image layer was removed, revealing a portrait where the luminance of Kate\u0027s features was represented by the intensity of the typography. The highlights of the portrait, such as her cheekbones and forehead, showcased the whitest parts of the text. As the typography transitioned from white to gray to black, it faded into the black background, creating a striking contrast and depth.","OUTCOME":"The end result was a captivating portrait of Kate Winslet, where her face emerged from the words that encapsulated her life\u0027s journey. The design achieved a balance between visual aesthetics and narrative depth, presenting an image that was not only visually stunning but also rich in context and meaning."}'
+                data-detail-characteristics=""
+                data-detail-client="Personal Project"
+                data-detail-date="2016"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Graphic Design"
+                data-detail-images='["images/Portfolio/Graphic_Design/KW Typographic Portrait.png", "images/Portfolio/Graphic_Design/Kate_Winslet/KW Final.png", "images/Portfolio/Graphic_Design/Kate_Winslet/KW Color.png", "images/Portfolio/Graphic_Design/Kate_Winslet/KW BW.png", "images/Portfolio/Graphic_Design/Kate_Winslet/KW small.png", "images/Portfolio/Graphic_Design/Kate_Winslet/KW medium.png", "images/Portfolio/Graphic_Design/Kate_Winslet/KW large.png"]'
+                data-detail-skills='[{"name":"Creative Direction","percent":97},{"name":"Technical Execution","percent":94},{"name":"Client Satisfaction","percent":99}]'>
+                <img src="images/Portfolio/Graphic_Design/KW Typographic Portrait.png" alt="Kate Winslet Typographic Portrait" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Graphic Design</h3>
+                    <p class="portfolio-overlay-description">Typography-based portrait design blending letterforms with human features</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Photography -->
+            <article class="portfolio-item photography" role="listitem" tabindex="0"
+                data-detail-name="AERIAL LANDSCAPE"
+                data-detail-role="Photography"
+                data-detail-description="A stunning aerial landscape capture showcasing dramatic perspective and natural composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create breathtaking visual narratives of natural environments."
+                data-detail-characteristics="Captured from an aerial perspective, this photograph required careful planning and timing to achieve optimal lighting conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in landscape photography and color grading."
+                data-detail-client="Travel Magazine"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Photography"
+                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Photography/Sattelite_View.jpg" alt="Photography Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Photography</h3>
+                    <p class="portfolio-overlay-description">Aerial landscape capture showcasing dramatic perspective and natural composition</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Retouching and Restoration - Military Composite -->
+            <article class="portfolio-item retouching-and-restoration" role="listitem" tabindex="0"
+                data-detail-name="MILITARY COMPOSITE"
+                data-detail-role="Retouching and Restoration"
+                data-detail-description="Composite imagery merging military aesthetics with cinematic post-processing. This retouching and restoration project combines multiple photographic elements to create a powerful and cohesive visual narrative, demonstrating advanced skills in compositing and color grading."
+                data-detail-characteristics="This composite required meticulous attention to detail in blending multiple photographic sources, matching lighting, perspective, and color tones. The final image demonstrates advanced masking techniques, realistic shadow integration, and cinematic color grading to create a seamless and impactful result."
+                data-detail-client="Media Production"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Retouching and Restoration"
+                data-detail-skills='[{"name":"Creative Direction","percent":94},{"name":"Technical Execution","percent":96},{"name":"Client Satisfaction","percent":95}]'>
+                <img src="images/Portfolio/Retouching_and_Restoration/Soldier.jpg" alt="Retouching and Restoration Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Retouching and Restoration</h3>
+                    <p class="portfolio-overlay-description">Composite imagery merging military aesthetics with cinematic post-processing</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Retouching and Restoration - Studio Retouch (BEFORE/AFTER) -->
+            <article class="portfolio-item retouching-and-restoration" role="listitem" tabindex="0"
+                data-detail-name="STUDIO RETOUCH"
+                data-detail-role="Retouching and Restoration"
+                data-detail-description="Professional portrait retouching demonstrating advanced skin correction, color grading, and detail enhancement techniques. This project showcases the transformation from raw capture to polished final image, highlighting precision in retouching workflow."
+                data-detail-characteristics="The retouching process involved careful attention to skin texture, color harmony, and overall image refinement while maintaining natural appearance. Advanced techniques were applied to enhance details, correct imperfections, and achieve a professional studio-quality result."
+                data-detail-client="Portrait Studio"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Retouching and Restoration"
+                data-detail-after="images/Portfolio/Retouching_and_Restoration/retouch-studio-after.png"
+                data-detail-before="images/Portfolio/Retouching_and_Restoration/Retouch/retouch-studio-before.jpg"
+                data-detail-skills='[{"name":"Creative Direction","percent":92},{"name":"Technical Execution","percent":98},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Retouching_and_Restoration/retouch-studio-after.png" alt="Studio Retouch - After" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Retouching and Restoration</h3>
+                    <p class="portfolio-overlay-description">Professional portrait retouching with before/after comparison</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: AI Art and Prompt Design - Royalty (formerly AI ART.png) -->
+            <article class="portfolio-item ai-art-and-prompt-design" role="listitem" tabindex="0"
+                data-detail-name="ROYALTY"
+                data-detail-role="AI Art"
+                data-detail-description="Generative artwork exploring the intersection of artificial intelligence and creative expression. This AI art project leverages custom prompt engineering and advanced algorithms to produce stunning visual content that pushes the boundaries of digital creativity."
+                data-detail-characteristics="This piece represents innovative use of AI generation tools, combining carefully crafted prompts with iterative refinement. The process involved experimenting with various AI models, style parameters, and post-processing techniques to achieve the desired aesthetic and conceptual outcome."
+                data-detail-client="Art Gallery"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="AI Art and Prompt Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":96},{"name":"Technical Execution","percent":93},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/AI_Art_and_Prompt_Design/Royalty.png" alt="Royalty AI Art Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>AI Art and Prompt Design</h3>
+                    <p class="portfolio-overlay-description">Generative artwork exploring the intersection of artificial intelligence and creative expression</p>
+                </div>
+            </article>
+            <article class="portfolio-item ai-art-and-prompt-design" role="listitem" tabindex="0"
+                data-detail-name="DUAL-TONE COMPOSITION"
+                data-detail-role="AI Art and Prompt Design"
+                data-detail-description="A dual-tone composition featuring split-screen aesthetics and algorithmic color mapping. This AI-generated artwork demonstrates sophisticated understanding of color theory, composition, and digital aesthetics, creating visually striking and thought-provoking imagery."
+                data-detail-characteristics="This composition explores algorithmic color relationships and split-screen design principles. The work demonstrates advanced understanding of color theory applied to AI-generated imagery, with careful attention to balance, contrast, and visual rhythm across the dual-panel format."
+                data-detail-client="Digital Art Collective"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="AI Art and Prompt Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":92},{"name":"Technical Execution","percent":94},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/AI_Art_and_Prompt_Design/Split.jpeg" alt="Dual-Tone Composition AI Art Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>AI Art and Prompt Design</h3>
+                    <p class="portfolio-overlay-description">Dual-tone composition featuring split-screen aesthetics and algorithmic color mapping</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Visual Effects - Fighter Jet -->
+            <article class="portfolio-item visual-effects" role="listitem" tabindex="0"
+                data-detail-name="FIGHTER JET COMPOSITE"
+                data-detail-role="Visual Effects"
+                data-detail-description="A high-impact visual effects project featuring dynamic fighter jet compositing with advanced motion tracking and realistic lighting integration. This project showcases expertise in post-production techniques, blending multiple layers to create a seamless and dramatic visual narrative."
+                data-detail-characteristics="This project required extensive compositing expertise, working with motion tracking, color grading, and seamless integration with live-action footage. The final result demonstrates mastery of visual effects pipelines and attention to cinematic detail."
+                data-detail-client="Creative Agency"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Visual Effects"
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Visual_Effects/Fighter_Jet.jpeg" alt="Fighter Jet Visual Effects Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Visual Effects</h3>
+                    <p class="portfolio-overlay-description">Dynamic fighter jet compositing with motion tracking and realistic lighting integration</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Photography - Alley -->
+            <article class="portfolio-item photography" role="listitem" tabindex="0"
+                data-detail-name="URBAN ALLEY"
+                data-detail-role="Photography"
+                data-detail-description="A striking urban photography capture showcasing dramatic perspective and architectural composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create compelling visual narratives of urban environments."
+                data-detail-characteristics="Captured with careful attention to lighting and composition, this photograph required precise timing to achieve optimal conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in urban photography and color grading."
+                data-detail-client="Travel Magazine"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Photography"
+                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Photography/Alley.jpeg" alt="Urban Alley Photography Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Photography</h3>
+                    <p class="portfolio-overlay-description">Urban alley capture showcasing dramatic perspective and architectural composition</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Photography - Door -->
+            <article class="portfolio-item photography" role="listitem" tabindex="0"
+                data-detail-name="ARCHITECTURAL DOOR"
+                data-detail-role="Photography"
+                data-detail-description="An architectural photography piece featuring detailed door design and natural lighting. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create compelling visual narratives of architectural details."
+                data-detail-characteristics="Captured with careful attention to lighting and composition, this photograph required precise timing to achieve optimal conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in architectural photography and color grading."
+                data-detail-client="Architecture Magazine"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Photography"
+                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Photography/Door.jpeg" alt="Architectural Door Photography Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Photography</h3>
+                    <p class="portfolio-overlay-description">Architectural door capture showcasing detailed design and natural lighting</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Photography - Drone Embassy -->
+            <article class="portfolio-item photography" role="listitem" tabindex="0"
+                data-detail-name="DRONE EMBASSY VIEW"
+                data-detail-role="Photography"
+                data-detail-description="A stunning aerial photography capture from a drone perspective showcasing architectural composition and dramatic perspective. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create breathtaking visual narratives."
+                data-detail-characteristics="Captured from an aerial drone perspective, this photograph required careful planning and timing to achieve optimal lighting conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in aerial photography and color grading."
+                data-detail-client="Travel Magazine"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Photography"
+                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Photography/Drone_Embassy.jpeg" alt="Drone Embassy Photography Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Photography</h3>
+                    <p class="portfolio-overlay-description">Aerial drone capture showcasing architectural composition and dramatic perspective</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Photography - Snowy Cabin -->
+            <article class="portfolio-item photography" role="listitem" tabindex="0"
+                data-detail-name="SNOWY CABIN LANDSCAPE"
+                data-detail-role="Photography"
+                data-detail-description="A serene landscape photography capture featuring a snowy cabin and natural winter composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create breathtaking visual narratives of natural environments."
+                data-detail-characteristics="Captured during winter conditions, this photograph required careful planning and timing to achieve optimal lighting. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in landscape photography and color grading."
+                data-detail-client="Travel Magazine"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Photography"
+                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Photography/Snowy_Cabin.jpeg" alt="Snowy Cabin Photography Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Photography</h3>
+                    <p class="portfolio-overlay-description">Serene winter landscape capture featuring snowy cabin and natural composition</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Photography - Street Level -->
+            <article class="portfolio-item photography" role="listitem" tabindex="0"
+                data-detail-name="STREET LEVEL PERSPECTIVE"
+                data-detail-role="Photography"
+                data-detail-description="A dynamic street-level photography capture showcasing urban perspective and natural composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create compelling visual narratives of urban environments."
+                data-detail-characteristics="Captured at street level, this photograph required careful planning and timing to achieve optimal lighting conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in urban photography and color grading."
+                data-detail-client="Travel Magazine"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Photography"
+                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
+                <img src="images/Portfolio/Photography/Street_Level.jpeg" alt="Street Level Photography Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Photography</h3>
+                    <p class="portfolio-overlay-description">Street-level capture showcasing urban perspective and natural composition</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Graphic Design - A Pride of Lions -->
+            <article class="portfolio-item graphic-design" role="listitem" tabindex="0"
+                data-detail-name="A PRIDE OF LIONS"
+                data-detail-role="Graphic Design"
+                data-detail-description="A powerful graphic design piece featuring a pride of lions with sophisticated composition and visual impact. This project showcases expertise in digital illustration and design techniques, creating a compelling visual narrative."
+                data-detail-characteristics="This project required extensive design expertise, working with digital illustration, color theory, and composition principles. The final result demonstrates mastery of graphic design pipelines and attention to visual detail."
+                data-detail-client="Creative Agency"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Graphic Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Graphic_Design/A_Pride_Of_Lions.png" alt="A Pride of Lions Graphic Design Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Graphic Design</h3>
+                    <p class="portfolio-overlay-description">Powerful design piece featuring pride of lions with sophisticated composition</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Graphic Design - Baroque Front -->
+            <article class="portfolio-item graphic-design" role="listitem" tabindex="0"
+                data-detail-name="BAROQUE FRONT DESIGN"
+                data-detail-role="Graphic Design"
+                data-detail-description="A sophisticated graphic design piece featuring baroque-inspired front design with intricate details and elegant composition. This project showcases expertise in typography and design techniques, creating a compelling visual narrative."
+                data-detail-characteristics="This project required extensive design expertise, working with typography, color theory, and composition principles. The final result demonstrates mastery of graphic design pipelines and attention to visual detail."
+                data-detail-client="Creative Agency"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Graphic Design"
+                data-detail-images='["images/Portfolio/Graphic_Design/Baroque Front.png", "images/Portfolio/Graphic_Design/Baroque/Baroque Back.png"]'
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Graphic_Design/Baroque Front.png" alt="Baroque Front Graphic Design Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Graphic Design</h3>
+                    <p class="portfolio-overlay-description">Sophisticated baroque-inspired front design with intricate details</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Graphic Design - GQ Aston Martin -->
+            <article class="portfolio-item graphic-design" role="listitem" tabindex="0"
+                data-detail-name="ASTON MARTIN"
+                data-detail-role="Graphic Design"
+                data-detail-description="The objective of this project was to create a speculative luxury advertising concept as if commissioned by Aston Martin—demonstrating brand understanding, conceptual thinking, and visual restraint. Rather than portraying luxury as excess or fantasy, the concept reframes the Aston Martin One-77 as the culmination of discipline, study, and earned mastery. By situating the vehicle within an academic environment, the piece positions luxury as something achieved through knowledge and refinement, not assumed or displayed for spectacle. This approach aligns with high-end automotive branding standards while showcasing my ability to think strategically about narrative, symbolism, and brand tone—key considerations for client-facing creative work."
+                data-detail-objective="The objective of this project was to create a speculative luxury advertising concept as if commissioned by Aston Martin—demonstrating brand understanding, conceptual thinking, and visual restraint. Rather than portraying luxury as excess or fantasy, the concept reframes the Aston Martin One-77 as the culmination of discipline, study, and earned mastery."
+                data-detail-process='{"DESIGN PROCESS & TECHNIQUE":"The design process focused on conceptual contrast: pairing one of the most exclusive production cars ever made with an environment associated with learning, restraint, and preparation. Rather than relying on overt marketing language or dramatic settings, the image was built around controlled lighting, deliberate composition, symbolic props, and negative space. The goal was to let the brand speak quietly, reinforcing confidence and maturity—qualities central to Aston Martin\u0027s identity.","PRIMARY FOCUS – MASTERY OVER DISPLAY":"The Aston Martin One-77 is presented not as a spectacle, but as a patient presence within the space. Its positioning suggests readiness rather than dominance, reinforcing the idea that true luxury is the result of preparation and intention. By avoiding aggressive angles or exaggerated motion, the car is treated as an object of contemplation—earned, not flaunted.","ENVIRONMENT – THE CLASSROOM":"The classroom setting serves as a metaphor for discipline, study, intellectual rigor, and long-term pursuit of excellence. This context reframes the car as the result of mastery rather than the starting point, subtly shifting the viewer\u0027s perception of ownership and aspiration.","BACKGROUND IMAGERY – CHALKBOARD LOGO":"The Aston Martin logo appears hand-rendered in chalk, an intentionally impermanent medium. This choice symbolizes legacy before possession, brand history as something studied and understood, and aspiration still in progress. The chalk texture contrasts with the vehicle\u0027s polished surfaces, reinforcing the progression from knowledge to achievement.","SYMBOLIC DETAIL – BOOKS & APPLE":"The books and apple act as restrained visual cues for education, patience, restraint, and earned reward. Rather than functioning as literal props, they are positioned as incidental elements—present, but not demanding attention—allowing the symbolism to register subconsciously.","LIGHTING & ATMOSPHERE":"Warm, directional light enters through tall windows, mimicking late-afternoon academic light. This lighting choice creates a contemplative mood, softens the vehicle\u0027s presence, and emphasizes texture and form over gloss. Shadows are controlled and intentional, reinforcing quiet confidence rather than drama.","COLOR PALETTE":"The palette is intentionally subdued: warm neutrals and wood tones for grounding, muted metallics to emphasize craftsmanship, and soft highlights rather than high contrast. This restraint supports the brand\u0027s understated luxury and avoids visual excess."}'
+                data-detail-characteristics="The final image presents Aston Martin not as an object of instant desire, but as the reward for mastery, discipline, and taste. By removing overt messaging and allowing symbolism, environment, and composition to carry the narrative, the piece communicates aspiration without arrogance, luxury without excess, and confidence without explanation. As a portfolio piece, it demonstrates my ability to think like a brand strategist, translate values into visual language, and produce client-ready conceptual advertising. This project serves as a speculative campaign artifact—showing not just how I design, but how I think when designing for premium brands."
+                data-detail-client="Aston Martin"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Graphic Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Graphic_Design/GQ_Aston_Martin.png" alt="GQ Aston Martin Graphic Design Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Graphic Design</h3>
+                    <p class="portfolio-overlay-description">Speculative luxury advertising concept positioning mastery and earned refinement</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Graphic Design - Nadia Comaneci -->
+            <article class="portfolio-item graphic-design" role="listitem" tabindex="0"
+                data-detail-name="NADIA COMANECI"
+                data-detail-role="Graphic Design"
+                data-detail-description="A contemporary, museum-grade biography cover that communicates Nadia Comăneci's legacy through symbolism rather than portraiture. The design shifts from literal representation to mythic abstraction, reinforcing her status as a historical and cultural force shaped by pressure, perfection, and fracture."
+                data-detail-objective="The objective of this redesign was to elevate the original concept into a contemporary, museum-grade biography cover that communicates Nadia Comăneci's legacy through symbolism rather than portraiture. The focus shifted from literal representation to mythic abstraction, reinforcing her status not only as an athlete, but as a historical and cultural force shaped by pressure, perfection, and fracture. This approach aligns with professional publishing standards while remaining suitable for a design portfolio that emphasizes conceptual rigor, restraint, and narrative clarity."
+                data-detail-process='{"DESIGN PROCESS & TECHNIQUE":"The redesign intentionally removes figurative depiction in favor of iconic visual language, allowing the story to be communicated universally rather than biographically. The process prioritized hierarchy, negative space, and material metaphor to achieve gravitas and longevity.","PRIMARY FOCUS – LEGACY OVER LIKENESS":"Rather than depicting Nadia Comăneci directly, the design centers on the idea of her achievement. This abstraction avoids nostalgia-driven imagery and instead positions her as a symbol of perfection under impossible expectations. This choice elevates the work beyond illustration into conceptual branding, a key distinction in professional-level design portfolios.","BACKGROUND IMAGERY – FRACTURED OLYMPIC RINGS":"The Olympic rings are rendered in a weathered, stone-metal hybrid texture and shown mid-fracture. This serves multiple symbolic functions: permanence vs. fragility (achievement carved into history, yet cracked by pressure), institutional weight (the burden of representing nation, ideology, and perfection), and shattered ideals (the cost of flawlessness, especially under authoritarian systems). The fractures are controlled and deliberate, ensuring the rings remain legible while visually communicating tension rather than destruction.","MOTION ELEMENT – GOLDEN RIBBONS":"Flowing, silk-like golden forms cut diagonally through the composition, evoking gymnastic movement, chalk dust and momentum, and the elegance beneath discipline. Gold was chosen not simply for victory, but for its dual nature: precious yet soft, luminous yet fragile—mirroring Comăneci\u0027s career arc.","COLOR PALETTE":"The palette was intentionally restrained: muted golds for excellence and transcendence, charcoal and smoke for pressure, secrecy, and emotional cost. Rather than literal national colors, the palette suggests emotional atmosphere, allowing the Romanian identity to be felt implicitly rather than declared. This subtlety signals maturity and confidence in visual storytelling.","TYPOGRAPHY":"The typography employs a refined serif with generous tracking. Name dominance reinforces historical significance, while subtitle restraint maintains hierarchy and avoids sentimentality. The type is integrated into the negative space rather than layered over imagery, ensuring cohesion and readability at both thumbnail and print scale."}'
+                data-detail-characteristics="The final design presents Nadia Comăneci not as a moment in time, but as a mythic figure shaped by systems, expectations, and sacrifice. By removing literal depiction, the cover gains timelessness, intellectual depth, and portfolio credibility. It communicates athletic brilliance, emotional cost, national symbolism, and historical weight in a single unified visual statement."
+                data-detail-client="Creative Agency"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Graphic Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Graphic_Design/Nadia Comaneci shattered 3.png" alt="Nadia Comaneci Graphic Design Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Graphic Design</h3>
+                    <p class="portfolio-overlay-description">Museum-grade biography cover communicating legacy through symbolism and mythic abstraction</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Graphic Design - Art Exhibit -->
+            <article class="portfolio-item graphic-design" role="listitem" tabindex="0"
+                data-detail-name="ART EXHIBIT"
+                data-detail-role="Graphic Design"
+                data-detail-description="A sophisticated art exhibit design with elegant composition and visual impact. This project showcases expertise in exhibition design and layout techniques, creating a compelling visual narrative."
+                data-detail-characteristics="This project required extensive design expertise, working with layout, typography, and composition principles. The final result demonstrates mastery of graphic design pipelines and attention to visual detail."
+                data-detail-client="Creative Agency"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Graphic Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Graphic_Design/Art_Exhibit.png" alt="Art Exhibit Graphic Design Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Graphic Design</h3>
+                    <p class="portfolio-overlay-description">Sophisticated art exhibit design with elegant composition and visual impact</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: Branding and Identity - DFW Legend 2 -->
+            <article class="portfolio-item branding-and-identity" role="listitem" tabindex="0"
+                data-detail-name="DFW GAMES LOGO"
+                data-detail-role="Branding & Identity"
+                data-detail-description="A sophisticated branding and identity design for DFW Games featuring elegant logo composition and visual impact. This project showcases expertise in branding and logo design techniques, creating a compelling visual identity."
+                data-detail-characteristics="This project required extensive branding expertise, working with logo design, typography, and identity principles. The final result demonstrates mastery of branding pipelines and attention to visual detail."
+                data-detail-client="DFW Games"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="Branding and Identity"
+                data-detail-images='["images/Portfolio/Branding_and_Identity/DFW_Games_Logo.jpg", "images/Portfolio/Branding_and_Identity/DFW_Logo/Dfw_Games_V2.jpg", "images/Portfolio/Branding_and_Identity/DFW_Logo/DFW_Games_V3.jpg"]'
+                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/Branding_and_Identity/DFW_Games_Logo.jpg" alt="DFW Games Logo Branding Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>Branding and Identity</h3>
+                    <p class="portfolio-overlay-description">Sophisticated DFW Games branding with elegant logo composition</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: AI Art and Prompt Design - Dragon -->
+            <article class="portfolio-item ai-art-and-prompt-design" role="listitem" tabindex="0"
+                data-detail-name="DRAGON ARTWORK"
+                data-detail-role="AI Art and Prompt Design"
+                data-detail-description="Generative artwork featuring a dragon with sophisticated color mapping and algorithmic design principles. This AI art project leverages custom prompt engineering and advanced algorithms to produce stunning visual content."
+                data-detail-characteristics="This piece represents innovative use of AI generation tools, combining carefully crafted prompts with iterative refinement. The process involved experimenting with various AI models, style parameters, and post-processing techniques to achieve the desired aesthetic and conceptual outcome."
+                data-detail-client="Art Gallery"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="AI Art and Prompt Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":96},{"name":"Technical Execution","percent":93},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/AI_Art_and_Prompt_Design/Dragon.jpeg" alt="Dragon AI Art Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>AI Art and Prompt Design</h3>
+                    <p class="portfolio-overlay-description">Generative dragon artwork with sophisticated color mapping and design</p>
+                </div>
+            </article>
+
+            <!-- Portfolio Item: AI Art and Prompt Design - Samurai -->
+            <article class="portfolio-item ai-art-and-prompt-design" role="listitem" tabindex="0"
+                data-detail-name="SAMURAI ARTWORK"
+                data-detail-role="AI Art and Prompt Design"
+                data-detail-description="Generative artwork featuring a samurai with sophisticated color mapping and algorithmic design principles. This AI art project leverages custom prompt engineering and advanced algorithms to produce stunning visual content."
+                data-detail-characteristics="This piece represents innovative use of AI generation tools, combining carefully crafted prompts with iterative refinement. The process involved experimenting with various AI models, style parameters, and post-processing techniques to achieve the desired aesthetic and conceptual outcome."
+                data-detail-client="Art Gallery"
+                data-detail-date="2024"
+                data-detail-project-url="https://silentlegend.com"
+                data-detail-category="AI Art and Prompt Design"
+                data-detail-skills='[{"name":"Creative Direction","percent":96},{"name":"Technical Execution","percent":93},{"name":"Client Satisfaction","percent":98}]'>
+                <img src="images/Portfolio/AI_Art_and_Prompt_Design/samurai_original.jpg" alt="Samurai AI Art Project" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <h3>AI Art and Prompt Design</h3>
+                    <p class="portfolio-overlay-description">Generative samurai artwork with sophisticated color mapping and design</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Portfolio Detail View -->
+    <section id="portfolio-detail" class="portfolio-detail-section" style="display: none;">
+        <button class="portfolio-detail-close" aria-label="Close portfolio detail">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="portfolio-detail-container">
+            <!-- Left Column: Content -->
+            <div class="portfolio-detail-left">
+                <!-- Project Header -->
+                <div class="detail-header">
+                    <h1 id="detail-name" class="detail-main-title">Project Name</h1>
+                    <h2 id="detail-role" class="detail-subtitle">Project Role</h2>
+                </div>
+
+                <!-- PROJECT OVERVIEW Section -->
+                <section class="detail-section">
+                    <h3 class="detail-section-title">PROJECT OVERVIEW</h3>
+                    <div id="detail-description" class="detail-description">
+                        <p>Project description will appear here...</p>
+                    </div>
+                    <!-- Share Section -->
+                    <div class="detail-share">
+                        <h6 class="share-label">SHARE:</h6>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn facebook" aria-label="Share on Facebook" target="_blank" rel="noopener">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="share-btn twitter" aria-label="Share on Twitter" target="_blank" rel="noopener">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="share-btn pinterest" aria-label="Share on Pinterest" target="_blank" rel="noopener">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJECTIVE Section -->
+                <section class="detail-section" id="detail-objective-section" style="display: none;">
+                    <h3 class="detail-section-title">OBJECTIVE</h3>
+                    <div id="detail-objective" class="detail-description">
+                        <p>Objective will appear here...</p>
+                    </div>
+                </section>
+
+                <!-- DESIGN PROCESS & TECHNIQUE Section -->
+                <section class="detail-section" id="detail-process-section">
+                    <h3 class="detail-section-title">DESIGN PROCESS & TECHNIQUE</h3>
+                    <div id="detail-process" class="detail-process-content">
+                        <!-- Process content will be dynamically inserted here -->
+                    </div>
+                </section>
+
+                <!-- Project Meta Information -->
+                <div class="detail-meta">
+                    <div class="meta-item">
+                        <h6 class="meta-label">CLIENT:</h6>
+                        <span id="detail-client" class="meta-value">Client Name</span>
+                    </div>
+                    <div class="meta-item">
+                        <h6 class="meta-label">DATE:</h6>
+                        <span id="detail-date" class="meta-value">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <h6 class="meta-label">PROJECT:</h6>
+                        <a id="detail-project-url" href="#" class="meta-value meta-link" target="_blank" rel="noopener">www.yourlink.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Images -->
+            <div class="portfolio-detail-right">
+                <div class="detail-images-wrapper">
+                    <!-- Thumbnail Gallery -->
+                    <div class="detail-thumbnails" id="detail-thumbnails" style="display: none;">
+                        <!-- Thumbnails will be dynamically generated here -->
+                    </div>
+                    <div class="detail-image-main">
+                        <img id="detail-image" src="" alt="Portfolio Detail Image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-details-modal" class="project-details-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+        <div class="project-details-overlay"></div>
+        <div class="project-details-container">
+            <button id="project-details-close" class="project-details-close" aria-label="Close project details">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="project-details-content">
+                <!-- Left: Image Section -->
+                <div class="project-details-image-section">
+                    <!-- BEFORE/AFTER Toggle (hidden by default) -->
+                    <div id="ba-toggle" class="ba-toggle" aria-hidden="true" style="display: none;">
+                        <button id="ba-before-btn" type="button" class="ba-btn">BEFORE</button>
+                        <span class="ba-divider">|</span>
+                        <button id="ba-after-btn" type="button" class="ba-btn active">AFTER</button>
+                    </div>
+                    
+                    <!-- Stacked Images Container -->
+                    <div class="modal-image-stack">
+                        <img id="modal-project-image-after" src="" alt="Project Image After" class="modal-project-image" />
+                        <img id="modal-project-image-before" src="" alt="Project Image Before" class="modal-project-image" style="opacity: 0; pointer-events: none;" />
+                    </div>
+                    
+                    <!-- Corner Label (hidden by default) -->
+                    <div id="ba-label" class="ba-label" aria-hidden="true" style="display: none;">AFTER</div>
+                    
+                    <!-- Optional WIP Thumbnails -->
+                    <div id="modal-wip-thumbnails" class="modal-wip-thumbnails" style="display: none;">
+                        <!-- WIP thumbnails will be dynamically generated here -->
+                    </div>
+                </div>
+                
+                <!-- Right: Content Section -->
+                <div class="project-details-text-section">
+                    <div class="project-details-scrollable">
+                        <h1 id="modal-project-title" class="modal-project-title">Project Title</h1>
+                        <div id="modal-project-description" class="modal-project-description">
+                            <p>Project description will appear here...</p>
+                        </div>
+                        
+                        <!-- Optional Sections -->
+                        <div id="modal-project-objective" class="modal-project-section" style="display: none;">
+                            <h3 class="modal-section-title">OBJECTIVE</h3>
+                            <div id="modal-objective-content" class="modal-section-content"></div>
+                        </div>
+                        
+                        <div id="modal-project-process" class="modal-project-section" style="display: none;">
+                            <h3 class="modal-section-title">DESIGN PROCESS</h3>
+                            <div id="modal-process-content" class="modal-section-content"></div>
+                        </div>
+                        
+                        <div id="modal-project-characteristics" class="modal-project-section" style="display: none;">
+                            <h3 class="modal-section-title">OUTCOME</h3>
+                            <div id="modal-characteristics-content" class="modal-section-content"></div>
+                        </div>
+                        
+                        <!-- Client Info -->
+                        <div class="modal-project-meta">
+                            <div class="modal-meta-item" id="modal-client-item" style="display: none;">
+                                <span class="modal-meta-label">CLIENT:</span>
+                                <span id="modal-client" class="modal-meta-value"></span>
+                            </div>
+                            <div class="modal-meta-item" id="modal-date-item" style="display: none;">
+                                <span class="modal-meta-label">DATE:</span>
+                                <span id="modal-date" class="modal-meta-value"></span>
+                            </div>
+                            <div class="modal-meta-item" id="modal-url-item" style="display: none;">
+                                <span class="modal-meta-label">PROJECT:</span>
+                                <a id="modal-project-url" href="#" class="modal-meta-value modal-meta-link" target="_blank" rel="noopener"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Portfolio Grid -->
-    <div class="portfolio-grid">
-        <!-- Portfolio Item: Visual Effects -->
-        <article class="portfolio-item visual-effects">
-            <img src="images/Explosion.jpeg" alt="Visual Effects Project" loading="lazy">
-            <div class="portfolio-overlay">
-                <h3>Visual Effects</h3>
-                <p>Amazing Visual Effects Project</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-format">
+        <header class="section-header">
+            <h2 data-title="Contact Us" class="section-title"><span>Contact Us</span></h2>
+            <div class="lead motto">
+                <p>Have questions or want to work together? Reach out—let's create something amazing.</p>
             </div>
-        </article>
-
-        <!-- Portfolio Item: Motion Graphics -->
-        <article class="portfolio-item motion-graphics">
-            <img src="images/Digital_Iris.jpeg" alt="Motion Graphics Project" loading="lazy">
-            <div class="portfolio-overlay">
-                <h3>Motion Graphics</h3>
-                <p>Stunning Motion Graphics Project</p>
+        </header>
+        <form id="contact-form" novalidate class="contact-form">
+            <div class="form-group">
+                <label for="name">
+                    Name
+                    <span class="required" aria-label="required">*</span>
+                </label>
+            <input type="text" id="name" name="name" required placeholder="Your full name"
+                    autocomplete="name" aria-required="true" />
             </div>
-        </article>
 
-        <!-- Portfolio Item: Graphic Design -->
-        <article class="portfolio-item graphic-design">
-            <img src="images/KW Typographic Portrait.png" alt="Graphic Design Project" loading="lazy">
-            <div class="portfolio-overlay">
-                <h3>Graphic Design</h3>
-                <p>Creative Graphic Design Project</p>
+            <div class="form-group">
+                <label for="email">
+                    Email
+                    <span class="required" aria-label="required">*</span>
+                </label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com"
+                    autocomplete="email" aria-required="true" />
             </div>
-        </article>
 
-        <!-- Portfolio Item: Photography -->
-        <article class="portfolio-item photography">
-            <img src="images/Sattelite_View.jpeg" alt="Photography Project" loading="lazy">
-            <div class="portfolio-overlay">
-                <h3>Photography</h3>
-                <p>Stunning Photography Project</p>
+            <div class="form-group">
+                <label for="message">
+                    Message
+                    <span class="required" aria-label="required">*</span>
+                </label>
+            <textarea id="message" name="message" required placeholder="Write your message..." rows="6"
+                    aria-required="true"></textarea>
             </div>
-        </article>
 
-        <!-- Portfolio Item: Photo Manipulation -->
-        <article class="portfolio-item photo-manipulation">
-            <img src="images/Soldier.jpeg" alt="Photo Manipulation Project" loading="lazy">
-            <div class="portfolio-overlay">
-                <h3>Photo Manipulation</h3>
-                <p>Incredible Photo Manipulation Project</p>
-            </div>
-        </article>
-    </div>
-</section>
+            <button type="submit" class="submit-button">Send Message</button>
 
+            <p id="form-message" role="alert" aria-live="polite" class="form-message"></p>
+        </form>
+    </section>
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Silent Legend. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <h3>Silent Legend</h3>
+                <p>DESIGN re-IMAGINED</p>
+            </div>
+            <nav class="footer-section footer-nav" aria-label="Footer navigation">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-section footer-contact">
+                <h4>Get In Touch</h4>
+                <p>Ready to bring your vision to life?</p>
+                <a href="#contact" class="footer-cta">Start a Project</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; <span id="current-year"></span> Silent Legend. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox">
-        <span id="lightbox-close">&times;</span>
-        <img id="lightbox-image" src="" alt="Lightbox Image">
-        <div id="lightbox-content">
-            <h3 id="lightbox-title">Title</h3>
-            <p id="lightbox-description">Description</p>
-            <button id="lightbox-prev">Prev</button>
-            <button id="lightbox-next">Next</button>
+    <div id="lightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <!-- Header Bar -->
+        <div class="lightbox-header">
+            <div class="lightbox-header-left">
+                <span class="lightbox-counter-header"><span id="lightbox-current-header">1</span>/<span id="lightbox-total-header">1</span></span>
+                <span class="lightbox-brand">Silent Legend</span>
+            </div>
+            <div class="lightbox-header-right">
+                <div class="lightbox-toggle-wrapper">
+                    <span class="toggle-label-text">Info</span>
+                    <button type="button" id="lightbox-info-toggle" class="lightbox-toggle-btn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-label="Toggle info sidebar">
+                        <div class="toggle-handle"></div>
+                    </button>
+                </div>
+                <div class="lightbox-toggle-wrapper">
+                    <span class="toggle-label-text">Details</span>
+                    <button type="button" id="lightbox-details-toggle" class="lightbox-toggle-btn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-label="Toggle details modal">
+                        <div class="toggle-handle"></div>
+                    </button>
+                </div>
+                <button id="lightbox-zoom-in" class="lightbox-icon-btn" aria-label="View actual size" title="Zoom In">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="lightbox-icon-btn" aria-label="Fullscreen" title="Fullscreen" id="lightbox-fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <div class="lightbox-share-wrapper">
+                    <button id="lightbox-share" class="lightbox-icon-btn" aria-label="Share" aria-haspopup="true" aria-expanded="false" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <ul id="lightbox-share-dropdown" class="lightbox-share-dropdown" style="display: none;">
+                        <li><a id="lightbox-share-facebook" class="lightbox-share-link" href="#" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+                        <li><a id="lightbox-share-twitter" class="lightbox-share-link" href="#" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i><span>Twitter</span></a></li>
+                        <li><a id="lightbox-share-pinterest" class="lightbox-share-link" href="#" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
+                    </ul>
+                </div>
+                <button id="lightbox-close" class="lightbox-icon-btn" aria-label="Close lightbox" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="lightbox-main-wrapper">
+            <!-- Left Sidebar -->
+            <aside class="lightbox-sidebar-left" id="lightbox-sidebar">
+                <div class="lightbox-sidebar-content">
+                    <div class="lightbox-info">
+                        <div id="lightbox-title-sidebar" class="info-title">Project Title</div>
+                        <div id="lightbox-category-sidebar" class="info-sub">Category</div>
+                        <div id="lightbox-role-sidebar" class="info-role" style="display: none;"></div>
+                        <div id="lightbox-meta-sidebar" class="info-meta" style="display: none;"></div>
+                        <div id="lightbox-desc-sidebar" class="info-desc" style="display: none;"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Image Area -->
+            <div class="lightbox-center">
+                <div class="lightbox-loader" aria-hidden="true">
+                    <div class="loader-spinner"></div>
+                </div>
+                <img id="lightbox-image" class="lightbox-image" src="" alt="Lightbox Image" />
+                <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next image">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Thumbnail Strip -->
+        <div class="lightbox-thumbnails-bottom">
+            <div class="lightbox-thumbnails-container" id="lightbox-thumbnails-bottom">
+                <!-- Bottom thumbnails will be generated here -->
+            </div>
         </div>
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Conditionally load manifest to avoid CORS errors with file:// protocol -->
+    <script>
+        // Only load manifest if not using file:// protocol
+        if (window.location.protocol !== 'file:') {
+            var link = document.createElement('link');
+            link.rel = 'manifest';
+            link.href = 'images/Fav/site.webmanifest';
+            document.head.appendChild(link);
+        }
+    </script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
