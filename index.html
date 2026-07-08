@@ -19,14 +19,14 @@
     <meta property="og:url" content="https://silentlegend.com/" />
     <meta property="og:title" content="Silent Legend - Design Re-imagined" />
     <meta property="og:description" content="Independent creative studio offering visual effects, motion graphics, web design, graphic design, and photography." />
-    <meta property="og:image" content="/images/Hero/logo.png" />
+    <meta property="og:image" content="images/Hero/logo.png" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://silentlegend.com/" />
     <meta property="twitter:title" content="Silent Legend - Design Re-imagined" />
     <meta property="twitter:description" content="Independent creative studio offering visual effects, motion graphics, web design, graphic design, and photography." />
-    <meta property="twitter:image" content="/images/Hero/logo.png" />
+    <meta property="twitter:image" content="images/Hero/logo.png" />
     
     <!-- Performance: Preconnect to external domains -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
@@ -388,15 +388,26 @@
         </div>
     </section>
 
-    <!-- Optional AI Art Info Section -->
-    <section id="ai-art" class="section-format ai-art-section">
-        <header class="section-header">
-        <h2 data-title="AI Art & Consulting" class="section-title">
-            <span>AI Art & Consulting</span>
-        </h2>
-        </header>
-        <div class="lead motto">
-        <p>With over 15 years of multidisciplinary expertise, I fuse AI prompt engineering, multimedia design, and cutting-edge automation pipelines to craft innovative visual content and dynamic user experiences. Whether building custom persona memory systems or deploying privacy-first AI tools, my work is at the forefront of creative technology.</p>
+    <!-- Featured Work Section -->
+    <section id="featured-work" class="featured-work-section" aria-labelledby="featured-work-title">
+        <div class="featured-work-card">
+            <a href="https://youtu.be/u172920GgoM?si=nyij3UBUNMp36lQZ" class="featured-work-thumbnail" target="_blank" rel="noopener noreferrer" aria-label="Watch Fighters' Destiny: Episode One on YouTube">
+                <img src="https://img.youtube.com/vi/u172920GgoM/maxresdefault.jpg" alt="Fighters' Destiny: Episode One" loading="lazy" width="1280" height="720" />
+                <span class="featured-work-play-icon" aria-hidden="true">
+                    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                        <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.65)"/>
+                        <polygon points="32,24 32,56 58,40" fill="#fff"/>
+                    </svg>
+                </span>
+            </a>
+            <div class="featured-work-content">
+                <span class="featured-work-label">FEATURED WORK</span>
+                <h2 id="featured-work-title" class="featured-work-title">Fighters' Destiny: The Evolution of Dead or Alive</h2>
+                <p class="featured-work-subtitle">4-Part Documentary Series &middot; Producer &amp; Motion Graphics</p>
+                <p class="featured-work-description">A 4-part documentary series on the Dead or Alive fighting game community, produced in collaboration with Brian Dawson. I conceived the series, handled all production, created every motion graphic from the opening title sequence to the lower thirds and end credits, shot and edited the footage, and color graded every episode. The series features interviews with sWooZie (Adande Thorne) and Tom Lee, Creative Director of Team Ninja. All four episodes are hosted on Team Ninja's official YouTube channel.</p>
+                <a href="https://youtu.be/u172920GgoM?si=nyij3UBUNMp36lQZ" class="service-cta-button featured-work-cta" target="_blank" rel="noopener noreferrer">Watch Episode One</a>
+                <p class="featured-work-credits">Production &middot; Motion Graphics &middot; Editing &middot; Color Grading &middot; Lower Thirds &middot; Title Design</p>
+            </div>
         </div>
     </section>
 
@@ -431,47 +442,6 @@
             </div>
         </header>
 
-        <div class="about-container">
-            <div class="about-column image-wrapper">
-                <img src="images/About/Digital_Eye.jpeg" alt="About" class="about-image" srcset="
-                     images/About/Digital_Eye-300x169.png 300w,
-                     images/About/Digital_Eye-500x281.png 500w,
-                     images/About/Digital_Eye-750x422.png 750w,
-                     images/About/Digital_Eye-1000x562.png 1000w,
-                     images/About/Digital_Eye-1500x843.png 1500w,
-                     images/About/Digital_Eye-2500x1354.png 2500w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" />
-            </div>
-            <div class="about-column">
-                <div class="about-feature">
-                    <figure class="feature-icon">
-                        <i class="fa fa-robot"></i>
-                    </figure>
-                    <div class="feature-text">
-                        <h3>Innovation at the Core</h3>
-                        <p>I harness AI, machine learning, and emerging technologies to create forward-thinking creative solutions — built to meet today's needs and designed with tomorrow in mind.</p>
-                    </div>
-                </div>
-                <div class="about-feature">
-                    <figure class="feature-icon">
-                        <i class="fa fa-laptop-code"></i>
-                    </figure>
-                    <div class="feature-text">
-                        <h3>Design & Development Expertise</h3>
-                        <p>I craft seamless, user-focused experiences that blend art and technology — from visual identities to fully functional digital solutions, built with intention and attention to detail.</p>
-                    </div>
-                </div>
-                <div class="about-feature">
-                    <figure class="feature-icon">
-                        <i class="fa fa-handshake"></i>
-                    </figure>
-                    <div class="feature-text">
-                        <h3>Your Vision, My Commitment</h3>
-                        <p>I'm more than a service provider — I'm a collaborator invested in your outcome. From first concept to final delivery, I work closely with you to bring your vision to life with the highest standard of quality and professionalism.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -579,24 +549,6 @@
                 </div>
             </article>
 
-            <!-- Portfolio Item: Photography -->
-            <article class="portfolio-item photography" role="listitem" tabindex="0"
-                data-detail-name="AERIAL LANDSCAPE"
-                data-detail-role="Photography"
-                data-detail-description="A stunning aerial landscape capture showcasing dramatic perspective and natural composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create breathtaking visual narratives of natural environments."
-                data-detail-characteristics="Captured from an aerial perspective, this photograph required careful planning and timing to achieve optimal lighting conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in landscape photography and color grading."
-                data-detail-client="Travel Magazine"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
-                data-detail-category="Photography"
-                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
-                <img src="images/Portfolio/Photography/Sattelite_View.jpg" alt="Photography Project" loading="lazy" />
-                <div class="portfolio-overlay">
-                    <h3>Photography</h3>
-                    <p class="portfolio-overlay-description">Photography Study</p>
-                </div>
-            </article>
-
             <!-- Portfolio Item: Retouching and Restoration - Military Composite -->
             <article class="portfolio-item retouching-and-restoration" role="listitem" tabindex="0"
                 data-detail-name="MILITARY COMPOSITE"
@@ -669,60 +621,6 @@
                 </div>
             </article>
 
-            <!-- Portfolio Item: Visual Effects - Fighter Jet -->
-            <article class="portfolio-item visual-effects" role="listitem" tabindex="0"
-                data-detail-name="FIGHTER JET COMPOSITE"
-                data-detail-role="Visual Effects"
-                data-detail-description="A high-impact visual effects project featuring dynamic fighter jet compositing with advanced motion tracking and realistic lighting integration. This project showcases expertise in post-production techniques, blending multiple layers to create a seamless and dramatic visual narrative."
-                data-detail-characteristics="This project required extensive compositing expertise, working with motion tracking, color grading, and seamless integration with live-action footage. The final result demonstrates mastery of visual effects pipelines and attention to cinematic detail."
-                data-detail-client="Creative Agency"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
-                data-detail-category="Visual Effects"
-                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
-                <img src="images/Portfolio/Visual_Effects/Fighter_Jet.jpeg" alt="Fighter Jet Visual Effects Project" loading="lazy" />
-                <div class="portfolio-overlay">
-                    <h3>Visual Effects</h3>
-                    <p class="portfolio-overlay-description">Dynamic fighter jet compositing with motion tracking and realistic lighting integration</p>
-                </div>
-            </article>
-
-            <!-- Portfolio Item: Photography - Alley -->
-            <article class="portfolio-item photography" role="listitem" tabindex="0"
-                data-detail-name="URBAN ALLEY"
-                data-detail-role="Photography"
-                data-detail-description="A striking urban photography capture showcasing dramatic perspective and architectural composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create compelling visual narratives of urban environments."
-                data-detail-characteristics="Captured with careful attention to lighting and composition, this photograph required precise timing to achieve optimal conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in urban photography and color grading."
-                data-detail-client="Travel Magazine"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
-                data-detail-category="Photography"
-                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
-                <img src="images/Portfolio/Photography/Alley.jpeg" alt="Urban Alley Photography Project" loading="lazy" />
-                <div class="portfolio-overlay">
-                    <h3>Photography</h3>
-                    <p class="portfolio-overlay-description">Urban alley capture showcasing dramatic perspective and architectural composition</p>
-                </div>
-            </article>
-
-            <!-- Portfolio Item: Photography - Door -->
-            <article class="portfolio-item photography" role="listitem" tabindex="0"
-                data-detail-name="ARCHITECTURAL DOOR"
-                data-detail-role="Photography"
-                data-detail-description="An architectural photography piece featuring detailed door design and natural lighting. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create compelling visual narratives of architectural details."
-                data-detail-characteristics="Captured with careful attention to lighting and composition, this photograph required precise timing to achieve optimal conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in architectural photography and color grading."
-                data-detail-client="Architecture Magazine"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
-                data-detail-category="Photography"
-                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
-                <img src="images/Portfolio/Photography/Door.jpeg" alt="Architectural Door Photography Project" loading="lazy" />
-                <div class="portfolio-overlay">
-                    <h3>Photography</h3>
-                    <p class="portfolio-overlay-description">Architectural door capture showcasing detailed design and natural lighting</p>
-                </div>
-            </article>
-
             <!-- Portfolio Item: Photography - Drone Embassy -->
             <article class="portfolio-item photography" role="listitem" tabindex="0"
                 data-detail-name="DRONE EMBASSY VIEW"
@@ -756,24 +654,6 @@
                 <div class="portfolio-overlay">
                     <h3>Photography</h3>
                     <p class="portfolio-overlay-description">Serene winter landscape capture featuring snowy cabin and natural composition</p>
-                </div>
-            </article>
-
-            <!-- Portfolio Item: Photography - Street Level -->
-            <article class="portfolio-item photography" role="listitem" tabindex="0"
-                data-detail-name="STREET LEVEL PERSPECTIVE"
-                data-detail-role="Photography"
-                data-detail-description="A dynamic street-level photography capture showcasing urban perspective and natural composition. This photography project demonstrates mastery of composition, lighting, and post-processing techniques to create compelling visual narratives of urban environments."
-                data-detail-characteristics="Captured at street level, this photograph required careful planning and timing to achieve optimal lighting conditions. The post-processing enhanced natural colors while maintaining authenticity, showcasing advanced skills in urban photography and color grading."
-                data-detail-client="Travel Magazine"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
-                data-detail-category="Photography"
-                data-detail-skills='[{"name":"Creative Direction","percent":91},{"name":"Technical Execution","percent":95},{"name":"Client Satisfaction","percent":97}]'>
-                <img src="images/Portfolio/Photography/Street_Level.jpeg" alt="Street Level Photography Project" loading="lazy" />
-                <div class="portfolio-overlay">
-                    <h3>Photography</h3>
-                    <p class="portfolio-overlay-description">Street-level capture showcasing urban perspective and natural composition</p>
                 </div>
             </article>
 
@@ -888,24 +768,6 @@
                 <div class="portfolio-overlay">
                     <h3>Branding and Identity</h3>
                     <p class="portfolio-overlay-description">Sophisticated DFW Games branding with elegant logo composition</p>
-                </div>
-            </article>
-
-            <!-- Portfolio Item: AI Art and Prompt Design - Dragon -->
-            <article class="portfolio-item ai-art-and-prompt-design" role="listitem" tabindex="0"
-                data-detail-name="DRAGON ARTWORK"
-                data-detail-role="AI Art and Prompt Design"
-                data-detail-description="Generative artwork featuring a dragon with sophisticated color mapping and algorithmic design principles. This AI art project leverages custom prompt engineering and advanced algorithms to produce stunning visual content."
-                data-detail-characteristics="This piece represents innovative use of AI generation tools, combining carefully crafted prompts with iterative refinement. The process involved experimenting with various AI models, style parameters, and post-processing techniques to achieve the desired aesthetic and conceptual outcome."
-                data-detail-client="Art Gallery"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
-                data-detail-category="AI Art and Prompt Design"
-                data-detail-skills='[{"name":"Creative Direction","percent":96},{"name":"Technical Execution","percent":93},{"name":"Client Satisfaction","percent":98}]'>
-                <img src="images/Portfolio/AI_Art_and_Prompt_Design/Dragon.webp" alt="Dragon AI Art Project" loading="lazy" />
-                <div class="portfolio-overlay">
-                    <h3>AI Art and Prompt Design</h3>
-                    <p class="portfolio-overlay-description">Generative dragon artwork with sophisticated color mapping and design</p>
                 </div>
             </article>
 

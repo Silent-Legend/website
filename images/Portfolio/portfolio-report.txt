@@ -1,32 +1,170 @@
-﻿C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\AI_Art_and_Prompt_Design\Dragon.jpeg | 212 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\AI_Art_and_Prompt_Design\Royalty.png | 5,866 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\AI_Art_and_Prompt_Design\samurai_original.jpg | 3,352 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\AI_Art_and_Prompt_Design\Split.jpeg | 196 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Branding_and_Identity\DFW_Games_Logo.jpg | 1,242 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Branding_and_Identity\DFW_Logo\Dfw_Games_V2.jpg | 1,062 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Branding_and_Identity\DFW_Logo\DFW_Games_V3.jpg | 316 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Art_Exhibit.png | 18,546 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\A_Pride_Of_Lions.png | 779 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Baroque Front.png | 14,233 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\GQ_Aston_Martin.png | 2,145 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\KW Typographic Portrait.png | 2,017 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Nadia Comaneci shattered 3.png | 2,621 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Baroque\Baroque Back.png | 1,243 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Kate_Winslet\KW BW.png | 361 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Kate_Winslet\KW Color.png | 949 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Kate_Winslet\KW Final.png | 8,114 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Kate_Winslet\KW large.png | 281 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Kate_Winslet\KW medium.png | 147 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Graphic_Design\Kate_Winslet\KW small.png | 275 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Motion_Graphics\Digital_Iris.jpg | 2,071 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Photography\Alley.jpeg | 8,290 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Photography\Door.jpeg | 2,773 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Photography\Drone_Embassy.jpeg | 6,933 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Photography\Sattelite_View.jpg | 7,014 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Photography\Snowy_Cabin.jpeg | 9,354 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Photography\Street_Level.jpeg | 15,268 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Retouching_and_Restoration\retouch-studio-after.png | 38,035 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Retouching_and_Restoration\Soldier.jpg | 3,459 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Retouching_and_Restoration\Retouch\retouch-studio-before.jpg | 5,464 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Visual_Effects\Explosion.jpg | 7,153 KB | x
-C:\Users\joelp\Desktop\My Website Projects\Silent.Legend\images\Portfolio\Visual_Effects\Fighter_Jet.jpeg | 3,057 KB | x
+﻿================================================================================
+PORTFOLIO IMAGE INVENTORY
+================================================================================
+
+Root:           images/Portfolio/
+Last scanned:   2026-05-12
+File count:     61
+Total size:     ~217 MB
+Categories:     8 top-level folders (one per portfolio filter category)
+
+PURPOSE
+-------
+This file is a manifest of every image asset under images/Portfolio/. It exists
+so any AI agent (or contributor) working on the site can see at a glance what
+assets are available in each category folder, their sizes, their format, and
+whether they are currently referenced by the live site (index.html).
+
+Regenerate this file (full disk re-scan) whenever assets are added, removed,
+renamed, or moved, or whenever portfolio items are added/removed in index.html.
+
+CONVENTIONS
+-----------
+Path:    relative to repo root, using forward slashes.
+Size:    kilobytes, integer.
+Use:     USED    -- referenced by index.html as <img src> or data-detail-*
+         UNUSED  -- on disk, no reference in index.html
+         STASH   -- inside a "New folder" subdir; treated as archived originals
+Format:  SRC     -- master source file (PNG / JPG / JPEG)
+         WEB     -- web-optimized .webp (full size)
+         THUMB   -- *_thumbnail.webp preview
+
+================================================================================
+AI_Art_and_Prompt_Design/    8 site files + 9 stash
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     WEB    AI_Art_and_Prompt_Design/Royalty.webp                449 KB
+USED     WEB    AI_Art_and_Prompt_Design/Split.webp                  219 KB
+USED     WEB    AI_Art_and_Prompt_Design/samurai_original.webp       211 KB
+UNUSED   WEB    AI_Art_and_Prompt_Design/Dragon.webp                 230 KB   (orphan: DRAGON ARTWORK item was cut)
+UNUSED   THUMB  AI_Art_and_Prompt_Design/Dragon_thumbnail.webp        42 KB
+UNUSED   THUMB  AI_Art_and_Prompt_Design/Royalty_thumbnail.webp       59 KB
+UNUSED   THUMB  AI_Art_and_Prompt_Design/Split_thumbnail.webp         34 KB
+UNUSED   THUMB  AI_Art_and_Prompt_Design/samurai_original_thumbnail.webp   31 KB
+
+  New folder/  (mixed stash; appears to contain masters for several categories)
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/Dragon.jpeg              212 KB
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/Dragon.png             6,088 KB
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/Royalty.png            5,866 KB
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/samurai_original.jpg   3,352 KB
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/Split.jpeg               196 KB
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/Split.png              5,726 KB
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/DFW_Games_Logo.jpg     1,242 KB   (misfiled: belongs in Branding_and_Identity/)
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/Dfw_Games_V2.jpg       1,062 KB   (misfiled: belongs in Branding_and_Identity/)
+STASH    SRC    AI_Art_and_Prompt_Design/New folder/DFW_Games_V3.jpg         316 KB   (misfiled: belongs in Branding_and_Identity/)
+
+================================================================================
+Branding_and_Identity/    6 files
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     WEB    Branding_and_Identity/DFW_Games_Logo.webp            235 KB
+USED     WEB    Branding_and_Identity/DFW_Logo/Dfw_Games_V2.webp     214 KB
+USED     WEB    Branding_and_Identity/DFW_Logo/DFW_Games_V3.webp     234 KB
+UNUSED   THUMB  Branding_and_Identity/DFW_Games_Logo_thumbnail.webp           29 KB
+UNUSED   THUMB  Branding_and_Identity/DFW_Logo/Dfw_Games_V2_thumbnail.webp    28 KB
+UNUSED   THUMB  Branding_and_Identity/DFW_Logo/DFW_Games_V3_thumbnail.webp    33 KB
+
+================================================================================
+Graphic_Design/    19 files
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     SRC    Graphic_Design/A_Pride_Of_Lions.png                    779 KB
+USED     SRC    Graphic_Design/Art_Exhibit.png                      18,546 KB   (heavy master; needs .webp optimization)
+USED     SRC    Graphic_Design/Baroque Front.png                    14,233 KB   (heavy master; needs .webp optimization)
+USED     SRC    Graphic_Design/GQ_Aston_Martin.png                   2,145 KB
+USED     SRC    Graphic_Design/KW Typographic Portrait.png           2,017 KB
+USED     SRC    Graphic_Design/Nadia Comaneci shattered 3.png        2,621 KB
+UNUSED   SRC    Graphic_Design/DUO menu.png                         10,817 KB   (unwired new asset)
+UNUSED   SRC    Graphic_Design/G.SPELL 3.png                        10,397 KB   (unwired new asset)
+
+  Baroque/
+USED     SRC    Graphic_Design/Baroque/Baroque Back.png              1,243 KB   (referenced via data-detail-images)
+UNUSED   WEB    Graphic_Design/Baroque/Baroque Back.webp               198 KB   (optimized, not yet wired)
+UNUSED   THUMB  Graphic_Design/Baroque/Baroque Back Thumbnail.webp      28 KB
+
+  God Spell/
+UNUSED   SRC    Graphic_Design/God Spell/G.SPELL.png                 1,915 KB
+UNUSED   SRC    Graphic_Design/God Spell/G.SPELL 1.png               2,840 KB
+
+  Kate_Winslet/  (all 6 referenced via data-detail-images on Kate Winslet item)
+USED     SRC    Graphic_Design/Kate_Winslet/KW Final.png             8,114 KB
+USED     SRC    Graphic_Design/Kate_Winslet/KW Color.png               949 KB
+USED     SRC    Graphic_Design/Kate_Winslet/KW BW.png                  361 KB
+USED     SRC    Graphic_Design/Kate_Winslet/KW large.png               281 KB
+USED     SRC    Graphic_Design/Kate_Winslet/KW medium.png              147 KB
+USED     SRC    Graphic_Design/Kate_Winslet/KW small.png               275 KB
+
+================================================================================
+Motion_Graphics/    1 file
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     SRC    Motion_Graphics/Digital_Iris.jpg                     2,071 KB
+
+================================================================================
+Photography/    6 files
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     SRC    Photography/Drone_Embassy.jpeg                       6,933 KB
+USED     SRC    Photography/Snowy_Cabin.jpeg                         9,354 KB
+UNUSED   SRC    Photography/Alley.jpeg                               8,290 KB   (orphan: URBAN ALLEY cut)
+UNUSED   SRC    Photography/Door.jpeg                                2,773 KB   (orphan: ARCHITECTURAL DOOR cut)
+UNUSED   SRC    Photography/Sattelite_View.jpg                       7,014 KB   (orphan: AERIAL LANDSCAPE cut)
+UNUSED   SRC    Photography/Street_Level.jpeg                       15,268 KB   (orphan: STREET LEVEL cut)
+
+================================================================================
+Retouching_and_Restoration/    5 files
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     SRC    Retouching_and_Restoration/Soldier.jpg               3,459 KB
+USED     WEB    Retouching_and_Restoration/retouch-studio-after.webp     76 KB
+USED     SRC    Retouching_and_Restoration/Retouch/retouch-studio-before.jpg   5,464 KB
+UNUSED   SRC    Retouching_and_Restoration/retouch-studio-after.png  38,035 KB   (heavy master; .webp variant is what's wired)
+UNUSED   THUMB  Retouching_and_Restoration/Retouch/retouch-studio-before_thumbnail.webp    79 KB
+
+================================================================================
+Visual_Effects/    2 files
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+USED     SRC    Visual_Effects/Explosion.jpg                         7,153 KB
+UNUSED   SRC    Visual_Effects/Fighter_Jet.jpeg                      3,057 KB   (orphan: FIGHTER JET COMPOSITE cut)
+
+================================================================================
+Web_Design/    5 files   (new folder; all unwired - staged for Web Design portfolio additions)
+================================================================================
+Use      Fmt    File                                                Size
+-------  -----  --------------------------------------------------  --------
+UNUSED   SRC    Web_Design/Bruce_Hero.png                            1,695 KB
+UNUSED   SRC    Web_Design/Tolkien_Hero.png                          4,772 KB
+UNUSED   SRC    Web_Design/Tolkien_Composite.jpg                       635 KB
+UNUSED   SRC    Web_Design/Tolkien_Mobile.png                          645 KB
+UNUSED   SRC    Web_Design/Tolkien_Timeline_Hero.png                 1,825 KB
+
+================================================================================
+NOTES FOR AGENTS
+================================================================================
+1. STASH images under "AI_Art_and_Prompt_Design/New folder/" appear to be an old
+   originals dump. Three of them (DFW_*) are misfiled and belong in
+   Branding_and_Identity/. The webp variants of those assets already exist in
+   their correct folder. Safe to delete or relocate as cleanup.
+
+2. UNUSED THUMB files were generated alongside the WEB optimized .webp variants
+   but never wired into the HTML. The current implementation does not use a
+   srcset/<picture> pattern for the portfolio grid, so the thumbs are dead
+   weight until that's adopted.
+
+3. UNUSED orphans flagged "(... cut)" became unreferenced after the May 2026
+   portfolio prune. Their containing portfolio items were deleted from
+   index.html. Safe to delete from disk after a backup checkpoint.
+
+4. The Web_Design/ folder is staged for an upcoming portfolio addition. None
+   of its assets are wired yet.
+
+5. Large UNUSED masters (>10 MB) flagged "(heavy master)" remain on disk for
+   reprocessing into .webp at a later date.
