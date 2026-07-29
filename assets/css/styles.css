@@ -592,7 +592,8 @@ body:not(.is-preload) #header {
     height: 100vh;
     width: 100%;
     max-width: 100%;
-    background-image: url('../../images/Hero/Hero-BG.png');
+    background-image: url('../../images/Hero/HERO_BG.webp');
+    background-color: #050505;
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -609,13 +610,13 @@ body:not(.is-preload) #header {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%);
     z-index: 1;
 }
 
 #hero .hero-logo {
     position: relative;
-    width: clamp(200px, 25vw, 400px);
+    width: clamp(280px, 50vw, 900px);
     height: auto;
     margin-bottom: clamp(20px, 3vh, 40px);
     z-index: 2;
@@ -671,11 +672,6 @@ body:not(.is-preload) #hero .hero-title {
 }
 
 /* HERO SECTION — wipe effect for DESIGN */
-#hero .scroll-button {
-    color: inherit;
-    text-decoration: none;
-}
-
 #hero .design-text {
     position: relative;
     display: inline-block;
@@ -699,6 +695,47 @@ body:not(.is-preload) #hero .hero-title {
     font-size: 1.1em;
     font-weight: 500;
 }
+
+#hero .hero-copy {
+    position: absolute;
+    bottom: clamp(48px, 10vh, 130px);
+    left: 0; right: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 1.6vh, 20px);
+    text-align: center;
+    padding: 0 20px;
+}
+#hero .hero-copy::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(1100px, 92vw);
+    height: 280%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.55) 38%,
+        rgba(0,0,0,0.28) 62%,
+        rgba(0,0,0,0) 80%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+#hero .hero-services {
+    margin: 0;
+    font-size: clamp(0.7rem, 1.15vw, 0.95rem);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+#hero .hero-services .sep { color: #ff6e00; margin: 0 0.4em; opacity: 0.85; }
 
 
 /* Services Section */
@@ -4135,10 +4172,6 @@ blockquote ins {
         width: clamp(160px, 35vw, 300px);
         transform: translateY(-70px);
     }
-    
-    #hero .hero-title {
-        transform: translateY(-60px);
-    }
 }
 
 @media (max-width: 600px) {
@@ -4149,7 +4182,6 @@ blockquote ins {
     
     #hero .hero-title {
         font-size: clamp(1.8em, 4vw, 2.2em);
-        transform: translateY(-40px);
         padding: 0 20px;
     }
     
