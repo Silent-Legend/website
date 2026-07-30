@@ -616,7 +616,7 @@ body:not(.is-preload) #header {
 
 #hero .hero-logo {
     position: relative;
-    width: clamp(280px, 50vw, 900px);
+    width: clamp(500px, 40vw + 100px, 700px);
     height: auto;
     margin-bottom: clamp(20px, 3vh, 40px);
     z-index: 2;
@@ -4162,27 +4162,37 @@ blockquote ins {
 
 @media (max-width: 1200px) {
     #hero .hero-logo {
-        width: clamp(180px, 30vw, 350px);
         transform: translateY(-80px);
     }
 }
 
 @media (max-width: 900px) {
     #hero .hero-logo {
-        width: clamp(160px, 35vw, 300px);
         transform: translateY(-70px);
     }
 }
 
 @media (max-width: 600px) {
+    #hero {
+        background-size: auto 100%;
+        background-position: center bottom;
+    }
+    
     #hero .hero-logo {
-        width: clamp(150px, 45vw, 250px);
-        transform: translateY(-50px);
+        transform: translateY(-10px);
     }
     
     #hero .hero-title {
         font-size: clamp(1.8em, 4vw, 2.2em);
         padding: 0 20px;
+    }
+    
+    #hero .hero-title a::after { display: none; }
+    
+    #hero .hero-services {
+        font-size: clamp(0.6rem, 2.9vw, 0.8rem);
+        letter-spacing: 0.14em;
+        line-height: 1.6;
     }
     
     .portfolio-grid {
