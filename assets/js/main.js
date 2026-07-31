@@ -1,30 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const __agentRunId = 'pre-fix';
-    let __agentProjectDetailsOpenCount = 0;
-    let __agentSetBeforeAfterCount = 0;
-
-    // #region agent log: global error/unhandled rejection
-    window.addEventListener('error', function(e) {
-        fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H4',location:'assets/js/main.js:global:error',message:'window.error',data:{message:e && e.message,filename:e && e.filename,lineno:e && e.lineno,colno:e && e.colno,errorName:e && e.error && e.error.name},timestamp:Date.now()})}).catch(()=>{});
-    });
-    window.addEventListener('unhandledrejection', function(e) {
-        fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H4',location:'assets/js/main.js:global:unhandledrejection',message:'window.unhandledrejection',data:{reason:(e && e.reason && (e.reason.message || String(e.reason)))},timestamp:Date.now()})}).catch(()=>{});
-    });
-    // #endregion
-
-    // #region agent log: long tasks (main thread blocks)
-    try {
-        if ('PerformanceObserver' in window) {
-            const __agentLongTaskObs = new PerformanceObserver((list) => {
-                list.getEntries().forEach((entry) => {
-                    fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H1',location:'assets/js/main.js:global:longtask',message:'longtask',data:{name:entry.name,startTime:Math.round(entry.startTime),duration:Math.round(entry.duration)},timestamp:Date.now()})}).catch(()=>{});
-                });
-            });
-            __agentLongTaskObs.observe({ entryTypes: ['longtask'] });
-        }
-    } catch (_) {}
-    // #endregion
-
     // -----------------------------------
     // Loading Bar & Hero Image Preload
     // -----------------------------------
@@ -1010,8 +984,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Function to open project details modal from lightbox
     function openProjectDetailsModal() {
-        const __agentT0 = (window.performance && performance.now) ? performance.now() : Date.now();
-        __agentProjectDetailsOpenCount++;
         if (currentIndex < 0 || currentIndex >= portfolioItems.length) return;
         
         const item = portfolioItems[currentIndex];
@@ -1057,10 +1029,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const detailAfter = item.getAttribute('data-detail-after') || (detailImages[0] || allImages[currentIndex]);
         const detailBefore = item.getAttribute('data-detail-before') || '';
 
-        // #region agent log: project details modal open (entry)
-        fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H2',location:'assets/js/main.js:openProjectDetailsModal:entry',message:'openProjectDetailsModal entry',data:{openCount:__agentProjectDetailsOpenCount,currentIndex:currentIndex,detailName:detailName,hasBefore:!!(detailBefore && detailBefore.trim()),detailImagesLen:(detailImages && detailImages.length)||0},timestamp:Date.now()})}).catch(()=>{});
-        // #endregion
-        
         // Update modal content
         const modalTitle = document.getElementById('modal-project-title');
         const modalDescription = document.getElementById('modal-project-description');
@@ -1112,14 +1080,10 @@ document.addEventListener("DOMContentLoaded", function () {
             modalImageBefore.alt = detailName + ' - Before';
             // Preload the image for smooth crossfade
             const beforeImg = new Image();
-            const __agentBeforeLoadStart = (window.performance && performance.now) ? performance.now() : Date.now();
             beforeImg.onload = function() {
                 if (modalImageBefore) {
                     modalImageBefore.src = detailBefore;
                 }
-                // #region agent log: before image preload complete
-                fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H3',location:'assets/js/main.js:openProjectDetailsModal:beforeImg.onload',message:'before image loaded',data:{src:detailBefore,ms:Math.round(((window.performance && performance.now)?performance.now():Date.now())-__agentBeforeLoadStart),naturalW:beforeImg.naturalWidth,naturalH:beforeImg.naturalHeight},timestamp:Date.now()})}).catch(()=>{});
-                // #endregion
             };
             beforeImg.src = detailBefore;
         }
@@ -1318,9 +1282,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // #region agent log: project details modal open (exit)
-        fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H1',location:'assets/js/main.js:openProjectDetailsModal:exit',message:'openProjectDetailsModal exit',data:{openCount:__agentProjectDetailsOpenCount,ms:Math.round(((window.performance && performance.now)?performance.now():Date.now())-__agentT0),wipThumbChildren:(modalWipThumbnails && modalWipThumbnails.children && modalWipThumbnails.children.length)||0,heapUsed:(performance && performance.memory && performance.memory.usedJSHeapSize)||null},timestamp:Date.now()})}).catch(()=>{});
-        // #endregion
     }
     
     // Function to reset BEFORE/AFTER to AFTER state
@@ -1355,8 +1316,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Function to set BEFORE/AFTER mode
     function setBeforeAfter(mode) {
-        const __agentT0 = (window.performance && performance.now) ? performance.now() : Date.now();
-        __agentSetBeforeAfterCount++;
         const modalImageAfter = document.getElementById('modal-project-image-after');
         const modalImageBefore = document.getElementById('modal-project-image-before');
         const baBeforeBtn = document.getElementById('ba-before-btn');
@@ -1402,16 +1361,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (baLabel) baLabel.textContent = 'AFTER';
         }
 
-        // #region agent log: setBeforeAfter cost + state
-        fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H2',location:'assets/js/main.js:setBeforeAfter',message:'setBeforeAfter',data:{count:__agentSetBeforeAfterCount,mode:mode,ms:Math.round(((window.performance && performance.now)?performance.now():Date.now())-__agentT0),afterOpacity:modalImageAfter.style.opacity,beforeOpacity:modalImageBefore.style.opacity,beforeHasSrc:!!modalImageBefore.src},timestamp:Date.now()})}).catch(()=>{});
-        // #endregion
     }
     
     // Function to close project details modal
     function closeProjectDetailsModal() {
-        // #region agent log: project details modal close
-        fetch('http://127.0.0.1:7242/ingest/910ecd53-f1e4-453b-a481-295811412fd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:__agentRunId,hypothesisId:'H2',location:'assets/js/main.js:closeProjectDetailsModal',message:'closeProjectDetailsModal',data:{openCount:__agentProjectDetailsOpenCount,active:!!(projectDetailsModal && projectDetailsModal.classList && projectDetailsModal.classList.contains('active')),heapUsed:(performance && performance.memory && performance.memory.usedJSHeapSize)||null},timestamp:Date.now()})}).catch(()=>{});
-        // #endregion
         if (projectDetailsModal) {
             // Reset to AFTER before closing
             resetBeforeAfter();
@@ -1892,7 +1845,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const formMessage = document.getElementById('form-message');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const name = contactForm.name.value.trim();
@@ -1922,10 +1875,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Simulate success message
-            formMessage.textContent = 'Thank you for reaching out! I will respond as soon as possible.';
-            formMessage.classList.add('success');
-            contactForm.reset();
+            // Submit to Web3Forms
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (result.success) {
+                    formMessage.textContent = "Thanks — your message has been sent. I'll be in touch soon.";
+                    formMessage.classList.remove('error');
+                    formMessage.classList.add('success');
+                    contactForm.reset();
+                } else {
+                    formMessage.textContent = "Something went wrong. Please email joel.pagan00@gmail.com directly.";
+                    formMessage.classList.remove('success');
+                    formMessage.classList.add('error');
+                }
+            } catch (err) {
+                formMessage.textContent = "Network error. Please email joel.pagan00@gmail.com directly.";
+                formMessage.classList.remove('success');
+                formMessage.classList.add('error');
+            }
         });
     }
 

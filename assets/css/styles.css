@@ -3047,6 +3047,7 @@ blockquote ins {
     margin-top: 1em;
     font-weight: 600;
     letter-spacing: 0.05em;
+    text-align: center;
 }
 
 .contact-section .form-message.error,
@@ -3056,7 +3057,7 @@ blockquote ins {
 
 .contact-section .form-message.success,
 .contact-section #form-message.success {
-    color: #2ebaae;
+    color: #ff6e00;
 }
 
 /* Lightbox Modal Styling */
