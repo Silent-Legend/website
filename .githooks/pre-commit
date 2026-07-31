@@ -1,0 +1,14 @@
+#!/bin/sh
+# Blocks commits containing debug/telemetry junk.
+PATTERN='127\.0\.0\.1|localhost:|debug-session|hypothesisId|__agentRunId|ingest/[0-9a-f-]{8}'
+MATCHES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|html|css)$' | while read -r f; do
+    git show ":$f" | grep -nE "$PATTERN" | sed "s|^|$f:|"
+done)
+if [ -n "$MATCHES" ]; then
+    echo "[BLOCKED] Commit contains possible debug/telemetry junk:"
+    echo "$MATCHES"
+    echo ""
+    echo "Remove the flagged lines, or if intentional, commit with: git commit --no-verify"
+    exit 1
+fi
+exit 0
