@@ -589,7 +589,8 @@ body:not(.is-preload) #header {
 /* Hero Section */ 
 #hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;    /* fallback for older browsers */
+    min-height: 100dvh;   /* dynamic viewport — fits when mobile address bar is showing */
     width: 100%;
     max-width: 100%;
     background-image: url('../../images/Hero/HERO_BG.webp');
@@ -698,7 +699,7 @@ body:not(.is-preload) #hero .hero-title {
 
 #hero .hero-copy {
     position: absolute;
-    bottom: clamp(48px, 10vh, 130px);
+    bottom: calc(clamp(48px, 10svh, 130px) + env(safe-area-inset-bottom, 0px));
     left: 0; right: 0;
     z-index: 2;
     display: flex;
