@@ -1961,7 +1961,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.remove('service-modal-open');
             document.body.style.top = '';
             if (restoreScroll && scrollPosition !== undefined) {
-                window.scrollTo(0, scrollPosition);
+                window.scrollTo({ top: scrollPosition, left: 0, behavior: 'instant' });
             }
             isClosing = false;
         }, 500); // Wait for modal close animation (0.5s)
