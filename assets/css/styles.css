@@ -763,15 +763,17 @@ body:not(.is-preload) #hero .hero-title {
 .services-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 -15px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service-column {
     padding: 0 15px;
     box-sizing: border-box;
-    flex: 1 1 320px; /* prefer fixed minimum column basis to avoid reflow jumps */
-    max-width: 360px; /* cap column width for visual balance */
+    flex: 0 0 33.333%;
+    max-width: none;
     margin-bottom: 50px;
     display: flex; /* Ensure column uses flexbox */
 }
