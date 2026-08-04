@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Store all portfolio data with categories
     portfolioItems.forEach((item, index) => {
-        let imageSrc = item.getAttribute("data-full") || item.querySelector("img").getAttribute("src");
+        let imageSrc = item.querySelector("img").getAttribute("src");
         let titleElement = item.querySelector(".portfolio-overlay h3");
         let descriptionElement = item.querySelector(".portfolio-overlay-description");
         let title = titleElement ? titleElement.textContent : "";
