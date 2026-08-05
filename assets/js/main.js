@@ -1179,9 +1179,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (modalUrlItem) modalUrlItem.style.display = 'none';
         }
         
-        // Handle WIP thumbnails (include all images, with KW Final.png last)
+        // Handle WIP thumbnails for multi-image projects (with KW Final.png last)
         const imageSection = document.querySelector('.project-details-image-section');
-        if (detailImages.length > 0 && modalWipThumbnails) {
+        if (detailImages.length > 1 && modalWipThumbnails) {
             // Reorder thumbnails: move first image (KW Final.png) to the end
             const firstImage = detailImages[0];
             const otherImages = detailImages.slice(1);

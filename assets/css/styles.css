@@ -1551,7 +1551,7 @@ blockquote ins {
     max-width: 1200px;
     margin: 0 auto 4em;
     position: relative;
-    min-height: 400px; /* Prevent layout shift during filtering */
+    align-items: start;
     will-change: contents; /* Optimize for animations */
 }
 
@@ -2852,22 +2852,22 @@ blockquote ins {
     
     .modal-project-image {
         max-width: 100%;
-        max-height: calc(45vh - 8em);
+        max-height: calc(45vh - 4.5em);
         width: auto;
         height: auto;
         object-fit: contain;
     }
     
     .project-details-image-section.has-thumbnails .modal-project-image {
-        max-height: calc(45vh - 8em - 100px);
+        max-height: calc(45vh - 6.5em - 100px);
     }
     
     .project-details-image-section.has-thumbnails .modal-image-stack .modal-project-image {
-        max-height: calc(45vh - 8em - 100px);
+        max-height: calc(45vh - 6.5em - 100px);
     }
     
     .modal-image-stack .modal-project-image {
-        max-height: calc(45vh - 8em);
+        max-height: calc(45vh - 4.5em);
     }
     
     /* BEFORE/AFTER Toggle Mobile Adjustments */
@@ -3751,7 +3751,7 @@ blockquote ins {
 @media (max-width: 1024px) {
     .lightbox-main-wrapper {
         grid-template-columns: 1fr !important;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: 1fr;
     }
     
     .lightbox-main-wrapper.sidebar-visible {
