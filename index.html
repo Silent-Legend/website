@@ -516,8 +516,8 @@
     <!-- Featured Work Section -->
     <section id="featured-work" class="featured-work-section" aria-labelledby="featured-work-title">
         <div class="featured-work-card">
-            <a href="https://youtu.be/u172920GgoM?si=nyij3UBUNMp36lQZ" class="featured-work-thumbnail" target="_blank" rel="noopener noreferrer" aria-label="Watch Fighters' Destiny: Episode One on YouTube">
-                <img src="https://img.youtube.com/vi/u172920GgoM/maxresdefault.jpg" alt="Fighters' Destiny: Episode One" loading="lazy" width="1280" height="720" />
+            <a href="https://youtu.be/u172920GgoM" class="featured-work-preview" id="featured-work-preview" target="_blank" rel="noopener noreferrer" aria-label="Watch Episode 1: Ties That Bind on YouTube">
+                <img id="featured-work-preview-image" src="https://img.youtube.com/vi/u172920GgoM/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/u172920GgoM/hqdefault.jpg';" alt="Fighters' Destiny — Episode 1: Ties That Bind" loading="lazy" width="1280" height="720" />
                 <span class="featured-work-play-icon" aria-hidden="true">
                     <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" focusable="false">
                         <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.65)"/>
@@ -530,7 +530,12 @@
                 <h2 id="featured-work-title" class="featured-work-title">Fighters' Destiny: The Evolution of Dead or Alive</h2>
                 <p class="featured-work-subtitle">4-Part Documentary Series &middot; Producer &amp; Motion Graphics</p>
                 <p class="featured-work-description">A 4-part documentary series on the Dead or Alive fighting game community, produced in collaboration with Brian Dawson. I conceived the series, handled all production, created every motion graphic from the opening title sequence to the lower thirds and end credits, shot and edited the footage, and color graded every episode. The series features interviews with sWooZie (Adande Thorne) and Tom Lee, Creative Director of Team Ninja. All four episodes are hosted on Team Ninja's official YouTube channel.</p>
-                <a href="https://youtu.be/u172920GgoM?si=nyij3UBUNMp36lQZ" class="service-cta-button featured-work-cta" target="_blank" rel="noopener noreferrer">Watch Episode One</a>
+                <div class="featured-work-episodes" role="group" aria-label="Fighters' Destiny episodes">
+                    <button type="button" class="featured-work-episode-button active" data-video-id="u172920GgoM" data-episode-title="Episode 1: Ties That Bind" aria-pressed="true" aria-controls="featured-work-preview">Ep 1 · Ties That Bind</button>
+                    <button type="button" class="featured-work-episode-button" data-video-id="lvpDKtQ_rLM" data-episode-title="Episode 2: The Evolution of Dead or Alive" aria-pressed="false" aria-controls="featured-work-preview">Ep 2 · The Evolution of Dead or Alive</button>
+                    <button type="button" class="featured-work-episode-button" data-video-id="sF36qM48Ggo" data-episode-title="Episode 3: Rivals" aria-pressed="false" aria-controls="featured-work-preview">Ep 3 · Rivals</button>
+                    <button type="button" class="featured-work-episode-button" data-video-id="f6G0DTE0Of4" data-episode-title="Episode 4: International Players" aria-pressed="false" aria-controls="featured-work-preview">Ep 4 · International Players</button>
+                </div>
                 <p class="featured-work-credits">Production &middot; Motion Graphics &middot; Editing &middot; Color Grading &middot; Lower Thirds &middot; Title Design</p>
             </div>
         </div>

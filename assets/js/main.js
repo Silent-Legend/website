@@ -2091,6 +2091,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     
+    // Featured Work episode selector
+    const featuredWorkPreview = document.getElementById('featured-work-preview');
+    const featuredWorkPreviewImage = document.getElementById('featured-work-preview-image');
+    const featuredEpisodeButtons = document.querySelectorAll('.featured-work-episode-button');
+
+    function selectFeaturedEpisode(button) {
+        const videoId = button.getAttribute('data-video-id');
+        const episodeTitle = button.getAttribute('data-episode-title');
+
+        if (!featuredWorkPreview || !featuredWorkPreviewImage || !videoId || !episodeTitle) return;
+
+        featuredEpisodeButtons.forEach(item => {
+            item.classList.remove('active');
+            item.setAttribute('aria-pressed', 'false');
+        });
+
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+
+        featuredWorkPreview.href = `https://youtu.be/${videoId}`;
+        featuredWorkPreview.setAttribute('aria-label', `Watch ${episodeTitle} on YouTube`);
+        featuredWorkPreviewImage.alt = `Fighters' Destiny — ${episodeTitle}`;
+        featuredWorkPreviewImage.onerror = function () {
+            this.onerror = null;
+            this.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        };
+        featuredWorkPreviewImage.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    }
+
+    featuredEpisodeButtons.forEach(button => {
+        button.addEventListener('click', () => selectFeaturedEpisode(button));
+    });
+
     // Handle "View Portfolio" button clicks
     const portfolioFilterLinks = document.querySelectorAll('.service-cta-button-secondary');
     portfolioFilterLinks.forEach(link => {
