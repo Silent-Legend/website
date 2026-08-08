@@ -332,6 +332,70 @@ document.addEventListener("DOMContentLoaded", function () {
             imageObserver.observe(img);
         });
     }
+
+    // -----------------------------------
+    // Ambient Logo Storm Video
+    // -----------------------------------
+    const ambientVideoSection = document.getElementById('ambient-logo-storm');
+    const ambientVideo = document.getElementById('ambient-logo-storm-video');
+
+    if (ambientVideoSection && ambientVideo) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const saveDataEnabled = Boolean(connection && connection.saveData);
+        let isInViewport = false;
+        let sourcesLoaded = false;
+
+        function loadAmbientVideoSources() {
+            if (sourcesLoaded || reducedMotion.matches || saveDataEnabled) return;
+
+            ambientVideo.querySelectorAll('source[data-src]').forEach(source => {
+                source.src = source.dataset.src;
+            });
+            ambientVideo.load();
+            sourcesLoaded = true;
+        }
+
+        function updateAmbientVideoPlayback() {
+            if (!isInViewport || document.hidden || reducedMotion.matches || saveDataEnabled) {
+                ambientVideo.pause();
+                return;
+            }
+
+            loadAmbientVideoSources();
+            ambientVideo.play().catch(() => {
+                // The poster remains visible if the browser blocks autoplay.
+            });
+        }
+
+        if ('IntersectionObserver' in window) {
+            const ambientVideoLoadObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadAmbientVideoSources();
+                        if (sourcesLoaded) observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '300px 0px'
+            });
+
+            const ambientVideoPlaybackObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    isInViewport = entry.isIntersecting;
+                    updateAmbientVideoPlayback();
+                });
+            }, {
+                threshold: 0.01
+            });
+
+            ambientVideoLoadObserver.observe(ambientVideoSection);
+            ambientVideoPlaybackObserver.observe(ambientVideoSection);
+        }
+
+        document.addEventListener('visibilitychange', updateAmbientVideoPlayback);
+        reducedMotion.addEventListener('change', updateAmbientVideoPlayback);
+    }
     
     // Update grid item count for CSS targeting
     function updateGridItemCount() {
