@@ -215,6 +215,142 @@ document.addEventListener("DOMContentLoaded", function () {
     // Trigger animation on page load to animate visible elements
     animateOnScroll();
 
+    // -----------------------------------
+    // Showreel Modal
+    // -----------------------------------
+    const showreelTrigger = document.getElementById('showreel-trigger');
+    const showreelModal = document.getElementById('showreel-modal');
+    const showreelClose = document.getElementById('showreel-close');
+    const showreelPlayer = document.getElementById('showreel-player');
+    const showreelBackdrop = showreelModal ? showreelModal.querySelector('[data-showreel-close]') : null;
+    const showreelStartSentinel = showreelModal ? showreelModal.querySelector('[data-showreel-sentinel="start"]') : null;
+    const showreelEndSentinel = showreelModal ? showreelModal.querySelector('[data-showreel-sentinel="end"]') : null;
+    let showreelScrollPosition = 0;
+    let showreelCloseTimer = null;
+    let showreelBackgroundState = [];
+    let showreelBodyStyleState = null;
+
+    function createShowreelIframe() {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/BCVKagAV_6U?rel=0&autoplay=1';
+        iframe.title = 'Silent Legend Showreel';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        return iframe;
+    }
+
+    function setShowreelBackgroundInert(isInert) {
+        if (!showreelModal) return;
+
+        if (isInert) {
+            showreelBackgroundState = Array.from(document.body.children)
+                .filter(element => element !== showreelModal)
+                .map(element => ({ element, hadInertAttribute: element.hasAttribute('inert') }));
+            showreelBackgroundState.forEach(({ element }) => {
+                element.setAttribute('inert', '');
+            });
+            return;
+        }
+
+        showreelBackgroundState.forEach(({ element, hadInertAttribute }) => {
+            if (!hadInertAttribute) element.removeAttribute('inert');
+        });
+        showreelBackgroundState = [];
+    }
+
+    function openShowreel() {
+        if (!showreelModal || !showreelPlayer || !showreelClose || !showreelModal.hidden) return;
+
+        clearTimeout(showreelCloseTimer);
+        showreelScrollPosition = window.scrollY;
+        showreelBodyStyleState = {
+            position: document.body.style.position,
+            top: document.body.style.top,
+            width: document.body.style.width,
+            overflow: document.body.style.overflow
+        };
+        showreelPlayer.replaceChildren(createShowreelIframe());
+        showreelModal.hidden = false;
+        showreelModal.setAttribute('aria-hidden', 'false');
+        setShowreelBackgroundInert(true);
+
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${showreelScrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+
+        requestAnimationFrame(() => {
+            showreelModal.classList.add('active');
+            showreelClose.focus();
+        });
+    }
+
+    function closeShowreel() {
+        if (!showreelModal || showreelModal.hidden) return;
+
+        showreelModal.classList.remove('active');
+        showreelModal.setAttribute('aria-hidden', 'true');
+        if (showreelPlayer) showreelPlayer.replaceChildren();
+        setShowreelBackgroundInert(false);
+
+        document.body.style.position = showreelBodyStyleState ? showreelBodyStyleState.position : '';
+        document.body.style.top = showreelBodyStyleState ? showreelBodyStyleState.top : '';
+        document.body.style.width = showreelBodyStyleState ? showreelBodyStyleState.width : '';
+        document.body.style.overflow = showreelBodyStyleState ? showreelBodyStyleState.overflow : '';
+        showreelBodyStyleState = null;
+        window.scrollTo({ top: showreelScrollPosition, left: 0, behavior: 'instant' });
+        if (showreelTrigger) showreelTrigger.focus({ preventScroll: true });
+
+        const closeDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 250;
+        showreelCloseTimer = setTimeout(() => {
+            showreelModal.hidden = true;
+        }, closeDelay);
+    }
+
+    if (showreelTrigger) {
+        showreelTrigger.addEventListener('click', openShowreel);
+    }
+
+    if (showreelClose) {
+        showreelClose.addEventListener('click', closeShowreel);
+        showreelClose.addEventListener('keydown', event => {
+            if (event.key === 'Tab' && event.shiftKey) {
+                const iframe = showreelPlayer ? showreelPlayer.querySelector('iframe') : null;
+                if (iframe) {
+                    event.preventDefault();
+                    iframe.focus();
+                }
+            }
+        });
+    }
+
+    if (showreelBackdrop) {
+        showreelBackdrop.addEventListener('click', closeShowreel);
+    }
+
+    if (showreelModal) {
+        showreelModal.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeShowreel();
+            }
+        });
+    }
+
+    if (showreelStartSentinel) {
+        showreelStartSentinel.addEventListener('focus', () => {
+            const iframe = showreelPlayer ? showreelPlayer.querySelector('iframe') : null;
+            (iframe || showreelClose).focus();
+        });
+    }
+
+    if (showreelEndSentinel) {
+        showreelEndSentinel.addEventListener('focus', () => {
+            showreelClose.focus();
+        });
+    }
+
 
 
     // -----------------------------------

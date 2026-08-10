@@ -591,7 +591,7 @@
                 <span>My Work</span>
             </h2>
             <div class="lead motto">
-                <p>The work speaks for itself. Browse recent projects below — each one built with <ins>care</ins>, <ins>craft</ins>, and <ins>intention</ins>.</p>
+                <p>The work speaks for itself. <button type="button" id="showreel-trigger" class="showreel-trigger" aria-haspopup="dialog" aria-controls="showreel-modal"><i class="fas fa-play" aria-hidden="true"></i><span>Watch the showreel</span></button>, or browse recent projects below — each one built with <ins>care</ins>, <ins>craft</ins>, and <ins>intention</ins>.</p>
             </div>
         </header>
 
@@ -1018,6 +1018,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Showreel Modal -->
+    <div id="showreel-modal" class="showreel-modal" role="dialog" aria-modal="true" aria-labelledby="showreel-modal-title" aria-hidden="true" hidden>
+        <div class="showreel-modal-backdrop" data-showreel-close></div>
+        <button type="button" class="showreel-focus-sentinel" data-showreel-sentinel="start" aria-label="Return to showreel controls"></button>
+        <div class="showreel-dialog">
+            <h2 id="showreel-modal-title" class="showreel-modal-title">Silent Legend Showreel</h2>
+            <button type="button" id="showreel-close" class="showreel-close" aria-label="Close showreel">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div id="showreel-player" class="showreel-player"></div>
+        </div>
+        <button type="button" class="showreel-focus-sentinel" data-showreel-sentinel="end" aria-label="Return to showreel controls"></button>
+    </div>
 
     <!-- Project Details Modal -->
     <div id="project-details-modal" class="project-details-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">

@@ -1472,6 +1472,180 @@ blockquote ins {
     margin-top: 15px;
 }
 
+.showreel-trigger {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.05em 0.15em;
+    border: 0;
+    background: transparent;
+    color: #151515;
+    font: inherit;
+    font-weight: 600;
+    line-height: inherit;
+    vertical-align: baseline;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.showreel-trigger i {
+    color: #ff6e00;
+    font-size: 0.7em;
+}
+
+.showreel-trigger::after {
+    content: '';
+    position: absolute;
+    right: 0.15em;
+    bottom: 0.05em;
+    left: 0.15em;
+    height: 2px;
+    background-color: #ff6e00;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+}
+
+.showreel-trigger:hover {
+    color: #ff6e00;
+}
+
+.showreel-trigger:hover::after,
+.showreel-trigger:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.showreel-trigger:focus-visible {
+    outline: 2px solid #ff6e00;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.showreel-modal[hidden] {
+    display: none;
+}
+
+.showreel-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1em, 4vw, 3em);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.showreel-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.showreel-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.showreel-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, 92vw, calc(88dvh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    transform: translateY(12px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.showreel-modal.active .showreel-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.showreel-modal-title,
+.showreel-focus-sentinel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.showreel-player,
+.showreel-player iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.showreel-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 2px solid #ff6e00;
+    border-radius: 50%;
+    background-color: rgba(21, 21, 21, 0.9);
+    color: #ff6e00;
+    font-size: 1.25em;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.showreel-close:hover,
+.showreel-close:focus-visible {
+    background-color: #ff6e00;
+    color: #fff;
+    transform: scale(1.06);
+    outline: none;
+}
+
+.showreel-close:focus-visible {
+    box-shadow: 0 0 0 3px #fff;
+}
+
+@media (max-width: 600px) {
+    .showreel-modal {
+        padding: 0.75em;
+    }
+
+    .showreel-close {
+        top: 0.6em;
+        right: 0.6em;
+        width: 42px;
+        height: 42px;
+        font-size: 1.1em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .showreel-trigger,
+    .showreel-trigger::after,
+    .showreel-modal,
+    .showreel-dialog,
+    .showreel-close {
+        transition: none;
+    }
+}
+
 .portfolio-filters {
     margin-bottom: 2em;
     display: flex;
