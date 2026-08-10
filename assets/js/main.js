@@ -1243,22 +1243,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (modalUrlItem) modalUrlItem.style.display = 'none';
         }
         
-        // Handle WIP thumbnails for multi-image projects (with KW Final.png last)
+        // Handle WIP thumbnails for multi-image projects
         const imageSection = document.querySelector('.project-details-image-section');
         if (detailImages.length > 1 && modalWipThumbnails) {
-            // Reorder thumbnails: move first image (KW Final.png) to the end
-            const firstImage = detailImages[0];
-            const otherImages = detailImages.slice(1);
-            const reorderedThumbnails = [...otherImages, firstImage];
-            
             modalWipThumbnails.style.display = 'flex';
-            modalWipThumbnails.innerHTML = reorderedThumbnails.map((imgSrc, thumbIndex) => {
-                // Find the original index in detailImages array
-                const originalIndex = detailImages.indexOf(imgSrc);
-                const isActive = originalIndex === 0; // First image (KW Final) is active
+            modalWipThumbnails.innerHTML = detailImages.map((imgSrc, imageIndex) => {
+                const isActive = imageIndex === 0;
                 return `
-                <div class="modal-wip-thumbnail ${isActive ? 'active' : ''}" data-wip-index="${originalIndex}">
-                    <img src="${imgSrc}" alt="${detailName} - Image ${originalIndex + 1}" />
+                <div class="modal-wip-thumbnail ${isActive ? 'active' : ''}" data-wip-index="${imageIndex}">
+                    <img src="${imgSrc}" alt="${detailName} - Image ${imageIndex + 1}" />
                 </div>
             `;
             }).join('');

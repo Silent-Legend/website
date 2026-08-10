@@ -2471,8 +2471,8 @@ blockquote ins {
     overflow-y: hidden;
     padding: 1em 0;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     flex-shrink: 0;
     max-height: 120px;
 }
@@ -2549,7 +2549,8 @@ blockquote ins {
 .modal-image-stack {
     position: relative;
     width: 100%;
-    height: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2782,6 +2783,14 @@ blockquote ins {
         align-items: center;
         justify-content: center;
     }
+
+    .project-details-image-section.has-thumbnails {
+        height: 60vh;
+        min-height: 60vh;
+        max-height: 60vh;
+        padding-bottom: 1em;
+        gap: 1em;
+    }
     
     .modal-project-image {
         max-width: 100%;
@@ -2792,7 +2801,11 @@ blockquote ins {
     }
     
     .project-details-image-section.has-thumbnails .modal-project-image {
-        max-height: calc(40vh - 6em - 120px);
+        max-height: calc(60vh - 6em - 120px);
+    }
+
+    .project-details-image-section.has-thumbnails .modal-image-stack .modal-project-image {
+        max-height: 100%;
     }
     
     .project-details-text-section {
@@ -2802,6 +2815,11 @@ blockquote ins {
         overflow: hidden;
         display: flex;
         flex-direction: column;
+    }
+
+    .project-details-image-section.has-thumbnails + .project-details-text-section {
+        max-height: 30vh;
+        height: 30vh;
     }
     
     .project-details-scrollable {
