@@ -2317,6 +2317,111 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', () => selectFeaturedEpisode(button));
     });
 
+    // -----------------------------------
+    // Dead or Alive Case Study Modal
+    // -----------------------------------
+    const doaCaseStudyTrigger = document.getElementById('doa-case-study-trigger');
+    const doaCaseStudyModal = document.getElementById('doa-case-study-modal');
+    const doaCaseStudyClose = document.getElementById('doa-case-study-close');
+    const doaCaseStudyBackdrop = doaCaseStudyModal ? doaCaseStudyModal.querySelector('[data-doa-case-study-close]') : null;
+    let doaCaseStudyScrollPosition = 0;
+    let doaCaseStudyCloseTimer = null;
+    let doaCaseStudyBackgroundState = [];
+    let doaCaseStudyBodyStyleState = null;
+
+    function setDoaCaseStudyBackgroundInert(isInert) {
+        if (!doaCaseStudyModal) return;
+
+        if (isInert) {
+            doaCaseStudyBackgroundState = Array.from(document.body.children)
+                .filter(element => element !== doaCaseStudyModal)
+                .map(element => ({ element, hadInertAttribute: element.hasAttribute('inert') }));
+            doaCaseStudyBackgroundState.forEach(({ element }) => {
+                element.setAttribute('inert', '');
+            });
+            return;
+        }
+
+        doaCaseStudyBackgroundState.forEach(({ element, hadInertAttribute }) => {
+            if (!hadInertAttribute) element.removeAttribute('inert');
+        });
+        doaCaseStudyBackgroundState = [];
+    }
+
+    function openDoaCaseStudy() {
+        if (!doaCaseStudyModal || !doaCaseStudyClose || !doaCaseStudyModal.hidden) return;
+
+        clearTimeout(doaCaseStudyCloseTimer);
+        doaCaseStudyScrollPosition = window.scrollY;
+        doaCaseStudyBodyStyleState = {
+            position: document.body.style.position,
+            top: document.body.style.top,
+            width: document.body.style.width,
+            overflow: document.body.style.overflow
+        };
+        doaCaseStudyModal.hidden = false;
+        doaCaseStudyModal.setAttribute('aria-hidden', 'false');
+        setDoaCaseStudyBackgroundInert(true);
+
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${doaCaseStudyScrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+
+        requestAnimationFrame(() => {
+            doaCaseStudyModal.classList.add('active');
+            doaCaseStudyClose.focus();
+        });
+    }
+
+    function closeDoaCaseStudy() {
+        if (!doaCaseStudyModal || doaCaseStudyModal.hidden) return;
+
+        doaCaseStudyModal.classList.remove('active');
+        doaCaseStudyModal.setAttribute('aria-hidden', 'true');
+        setDoaCaseStudyBackgroundInert(false);
+
+        document.body.style.position = doaCaseStudyBodyStyleState ? doaCaseStudyBodyStyleState.position : '';
+        document.body.style.top = doaCaseStudyBodyStyleState ? doaCaseStudyBodyStyleState.top : '';
+        document.body.style.width = doaCaseStudyBodyStyleState ? doaCaseStudyBodyStyleState.width : '';
+        document.body.style.overflow = doaCaseStudyBodyStyleState ? doaCaseStudyBodyStyleState.overflow : '';
+        doaCaseStudyBodyStyleState = null;
+        window.scrollTo({ top: doaCaseStudyScrollPosition, left: 0, behavior: 'instant' });
+        if (doaCaseStudyTrigger) doaCaseStudyTrigger.focus({ preventScroll: true });
+
+        const closeDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+        doaCaseStudyCloseTimer = setTimeout(() => {
+            doaCaseStudyModal.hidden = true;
+        }, closeDelay);
+    }
+
+    if (doaCaseStudyTrigger) {
+        doaCaseStudyTrigger.addEventListener('click', openDoaCaseStudy);
+    }
+
+    if (doaCaseStudyClose) {
+        doaCaseStudyClose.addEventListener('click', closeDoaCaseStudy);
+    }
+
+    if (doaCaseStudyBackdrop) {
+        doaCaseStudyBackdrop.addEventListener('click', closeDoaCaseStudy);
+    }
+
+    if (doaCaseStudyModal) {
+        doaCaseStudyModal.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeDoaCaseStudy();
+                return;
+            }
+
+            if (event.key === 'Tab') {
+                event.preventDefault();
+                doaCaseStudyClose.focus();
+            }
+        });
+    }
+
     // Handle "View Portfolio" button clicks
     const portfolioFilterLinks = document.querySelectorAll('.service-cta-button-secondary');
     portfolioFilterLinks.forEach(link => {

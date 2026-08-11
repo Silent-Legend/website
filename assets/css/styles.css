@@ -4711,6 +4711,250 @@ blockquote ins {
     padding-top: 1.5em;
 }
 
+.doa-case-study-trigger {
+    align-self: flex-start;
+    padding: 0.15em 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: #ff6e00;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.doa-case-study-trigger:hover,
+.doa-case-study-trigger:focus-visible {
+    color: #fff;
+    border-color: #ff6e00;
+}
+
+.doa-case-study-trigger:focus-visible {
+    outline: 2px solid #ff6e00;
+    outline-offset: 4px;
+}
+
+.doa-case-study-modal[hidden] {
+    display: none;
+}
+
+.doa-case-study-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1em, 3vw, 2.5em);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.doa-case-study-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.doa-case-study-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.doa-case-study-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, 100%);
+    max-height: calc(100dvh - clamp(2em, 6vw, 5em));
+    overflow: hidden;
+    background-color: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+    transform: translateY(16px) scale(0.985);
+    transition: transform 0.3s ease;
+}
+
+.doa-case-study-modal.active .doa-case-study-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.doa-case-study-scrollable {
+    max-height: calc(100dvh - clamp(2em, 6vw, 5em));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: #ff6e00 #1b1b1b;
+}
+
+.doa-case-study-article {
+    width: min(860px, calc(100% - 4em));
+    margin: 0 auto;
+    padding: clamp(4.5em, 8vw, 7em) 0 clamp(4em, 7vw, 6em);
+    color: #d0d0d0;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+}
+
+.doa-case-study-header {
+    padding-bottom: clamp(2.5em, 5vw, 4em);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.doa-case-study-eyebrow {
+    display: block;
+    margin-bottom: 1.25em;
+    color: #ff6e00;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+.doa-case-study-header h2 {
+    margin: 0 0 0.65em;
+    color: #fff;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: clamp(2em, 5vw, 3.5em);
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.doa-case-study-disciplines,
+.doa-case-study-relationship {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.doa-case-study-disciplines {
+    color: #d7d7d7;
+    font-size: 0.98em;
+    font-weight: 600;
+}
+
+.doa-case-study-relationship {
+    color: #8f8f8f;
+    font-size: 0.85em;
+}
+
+.doa-case-study-section,
+.doa-case-study-moments-section {
+    padding-top: clamp(2.5em, 5vw, 4em);
+}
+
+.doa-case-study-section h3,
+.doa-case-study-moments-section h3 {
+    margin: 0 0 0.9em;
+    color: #fff;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: clamp(1.25em, 2.5vw, 1.65em);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.doa-case-study-section p {
+    margin: 0;
+    color: #c8c8c8;
+    font-size: 1em;
+    line-height: 1.85;
+}
+
+.doa-case-study-moments-intro {
+    margin: -0.35em 0 1.5em;
+    color: #8f8f8f;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+.doa-case-study-moments-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    list-style: none;
+}
+
+.doa-case-study-moments-list li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.doa-case-study-moments-list a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 1.15em 0;
+    color: #d7d7d7;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 0.92em;
+    font-weight: 700;
+    line-height: 1.45;
+    text-decoration: none;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.doa-case-study-moments-list a::after {
+    content: '\2197';
+    flex: 0 0 auto;
+    color: #ff6e00;
+}
+
+.doa-case-study-moments-list a span:first-child {
+    flex: 1 1 auto;
+}
+
+.doa-case-study-moments-list a span:last-child {
+    flex: 0 0 auto;
+    color: #8f8f8f;
+    font-size: 0.82em;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+
+.doa-case-study-moments-list a:hover,
+.doa-case-study-moments-list a:focus-visible {
+    padding-left: 0.5em;
+    color: #ff6e00;
+    outline: none;
+}
+
+.doa-case-study-moments-list a:focus-visible {
+    box-shadow: inset 3px 0 0 #ff6e00;
+}
+
+.doa-case-study-close {
+    position: absolute;
+    top: 1.25em;
+    right: 1.25em;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #ff6e00;
+    border-radius: 50%;
+    background-color: rgba(17, 17, 17, 0.92);
+    color: #ff6e00;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.doa-case-study-close:hover,
+.doa-case-study-close:focus-visible {
+    background-color: #ff6e00;
+    color: #fff;
+    transform: rotate(90deg);
+    outline: none;
+}
+
+.doa-case-study-close:focus-visible {
+    box-shadow: 0 0 0 3px #fff;
+}
+
 @media (max-width: 768px) {
     #featured-work {
         padding: 4em 1.25em;
@@ -4735,5 +4979,40 @@ blockquote ins {
     }
     .featured-work-title {
         font-size: 1.65em;
+    }
+    .doa-case-study-modal {
+        padding: 0;
+    }
+    .doa-case-study-dialog,
+    .doa-case-study-scrollable {
+        width: 100%;
+        max-height: 100dvh;
+        border-radius: 0;
+    }
+    .doa-case-study-article {
+        width: calc(100% - 2.5em);
+        padding-top: 5.5em;
+    }
+    .doa-case-study-moments-list a {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 0.35em 1em;
+    }
+    .doa-case-study-moments-list a span:last-child {
+        width: 100%;
+    }
+    .doa-case-study-close {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .doa-case-study-trigger,
+    .doa-case-study-modal,
+    .doa-case-study-dialog,
+    .doa-case-study-close {
+        transition: none;
     }
 }
