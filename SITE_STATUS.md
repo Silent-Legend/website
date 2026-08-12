@@ -42,10 +42,10 @@ Copy = **final** (bespoke objective/process) vs **placeholder** (generic boilerp
 | 12 | 698 | ASTON MARTIN | `graphic-design` | Graphic_Design/GQ_Aston_Martin.png | **final** |
 | 13 | 718 | NADIA COMANECI | `graphic-design` | Graphic_Design/Nadia Comaneci shattered 3.png | **final** |
 | 14 | 738 | ART EXHIBIT | `graphic-design` | Graphic_Design/Art_Exhibit.png | placeholder |
-| 15 | 756 | DFW GAMES LOGO | `branding-and-identity` | Branding_and_Identity/DFW_Games_Logo.webp | placeholder (+3-img gallery) |
+| 15 | 756 | DFW GAMES | `branding-and-identity` | Branding_and_Identity/DFW_Logo/dfw-games-final-silhouette-red.webp | restored (+5-img gallery) |
 | 16 | 775 | SAMURAI ARTWORK | `ai-art-and-prompt-design` | AI_Art_and_Prompt_Design/samurai_original.webp | placeholder |
 
-Multi-image galleries (`data-detail-images`): #3 Kate Winslet (7 imgs), #11 Baroque (2), #15 DFW (3). All those paths exist on disk.
+Multi-image galleries (`data-detail-images`): #3 Kate Winslet (7 imgs), #11 Baroque (2), #15 DFW (5). All those paths exist on disk.
 Note: filter button `.motion-graphics` exists but only 1 item uses it; `.motion-graphics` has no dedicated filter distinct issue.
 
 ## Pending assets (on disk under `images/Portfolio/`, NOT referenced by any HTML)
@@ -53,7 +53,7 @@ Note: filter button `.motion-graphics` exists but only 1 item uses it; `.motion-
 Staged-but-unwired originals/extras:
 - **Web_Design/** (entire folder, all untracked): `Bruce_Hero.png`, `Tolkien_Hero.png`, `Tolkien_Composite.jpg`, `Tolkien_Mobile.png`, `Tolkien_Timeline_Hero.png` — no `web-design` filter or articles exist yet.
 - **Graphic_Design/** untracked: `DUO menu.png` (10.6MB), `G.SPELL 3.png` (10.2MB), `God Spell/G.SPELL 1.png`, `God Spell/G.SPELL.png`.
-- **AI_Art_and_Prompt_Design/New folder/** (9 source files): `Dragon.png/.jpeg`, `Royalty.png`, `Split.png/.jpeg`, `samurai_original.jpg`, `DFW_Games_Logo.jpg`, `Dfw_Games_V2.jpg`, `DFW_Games_V3.jpg`.
+- **AI_Art_and_Prompt_Design/New folder/** (6 source files): `Dragon.png/.jpeg`, `Royalty.png`, `Split.png/.jpeg`, `samurai_original.jpg`.
 - **AI_Art_and_Prompt_Design/**: `Dragon.webp` + `Dragon_thumbnail.webp` (no Dragon article in root; only in worktree copy).
 - **Photography/** unwired: `Alley.jpeg` (8.1MB), `Door.jpeg`, `Sattelite_View.jpg` (6.9MB, misspelled), `Street_Level.jpeg` (14.9MB).
 - **Visual_Effects/**: `Fighter_Jet.jpeg` (unwired in root; used only in worktree).
