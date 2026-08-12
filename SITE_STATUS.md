@@ -38,7 +38,7 @@ Copy = **final** (bespoke objective/process) vs **placeholder** (generic boilerp
 | 8 | 625 | DRONE EMBASSY VIEW | `photography` | Photography/Drone_Embassy.jpeg | placeholder |
 | 9 | 643 | SNOWY CABIN LANDSCAPE | `photography` | Photography/Snowy_Cabin.jpeg | placeholder |
 | 10 | 661 | A PRIDE OF LIONS | `graphic-design` | Graphic_Design/A_Pride_Of_Lions.png | placeholder |
-| 11 | 679 | BAROQUE FRONT DESIGN | `graphic-design` | Graphic_Design/Baroque Front.png | placeholder (+2-img gallery) |
+| 11 | 679 | BAROQUE POSTCARD — BERNINI EXHIBITION | `graphic-design` | Graphic_Design/Baroque/baroque-postcard-cover.webp | restored (+2-img gallery) |
 | 12 | 698 | ASTON MARTIN | `graphic-design` | Graphic_Design/GQ_Aston_Martin.png | **final** |
 | 13 | 718 | NADIA COMANECI | `graphic-design` | Graphic_Design/Nadia Comaneci shattered 3.png | **final** |
 | 14 | 738 | ART EXHIBIT | `graphic-design` | Graphic_Design/Art_Exhibit.png | placeholder |
@@ -57,15 +57,14 @@ Staged-but-unwired originals/extras:
 - **AI_Art_and_Prompt_Design/**: `Dragon.webp` + `Dragon_thumbnail.webp` (no Dragon article in root; only in worktree copy).
 - **Photography/** unwired: `Alley.jpeg` (8.1MB), `Door.jpeg`, `Sattelite_View.jpg` (6.9MB, misspelled), `Street_Level.jpeg` (14.9MB).
 - **Visual_Effects/**: `Fighter_Jet.jpeg` (unwired in root; used only in worktree).
-- **Graphic_Design/Baroque/**: `Baroque Back.webp` (only the `.png` is wired).
 - `Retouching_and_Restoration/retouch-studio-after.png` (**37.1MB**) — superseded by the `.webp` that is actually wired.
-- All `*_thumbnail.webp` files (Royalty, Split, samurai, DFW x3, Dragon, Baroque Back, retouch-before): **not referenced** — `main.js` builds thumbnails from the full images, not from these files.
+- Remaining `*_thumbnail.webp` files (Royalty, Split, samurai, Dragon, retouch-before): **not referenced** — `main.js` builds thumbnails from the full images, not from these files.
 
 ## Known issues
 
-- **Oversized referenced images (>5MB) — will hurt load/LCP:** `Art_Exhibit.png` (18.1MB), `Baroque Front.png` (13.9MB), `Snowy_Cabin.jpeg` (9.1MB), `KW Final.png` (7.9MB, gallery), `Explosion.jpg` (7.0MB), `Drone_Embassy.jpeg` (6.8MB), `retouch-studio-before.jpg` (5.3MB, gallery).
+- **Oversized referenced images (>5MB) — will hurt load/LCP:** `Art_Exhibit.png` (18.1MB), `Snowy_Cabin.jpeg` (9.1MB), `KW Final.png` (7.9MB, gallery), `Explosion.jpg` (7.0MB), `Drone_Embassy.jpeg` (6.8MB), `retouch-studio-before.jpg` (5.3MB, gallery).
 - **Oversized unreferenced junk on disk:** `retouch-studio-after.png` (37.1MB), `Street_Level.jpeg` (14.9MB), `DUO menu.png`, `G.SPELL 3.png`, `Alley.jpeg`, plus 5–6MB PNGs in `New folder/`. Safe to delete/exclude to shrink repo.
-- **Filenames with spaces/periods** (wired, so risky if paths are ever URL-encoded): `KW Typographic Portrait.png`, `Baroque Front.png`, `Nadia Comaneci shattered 3.png`, all `KW *.png` variants, `Baroque Back.png`. Untracked ones add periods: `G.SPELL 3.png`, `G.SPELL.png`. Directories with spaces: `New folder/`, `God Spell/`.
+- **Filenames with spaces/periods** (wired, so risky if paths are ever URL-encoded): `KW Typographic Portrait.png`, `Nadia Comaneci shattered 3.png`, all `KW *.png` variants. Untracked ones add periods: `G.SPELL 3.png`, `G.SPELL.png`. Directories with spaces: `New folder/`, `God Spell/`.
 - **Misspelled asset:** `Photography/Sattelite_View.jpg` ("Sattelite" → "Satellite"); currently unwired so harmless.
 - **Orphaned pages/JS:**
   - `services.html` — not linked from `index.html`; references `assets/js/services.js` which **does not exist**, and uses a `via.placeholder.com` image for AI Art.

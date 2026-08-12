@@ -1191,6 +1191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Read all detail data from data attributes
         const detailName = item.getAttribute('data-detail-name') || allTitles[currentIndex] || 'Project';
+        const detailModalTitle = item.getAttribute('data-detail-modal-title') || detailName;
         const detailRole = item.getAttribute('data-detail-role') || '';
         const detailDescription = item.getAttribute('data-detail-description') || allDescriptions[currentIndex] || 'No description available.';
         const detailObjective = item.getAttribute('data-detail-objective') || '';
@@ -1253,7 +1254,9 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Set title
         if (modalTitle) {
-            modalTitle.textContent = detailName + (detailRole ? ` - ${detailRole}` : '');
+            modalTitle.textContent = item.hasAttribute('data-detail-modal-title')
+                ? detailModalTitle
+                : detailName + (detailRole ? ` - ${detailRole}` : '');
         }
         
         // Set description

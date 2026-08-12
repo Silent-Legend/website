@@ -73,7 +73,7 @@ Use      Fmt    File                                                Size
 -------  -----  --------------------------------------------------  --------
 USED     SRC    Graphic_Design/A_Pride_Of_Lions.png                    779 KB
 USED     SRC    Graphic_Design/Art_Exhibit.png                      18,546 KB   (heavy master; needs .webp optimization)
-USED     SRC    Graphic_Design/Baroque Front.png                    14,233 KB   (heavy master; needs .webp optimization)
+USED     WEB    Graphic_Design/Baroque/baroque-postcard-cover.webp  1,014 KB   (portfolio card/lightbox)
 USED     SRC    Graphic_Design/GQ_Aston_Martin.png                   2,145 KB
 USED     SRC    Graphic_Design/KW Typographic Portrait.png           2,017 KB
 USED     SRC    Graphic_Design/Nadia Comaneci shattered 3.png        2,621 KB
@@ -81,9 +81,8 @@ UNUSED   SRC    Graphic_Design/DUO menu.png                         10,817 KB   
 UNUSED   SRC    Graphic_Design/G.SPELL 3.png                        10,397 KB   (unwired new asset)
 
   Baroque/
-USED     SRC    Graphic_Design/Baroque/Baroque Back.png              1,243 KB   (referenced via data-detail-images)
-UNUSED   WEB    Graphic_Design/Baroque/Baroque Back.webp               198 KB   (optimized, not yet wired)
-UNUSED   THUMB  Graphic_Design/Baroque/Baroque Back Thumbnail.webp      28 KB
+USED     WEB    Graphic_Design/Baroque/baroque-postcard-front.webp   2,416 KB   (detail gallery)
+USED     WEB    Graphic_Design/Baroque/baroque-postcard-back.webp      340 KB   (detail gallery)
 
   God Spell/
 UNUSED   SRC    Graphic_Design/God Spell/G.SPELL.png                 1,915 KB
