@@ -4860,6 +4860,31 @@ blockquote ins {
     line-height: 1.85;
 }
 
+.doa-case-study-section .doa-case-study-press {
+    margin-top: 1.25em;
+    color: #8f8f8f;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+.doa-case-study-press a {
+    color: #c8c8c8;
+    text-decoration-color: rgba(255, 110, 0, 0.65);
+    text-underline-offset: 0.2em;
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.doa-case-study-press a:hover,
+.doa-case-study-press a:focus-visible {
+    color: #ff6e00;
+    text-decoration-color: #ff6e00;
+}
+
+.doa-case-study-press a:focus-visible {
+    outline: 2px solid #ff6e00;
+    outline-offset: 3px;
+}
+
 .doa-case-study-moments-intro {
     margin: -0.35em 0 1.5em;
     color: #8f8f8f;
