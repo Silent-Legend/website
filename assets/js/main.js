@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Store all portfolio data with categories
     portfolioItems.forEach((item, index) => {
-        let imageSrc = item.querySelector("img").getAttribute("src");
+        let imageSrc = item.getAttribute("data-full") || item.querySelector("img").getAttribute("src");
         let titleElement = item.querySelector(".portfolio-overlay h3");
         let descriptionElement = item.querySelector(".portfolio-overlay-description");
         let title = titleElement ? titleElement.textContent : "";
@@ -1315,8 +1315,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         
-        // Reset to AFTER state (always start on AFTER)
-        resetBeforeAfter();
+        // Before/after projects open on the original image so the restoration reads as a reveal.
+        setBeforeAfter(detailBefore ? 'before' : 'after');
         
         // Set objective
         if (detailObjective && detailObjective.trim() !== '') {
@@ -1384,6 +1384,12 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Handle WIP thumbnails for multi-image projects
         const imageSection = document.querySelector('.project-details-image-section');
+        if (imageSection) {
+            imageSection.classList.toggle(
+                'compact-portrait',
+                item.getAttribute('data-detail-image-size') === 'compact-portrait'
+            );
+        }
         if (detailImages.length > 1 && modalWipThumbnails) {
             modalWipThumbnails.style.display = 'flex';
             modalWipThumbnails.innerHTML = detailImages.map((imgSrc, imageIndex) => {

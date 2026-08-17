@@ -3174,6 +3174,23 @@ blockquote ins {
     }
 }
 
+/* Give true portrait restorations a little more breathing room without changing mobile sizing. */
+@media (min-width: 1025px) {
+    .project-details-image-section.compact-portrait .modal-image-stack .modal-project-image {
+        max-width: 88%;
+        max-height: 78vh;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .project-details-image-section.compact-portrait .modal-image-stack .modal-project-image {
+        width: auto;
+        height: 100%;
+        max-width: 88%;
+        max-height: 100%;
+    }
+}
+
 /* Contact Section */
 
 .contact-section {
