@@ -689,19 +689,20 @@
             -->
             <!-- Portfolio Item: Visual Effects -->
             <article class="portfolio-item visual-effects" role="listitem" tabindex="0"
-                data-detail-name="EXPLOSION COMPOSITE"
-                data-detail-role="Visual Effects"
-                data-detail-description="A high-impact visual effects project featuring dynamic explosion compositing with advanced particle systems and realistic lighting integration. This project showcases expertise in post-production techniques, blending multiple layers to create a seamless and dramatic visual narrative."
-                data-detail-characteristics="This project required extensive compositing expertise, working with particle simulations, color grading, and seamless integration with live-action footage. The final result demonstrates mastery of visual effects pipelines and attention to cinematic detail."
-                data-detail-client="Creative Agency"
-                data-detail-date="2024"
-                data-detail-project-url="https://silentlegend.com"
+                data-detail-name="CYBER COMPOSITE"
+                data-detail-modal-title="CYBER COMPOSITE BREAKDOWN"
+                data-detail-role="Compositing Breakdown"
+                data-detail-description="A continuous visual-effects breakdown showing the finished cyberpunk composite, original green-screen footage, environment plate, and final close-up."
+                data-detail-objective="Demonstrate how the live-action performance and digital environment combine to create the finished scene."
+                data-detail-process='{"COMPOSITING":"The performer was keyed from the green-screen footage and integrated into the neon city environment.","BREAKDOWN EDIT":"Synchronized wipes reveal the green-screen source, finished composite, and background plate while the action remains in motion. A flash transition introduces the final close-up.","PRESENTATION":"Clear stage labels, continuous sound, and a short fade-out keep the breakdown focused and easy to follow."}'
+                data-detail-characteristics="The completed breakdown presents both the finished shot and the individual elements used to construct it, making the compositing process immediately understandable."
                 data-detail-category="Visual Effects"
-                data-detail-skills='[{"name":"Creative Direction","percent":95},{"name":"Technical Execution","percent":92},{"name":"Client Satisfaction","percent":98}]'>
-                <img src="images/Portfolio/Visual_Effects/Explosion.jpg" alt="Visual Effects Project" loading="lazy" />
+                data-video-src="assets/video/cyber-composite-breakdown.mp4"
+                data-video-poster="images/Portfolio/Visual_Effects/cyber-composite-poster.webp">
+                <img src="images/Portfolio/Visual_Effects/cyber-composite-poster.webp" alt="Cyberpunk visual-effects composite with a performer in a neon city" loading="lazy" />
                 <div class="portfolio-overlay">
                     <h3>Visual Effects</h3>
-                    <p class="portfolio-overlay-description">Visual Effects Demo</p>
+                    <p class="portfolio-overlay-description">Cyber Composite Breakdown</p>
                 </div>
             </article>
 
@@ -1156,6 +1157,7 @@
                         <img id="modal-project-image-after" src="" alt="Project Image After" class="modal-project-image" />
                         <img id="modal-project-image-before" src="" alt="Project Image Before" class="modal-project-image" style="opacity: 0; pointer-events: none;" />
                     </div>
+                    <video id="modal-project-video" class="modal-project-video" controls playsinline preload="metadata" hidden></video>
                     
                     <!-- Corner Label (hidden by default) -->
                     <div id="ba-label" class="ba-label" aria-hidden="true" style="display: none;">AFTER</div>
@@ -1348,6 +1350,7 @@
                     <div class="loader-spinner"></div>
                 </div>
                 <img id="lightbox-image" class="lightbox-image" src="" alt="Lightbox Image" />
+                <video id="lightbox-video" class="lightbox-video" controls playsinline preload="metadata" hidden></video>
                 <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>

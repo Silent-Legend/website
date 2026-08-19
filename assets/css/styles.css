@@ -2730,6 +2730,21 @@ blockquote ins {
     justify-content: center;
 }
 
+.modal-image-stack[hidden],
+.modal-project-video[hidden],
+.lightbox-video[hidden] {
+    display: none;
+}
+
+.modal-project-video {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(90vh - 6em);
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #000;
+}
+
 .modal-image-stack .modal-project-image {
     position: absolute;
     top: 50%;
@@ -3688,6 +3703,19 @@ blockquote ins {
     -webkit-user-drag: none;
 }
 
+.lightbox-video {
+    position: relative;
+    z-index: 2;
+    width: min(90vw, 1600px);
+    max-width: 100%;
+    max-height: 85vh;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #000;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
 .lightbox-modal.active .lightbox-image.loaded {
     opacity: 1;
     transform: scale(1);
@@ -4029,6 +4057,11 @@ blockquote ins {
         max-height: 80vh;
         width: auto;
         height: auto;
+    }
+
+    .lightbox-video {
+        width: 100%;
+        max-height: 80vh;
     }
     
     .lightbox-center {

@@ -359,6 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightbox = document.querySelector("#lightbox");
     const lightboxModal = document.querySelector(".lightbox-modal");
     const lightboxImage = document.querySelector("#lightbox-image");
+    const lightboxVideo = document.querySelector("#lightbox-video");
     const lightboxTitle = document.querySelector("#lightbox-title-sidebar");
     const lightboxCategory = document.getElementById('lightbox-category-sidebar');
     const lightboxPrev = document.querySelector("#lightbox-prev");
@@ -577,9 +578,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function resetLightboxVideo() {
+        if (!lightboxVideo) return;
+
+        lightboxVideo.pause();
+        lightboxVideo.removeAttribute('src');
+        lightboxVideo.removeAttribute('poster');
+        lightboxVideo.load();
+        lightboxVideo.hidden = true;
+    }
+
     function updateLightboxContent() {
         // Reset image state when changing images
         resetLightboxImageState();
+        resetLightboxVideo();
         if (lightboxZoomIn) {
             lightboxZoomIn.innerHTML = '<i class="fas fa-search-plus"></i>';
         }
@@ -618,6 +630,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const detailDate = currentItem ? (currentItem.getAttribute('data-detail-date') || '') : '';
         const detailClient = currentItem ? (currentItem.getAttribute('data-detail-client') || '') : '';
         const detailDescription = currentItem ? (currentItem.getAttribute('data-detail-description') || '') : '';
+        const videoSrc = currentItem ? (currentItem.getAttribute('data-video-src') || '') : '';
+        const videoPoster = currentItem ? (currentItem.getAttribute('data-video-poster') || allImages[currentIndex]) : allImages[currentIndex];
+        const displayImage = videoPoster || allImages[currentIndex];
+
+        if (lightboxImage) {
+            lightboxImage.hidden = Boolean(videoSrc);
+        }
+        if (lightboxZoomIn) {
+            lightboxZoomIn.style.display = videoSrc ? 'none' : '';
+        }
         
         // Get category from filter or data attribute
         let categoryText = '';
@@ -646,7 +668,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const newImage = new Image();
         newImage.onload = function() {
             if (lightboxImage) {
-                lightboxImage.src = allImages[currentIndex];
+                lightboxImage.src = displayImage;
             }
             
             // Update title (project name)
@@ -727,11 +749,19 @@ document.addEventListener("DOMContentLoaded", function () {
             if (loader) {
                 loader.classList.remove('active');
             }
-            setTimeout(() => {
-                if (lightboxImage) {
-                    lightboxImage.classList.add('loaded');
-                }
-            }, 50);
+            if (videoSrc && lightboxVideo) {
+                lightboxVideo.poster = displayImage;
+                lightboxVideo.src = videoSrc;
+                lightboxVideo.hidden = false;
+                lightboxVideo.load();
+            } else {
+                if (lightboxImage) lightboxImage.hidden = false;
+                setTimeout(() => {
+                    if (lightboxImage) {
+                        lightboxImage.classList.add('loaded');
+                    }
+                }, 50);
+            }
             
             // Update thumbnails active state
             updateThumbnailsActive();
@@ -740,13 +770,19 @@ document.addEventListener("DOMContentLoaded", function () {
             if (loader) {
                 loader.classList.remove('active');
             }
-            if (lightboxImage) {
+            if (videoSrc && lightboxVideo) {
+                lightboxVideo.poster = displayImage;
+                lightboxVideo.src = videoSrc;
+                lightboxVideo.hidden = false;
+                lightboxVideo.load();
+            } else if (lightboxImage) {
                 lightboxImage.src = allImages[currentIndex];
+                lightboxImage.hidden = false;
                 lightboxImage.classList.add('loaded');
             }
             updateThumbnailsActive();
         };
-        newImage.src = allImages[currentIndex];
+        newImage.src = displayImage;
     }
     
     function updateThumbnailsActive() {
@@ -798,6 +834,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Reset image state
         resetLightboxImageState();
+        resetLightboxVideo();
         
         // Close share dropdown
         if (lightboxShareDropdown) {
@@ -854,7 +891,8 @@ document.addEventListener("DOMContentLoaded", function () {
             
             // Don't close if clicking on buttons, images, or interactive elements
             if (e.target.closest('button') && !e.target.closest('#lightbox-close') || 
-                e.target.closest('.lightbox-image') || 
+                e.target.closest('.lightbox-image') ||
+                e.target.closest('.lightbox-video') ||
                 e.target.closest('.lightbox-nav') ||
                 e.target.closest('.lightbox-sidebar-left') ||
                 e.target.closest('.lightbox-thumbnails-bottom') ||
@@ -1198,6 +1236,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const detailClient = item.getAttribute('data-detail-client') || '';
         const detailDate = item.getAttribute('data-detail-date') || '';
         const detailProjectUrl = item.getAttribute('data-detail-project-url') || '#';
+        const detailVideoSrc = item.getAttribute('data-video-src') || '';
+        const detailVideoPoster = item.getAttribute('data-video-poster') || allImages[currentIndex] || '';
         
         // Parse process data
         let processData = {};
@@ -1236,6 +1276,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Note: Old modalImage element replaced with stacked images (modalImageAfter/Before)
         const modalImageAfter = document.getElementById('modal-project-image-after');
         const modalImageBefore = document.getElementById('modal-project-image-before');
+        const modalVideo = document.getElementById('modal-project-video');
+        const modalImageStack = document.querySelector('.modal-image-stack');
+        const imageSection = document.querySelector('.project-details-image-section');
         const baToggle = document.getElementById('ba-toggle');
         const baBeforeBtn = document.getElementById('ba-before-btn');
         const baAfterBtn = document.getElementById('ba-after-btn');
@@ -1263,6 +1306,27 @@ document.addEventListener("DOMContentLoaded", function () {
         if (modalDescription) {
             modalDescription.innerHTML = `<p>${detailDescription}</p>`;
         }
+
+        if (detailVideoSrc && modalVideo) {
+            if (lightboxVideo) lightboxVideo.pause();
+            modalVideo.poster = detailVideoPoster;
+            modalVideo.src = detailVideoSrc;
+            modalVideo.hidden = false;
+            modalVideo.load();
+            if (modalImageStack) modalImageStack.hidden = true;
+        } else {
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.removeAttribute('src');
+                modalVideo.removeAttribute('poster');
+                modalVideo.load();
+                modalVideo.hidden = true;
+            }
+            if (modalImageStack) modalImageStack.hidden = false;
+        }
+        if (imageSection) {
+            imageSection.classList.toggle('video-project', Boolean(detailVideoSrc));
+        }
         
         // Set main image (use first image or current lightbox image)
         // Note: modalImage is kept for backward compatibility, but we now use modalImageAfter/Before
@@ -1279,7 +1343,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         // Setup BEFORE image - preload for smooth transition
-        if (modalImageBefore && detailBefore) {
+        if (modalImageBefore && detailBefore && !detailVideoSrc) {
             modalImageBefore.alt = detailName + ' - Before';
             // Preload the image for smooth crossfade
             const beforeImg = new Image();
@@ -1292,7 +1356,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         // Show/hide BEFORE/AFTER toggle based on whether BEFORE exists
-        if (detailBefore && detailBefore.trim() !== '') {
+        if (!detailVideoSrc && detailBefore && detailBefore.trim() !== '') {
             // Show toggle and label
             if (baToggle) {
                 baToggle.setAttribute('aria-hidden', 'false');
@@ -1316,7 +1380,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         // Before/after projects open on the original image so the restoration reads as a reveal.
-        setBeforeAfter(detailBefore ? 'before' : 'after');
+        setBeforeAfter(!detailVideoSrc && detailBefore ? 'before' : 'after');
         
         // Set objective
         if (detailObjective && detailObjective.trim() !== '') {
@@ -1383,14 +1447,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         // Handle WIP thumbnails for multi-image projects
-        const imageSection = document.querySelector('.project-details-image-section');
         if (imageSection) {
             imageSection.classList.toggle(
                 'compact-portrait',
-                item.getAttribute('data-detail-image-size') === 'compact-portrait'
+                !detailVideoSrc && item.getAttribute('data-detail-image-size') === 'compact-portrait'
             );
         }
-        if (detailImages.length > 1 && modalWipThumbnails) {
+        if (!detailVideoSrc && detailImages.length > 1 && modalWipThumbnails) {
             modalWipThumbnails.style.display = 'flex';
             modalWipThumbnails.innerHTML = detailImages.map((imgSrc, imageIndex) => {
                 const isActive = imageIndex === 0;
@@ -1570,6 +1633,19 @@ document.addEventListener("DOMContentLoaded", function () {
         if (projectDetailsModal) {
             // Reset to AFTER before closing
             resetBeforeAfter();
+
+            const modalVideo = document.getElementById('modal-project-video');
+            const modalImageStack = document.querySelector('.modal-image-stack');
+            const imageSection = document.querySelector('.project-details-image-section');
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.removeAttribute('src');
+                modalVideo.removeAttribute('poster');
+                modalVideo.load();
+                modalVideo.hidden = true;
+            }
+            if (modalImageStack) modalImageStack.hidden = false;
+            if (imageSection) imageSection.classList.remove('video-project');
             
             // Remove active class first
             projectDetailsModal.classList.remove('active');
