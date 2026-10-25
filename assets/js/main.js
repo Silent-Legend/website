@@ -366,8 +366,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxNext = document.querySelector("#lightbox-next");
     const lightboxClose = document.querySelector("#lightbox-close");
     const lightboxThumbnailsBottom = document.getElementById('lightbox-thumbnails-bottom');
-    const lightboxShare = document.getElementById('lightbox-share');
-    const lightboxShareDropdown = document.getElementById('lightbox-share-dropdown');
 
     // Declare portfolioItems once
     const portfolioItems = document.querySelectorAll(".portfolio-item");
@@ -596,11 +594,6 @@ document.addEventListener("DOMContentLoaded", function () {
             lightboxZoomIn.innerHTML = '<i class="fas fa-search-plus"></i>';
         }
         
-        // Update share links
-        if (typeof window.updateShareLinks === 'function') {
-            window.updateShareLinks();
-        }
-        
         // Show loader
         const loader = document.querySelector('.lightbox-loader');
         if (loader) {
@@ -809,10 +802,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Set aria-hidden to false BEFORE making it visible
                     activeLightbox.setAttribute('aria-hidden', 'false');
                     activeLightbox.classList.add("active");
-                    // Update share links when opening
-                    if (typeof window.updateShareLinks === 'function') {
-                        window.updateShareLinks();
-                    }
                 }
                 document.body.style.overflow = 'hidden';
                 updateLightboxContent();
@@ -835,14 +824,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Reset image state
         resetLightboxImageState();
         resetLightboxVideo();
-        
-        // Close share dropdown
-        if (lightboxShareDropdown) {
-            lightboxShareDropdown.style.display = 'none';
-            if (lightboxShare) {
-                lightboxShare.setAttribute('aria-expanded', 'false');
-            }
-        }
         
         // Exit fullscreen if active before closing
         if (document.fullscreenElement) {
@@ -1235,7 +1216,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const detailObjective = item.getAttribute('data-detail-objective') || '';
         const detailClient = item.getAttribute('data-detail-client') || '';
         const detailDate = item.getAttribute('data-detail-date') || '';
-        const detailProjectUrl = item.getAttribute('data-detail-project-url') || '#';
         const detailVideoSrc = item.getAttribute('data-video-src') || '';
         const detailVideoPoster = item.getAttribute('data-video-poster') || allImages[currentIndex] || '';
         
@@ -1289,10 +1269,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const modalProcessContent = document.getElementById('modal-process-content');
         const modalClient = document.getElementById('modal-client');
         const modalDate = document.getElementById('modal-date');
-        const modalProjectUrl = document.getElementById('modal-project-url');
         const modalClientItem = document.getElementById('modal-client-item');
         const modalDateItem = document.getElementById('modal-date-item');
-        const modalUrlItem = document.getElementById('modal-url-item');
         const modalWipThumbnails = document.getElementById('modal-wip-thumbnails');
         
         // Set title
@@ -1434,16 +1412,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (modalDate) modalDate.textContent = detailDate;
         } else {
             if (modalDateItem) modalDateItem.style.display = 'none';
-        }
-        
-        if (detailProjectUrl && detailProjectUrl !== '#') {
-            if (modalUrlItem) modalUrlItem.style.display = 'block';
-            if (modalProjectUrl) {
-                modalProjectUrl.href = detailProjectUrl;
-                modalProjectUrl.textContent = detailProjectUrl.replace(/^https?:\/\//, '').replace(/^www\./, '');
-            }
-        } else {
-            if (modalUrlItem) modalUrlItem.style.display = 'none';
         }
         
         // Handle WIP thumbnails for multi-image projects
@@ -1719,287 +1687,6 @@ document.addEventListener("DOMContentLoaded", function () {
             closeProjectDetailsModal();
         }
     });
-
-    // -----------------------------------
-    // Portfolio Detail View (Legacy - can be removed if not needed)
-    // -----------------------------------
-    const portfolioDetail = document.getElementById('portfolio-detail');
-    const detailClose = document.querySelector('.portfolio-detail-close');
-    const detailImageEl = document.getElementById('detail-image');
-    const detailNameEl = document.getElementById('detail-name');
-    const detailRoleEl = document.getElementById('detail-role');
-    const detailDescriptionEl = document.getElementById('detail-description');
-    const detailObjectiveEl = document.getElementById('detail-objective');
-    const detailObjectiveSection = document.getElementById('detail-objective-section');
-    const detailProcessEl = document.getElementById('detail-process');
-    const detailProcessSection = document.getElementById('detail-process-section');
-    const detailCharacteristicsEl = document.getElementById('detail-characteristics');
-    const detailCharacteristicsSection = document.getElementById('detail-characteristics-section');
-    const detailClientEl = document.getElementById('detail-client');
-    const detailDateEl = document.getElementById('detail-date');
-    const detailCategoryEl = document.getElementById('detail-category');
-    const detailProjectUrlEl = document.getElementById('detail-project-url');
-    
-    // Function to show portfolio detail - reads from data attributes for easy expansion
-    function showPortfolioDetail(index) {
-        const item = portfolioItems[index];
-        if (!item) return;
-        
-        // Read all detail data from data attributes
-        const detailName = item.getAttribute('data-detail-name') || allTitles[index] || 'Project';
-        const detailRole = item.getAttribute('data-detail-role') || '';
-        const detailDescription = item.getAttribute('data-detail-description') || allDescriptions[index] || 'No description available.';
-        const detailObjective = item.getAttribute('data-detail-objective') || '';
-        const detailCharacteristics = item.getAttribute('data-detail-characteristics') || '';
-        const detailClient = item.getAttribute('data-detail-client') || 'Client';
-        const detailDate = item.getAttribute('data-detail-date') || new Date().getFullYear().toString();
-        const detailCategory = item.getAttribute('data-detail-category') || '';
-        const detailProjectUrl = item.getAttribute('data-detail-project-url') || '#';
-        
-        // Parse process data from JSON data attribute
-        let processData = {};
-        try {
-            let processJson = item.getAttribute('data-detail-process');
-            if (processJson && processJson.trim() !== '') {
-                // Replace unicode escape sequences if present
-                processJson = processJson.replace(/\\u0027/g, "'");
-                processData = JSON.parse(processJson);
-            }
-        } catch (e) {
-            console.warn('Could not parse process data for item', index, e);
-        }
-        
-        // Parse skills from JSON data attribute
-        let skills = [];
-        try {
-            const skillsJson = item.getAttribute('data-detail-skills');
-            if (skillsJson) {
-                skills = JSON.parse(skillsJson);
-            }
-        } catch (e) {
-            console.warn('Could not parse skills data for item', index);
-        }
-        
-        // Set default skills if none provided
-        if (skills.length === 0) {
-            skills = [
-                { name: "Creative Direction", percent: 90 },
-                { name: "Technical Execution", percent: 88 },
-                { name: "Client Satisfaction", percent: 95 }
-            ];
-        }
-        
-        // Parse detail images from JSON data attribute
-        let detailImages = [];
-        try {
-            const imagesJson = item.getAttribute('data-detail-images');
-            if (imagesJson) {
-                detailImages = JSON.parse(imagesJson);
-            }
-        } catch (e) {
-            console.warn('Could not parse images data for item', index);
-        }
-        
-        // If no detail images array, use the single portfolio image
-        if (detailImages.length === 0) {
-            detailImages = [allImages[index]];
-        }
-        
-        // Update main image (use first image from array)
-        const mainImageSrc = detailImages[0];
-        if (detailImageEl) {
-            detailImageEl.src = mainImageSrc;
-            detailImageEl.alt = detailName;
-        }
-        
-        // Update thumbnail gallery - always show all images as thumbnails
-        const detailThumbnailsContainer = document.getElementById('detail-thumbnails');
-        if (detailThumbnailsContainer) {
-            // Always show thumbnail gallery if there are images (including single image)
-            // Include all images as thumbnails - KW Typographic Portrait.png is image 0
-            if (detailImages.length > 0) {
-                detailThumbnailsContainer.style.display = 'flex';
-                detailThumbnailsContainer.innerHTML = detailImages.map((imgSrc, imgIndex) => `
-                    <div class="detail-thumbnail-item ${imgIndex === 0 ? 'active' : ''}" data-image-index="${imgIndex}" role="button" tabindex="0" aria-label="View image ${imgIndex + 1}">
-                        <img src="${imgSrc}" alt="${detailName} - Image ${imgIndex + 1}" />
-                    </div>
-                `).join('');
-                
-                // Add click handlers for thumbnails
-                const thumbnailItems = detailThumbnailsContainer.querySelectorAll('.detail-thumbnail-item');
-                thumbnailItems.forEach((thumb) => {
-                    thumb.addEventListener('click', function() {
-                        // Get the image index from data attribute
-                        const imageIndex = parseInt(thumb.getAttribute('data-image-index'));
-                        const imageSrc = detailImages[imageIndex];
-                        
-                        // Update main image with loading state
-                        if (detailImageEl) {
-                            detailImageEl.style.opacity = '0.5';
-                            const img = new Image();
-                            img.onload = function() {
-                                detailImageEl.src = imageSrc;
-                                detailImageEl.style.opacity = '1';
-                            };
-                            img.onerror = function() {
-                                detailImageEl.style.opacity = '1';
-                                console.warn('Failed to load image:', imageSrc);
-                            };
-                            img.src = imageSrc;
-                        }
-                        
-                        // Update active thumbnail
-                        thumbnailItems.forEach(t => t.classList.remove('active'));
-                        thumb.classList.add('active');
-                    });
-                    
-                    // Keyboard support
-                    thumb.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            thumb.click();
-                        }
-                    });
-                });
-            } else {
-                // Hide thumbnail gallery if only one image, but keep container in DOM
-                detailThumbnailsContainer.style.display = 'none';
-                detailThumbnailsContainer.innerHTML = '';
-            }
-        }
-        
-        // Update basic content
-        if (detailNameEl) detailNameEl.textContent = detailName;
-        if (detailRoleEl) detailRoleEl.textContent = detailRole;
-        if (detailDescriptionEl) detailDescriptionEl.innerHTML = `<p>${detailDescription}</p>`;
-        if (detailClientEl) detailClientEl.textContent = detailClient;
-        if (detailDateEl) detailDateEl.textContent = detailDate;
-        if (detailCategoryEl) detailCategoryEl.textContent = detailCategory;
-        if (detailProjectUrlEl) {
-            detailProjectUrlEl.href = detailProjectUrl;
-            detailProjectUrlEl.textContent = detailProjectUrl.replace(/^https?:\/\//, '').replace(/^www\./, '');
-        }
-        
-        // Handle Objective section
-        if (detailObjective && detailObjective.trim() !== '') {
-            if (detailObjectiveEl) detailObjectiveEl.innerHTML = `<p>${detailObjective}</p>`;
-            if (detailObjectiveSection) detailObjectiveSection.style.display = 'block';
-        } else {
-            if (detailObjectiveSection) detailObjectiveSection.style.display = 'none';
-        }
-        
-        // Handle Process section
-        if (processData && Object.keys(processData).length > 0) {
-            if (detailProcessEl && detailProcessSection) {
-                let processHTML = '';
-                for (const [subsectionTitle, subsectionContent] of Object.entries(processData)) {
-                    processHTML += `
-                        <div class="detail-process-subsection">
-                            <h4 class="detail-process-subsection-title">${subsectionTitle}:</h4>
-                            <p class="detail-process-subsection-content">${subsectionContent}</p>
-                        </div>
-                    `;
-                }
-                detailProcessEl.innerHTML = processHTML;
-                detailProcessSection.style.display = 'block';
-            } else {
-                console.warn('Process section elements not found');
-            }
-        } else {
-            if (detailProcessSection) detailProcessSection.style.display = 'none';
-        }
-        
-        // Handle Characteristics section
-        if (detailCharacteristics && detailCharacteristics.trim() !== '') {
-            if (detailCharacteristicsEl) detailCharacteristicsEl.innerHTML = `<p>${detailCharacteristics}</p>`;
-            if (detailCharacteristicsSection) detailCharacteristicsSection.style.display = 'block';
-        } else {
-            if (detailCharacteristicsSection) detailCharacteristicsSection.style.display = 'none';
-        }
-        
-        // Update share button URLs
-        const currentUrl = encodeURIComponent(window.location.href);
-        const shareText = encodeURIComponent(`${detailName} - ${detailRole}`);
-        const shareButtons = document.querySelectorAll('.share-btn');
-        
-        shareButtons.forEach(btn => {
-            const platform = btn.classList.contains('facebook') ? 'facebook' :
-                           btn.classList.contains('twitter') ? 'twitter' :
-                           btn.classList.contains('linkedin') ? 'linkedin' : 'pinterest';
-            
-            let shareUrl = '#';
-            if (platform === 'facebook') {
-                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
-            } else if (platform === 'twitter') {
-                shareUrl = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${shareText}`;
-            } else if (platform === 'linkedin') {
-                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
-            } else if (platform === 'pinterest') {
-                shareUrl = `https://pinterest.com/pin/create/button/?url=${currentUrl}&description=${shareText}`;
-            }
-            btn.href = shareUrl;
-        });
-        
-        // Update skills
-        const skillsContainer = document.querySelector('.detail-skills');
-        if (skillsContainer && skills.length > 0) {
-            const skillsHTML = `
-                ${skills.map(skill => `
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">${skill.name}</span>
-                            <span class="skill-percentage">${skill.percent}%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-percent="${skill.percent}" style="width: 0%;"></div>
-                        </div>
-                    </div>
-                `).join('')}
-            `;
-            skillsContainer.innerHTML = skillsHTML;
-            
-            // Animate skill bars
-            setTimeout(() => {
-                const progressBars = skillsContainer.querySelectorAll('.skill-progress');
-                progressBars.forEach(bar => {
-                    const percent = bar.getAttribute('data-percent');
-                    bar.style.width = percent + '%';
-                });
-            }, 300);
-        }
-        
-        if (portfolioDetail) {
-            portfolioDetail.style.display = 'block';
-            setTimeout(() => {
-                portfolioDetail.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                // Smooth scroll to top of left column
-                const leftColumn = portfolioDetail.querySelector('.portfolio-detail-left');
-                if (leftColumn) {
-                    leftColumn.scrollTop = 0;
-                }
-            }, 10);
-        }
-    }
-    
-    function closePortfolioDetail() {
-        portfolioDetail.classList.remove('active');
-        setTimeout(() => {
-            portfolioDetail.style.display = 'none';
-            document.body.style.overflow = '';
-        }, 400);
-    }
-    
-    if (detailClose) {
-        detailClose.addEventListener('click', closePortfolioDetail);
-        detailClose.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                closePortfolioDetail();
-            }
-        });
-    }
-
 
     // -----------------------------------
     // Filter Toggle and Filtering

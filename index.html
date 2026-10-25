@@ -53,10 +53,36 @@
     <!-- Manifest will be loaded conditionally via script to avoid CORS errors with file:// protocol -->
     <link rel="mask-icon" href="images/Fav/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#0d0d0d" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Silent Legend",
+        "url": "https://silentlegend.com/",
+        "logo": "https://silentlegend.com/images/Hero/logo.png",
+        "description": "Independent creative practice offering visual effects, motion graphics, web design, graphic design, photography, retouching, and AI-enhanced creative production.",
+        "slogan": "Design re-imagined.",
+        "knowsAbout": [
+            "Visual effects",
+            "Motion graphics",
+            "Web design",
+            "Graphic design",
+            "Photography",
+            "Photo retouching and restoration",
+            "AI art and prompt design"
+        ],
+        "potentialAction": {
+            "@type": "ContactAction",
+            "name": "Discuss a project or opportunity",
+            "target": "https://silentlegend.com/#contact"
+        }
+    }
+    </script>
 </head>
 
 <body class="is-preload">
+    <!-- Reviewing the source? Nice attention to detail. Silent Legend welcomes thoughtful collaborations—say hello through the contact form. -->
     <!-- Loading Bar -->
     <div id="loading-bar" class="loading-bar" aria-hidden="false" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
         <div class="loading-bar-progress"></div>
@@ -679,13 +705,8 @@
                    - data-detail-characteristics: Additional project details (CHARACTERISTICS section)
                    - data-detail-client: Client name
                    - data-detail-date: Project date/year
-                   - data-detail-project-url: Project URL (optional, defaults to #)
                    - data-detail-category: Project category
-                   - data-detail-skills: JSON array of skills (see example format below)
                 5. Add the category class (visual-effects, motion-graphics, graphic-design, photography, retouching-and-restoration, ai-art-and-prompt-design, branding-and-identity)
-                
-                Skills format example:
-                data-detail-skills='[{"name":"Skill Name","percent":95},{"name":"Another Skill","percent":90}]'
             -->
             <!-- Portfolio Item: Visual Effects -->
             <article class="portfolio-item visual-effects" role="listitem" tabindex="0"
@@ -1032,94 +1053,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Detail View -->
-    <section id="portfolio-detail" class="portfolio-detail-section" style="display: none;">
-        <button class="portfolio-detail-close" aria-label="Close portfolio detail">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="portfolio-detail-container">
-            <!-- Left Column: Content -->
-            <div class="portfolio-detail-left">
-                <!-- Project Header -->
-                <div class="detail-header">
-                    <h1 id="detail-name" class="detail-main-title">Project Name</h1>
-                    <h2 id="detail-role" class="detail-subtitle">Project Role</h2>
-                </div>
-
-                <!-- PROJECT OVERVIEW Section -->
-                <section class="detail-section">
-                    <h3 class="detail-section-title">PROJECT OVERVIEW</h3>
-                    <div id="detail-description" class="detail-description">
-                        <p>Project description will appear here...</p>
-                    </div>
-                    <!-- Share Section -->
-                    <div class="detail-share">
-                        <h6 class="share-label">SHARE:</h6>
-                        <div class="share-buttons">
-                            <a href="#" class="share-btn facebook" aria-label="Share on Facebook" target="_blank" rel="noopener">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="share-btn twitter" aria-label="Share on Twitter" target="_blank" rel="noopener">
-                                <i class="fab fa-x-twitter"></i>
-                            </a>
-                            <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn" target="_blank" rel="noopener">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="share-btn pinterest" aria-label="Share on Pinterest" target="_blank" rel="noopener">
-                                <i class="fab fa-pinterest"></i>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- OBJECTIVE Section -->
-                <section class="detail-section" id="detail-objective-section" style="display: none;">
-                    <h3 class="detail-section-title">OBJECTIVE</h3>
-                    <div id="detail-objective" class="detail-description">
-                        <p>Objective will appear here...</p>
-                    </div>
-                </section>
-
-                <!-- DESIGN PROCESS & TECHNIQUE Section -->
-                <section class="detail-section" id="detail-process-section">
-                    <h3 class="detail-section-title">DESIGN PROCESS & TECHNIQUE</h3>
-                    <div id="detail-process" class="detail-process-content">
-                        <!-- Process content will be dynamically inserted here -->
-                    </div>
-                </section>
-
-                <!-- Project Meta Information -->
-                <div class="detail-meta">
-                    <div class="meta-item">
-                        <h6 class="meta-label">CLIENT:</h6>
-                        <span id="detail-client" class="meta-value">Client Name</span>
-                    </div>
-                    <div class="meta-item">
-                        <h6 class="meta-label">DATE:</h6>
-                        <span id="detail-date" class="meta-value">2024</span>
-                    </div>
-                    <div class="meta-item">
-                        <h6 class="meta-label">PROJECT:</h6>
-                        <a id="detail-project-url" href="#" class="meta-value meta-link" target="_blank" rel="noopener">www.yourlink.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Images -->
-            <div class="portfolio-detail-right">
-                <div class="detail-images-wrapper">
-                    <!-- Thumbnail Gallery -->
-                    <div class="detail-thumbnails" id="detail-thumbnails" style="display: none;">
-                        <!-- Thumbnails will be dynamically generated here -->
-                    </div>
-                    <div class="detail-image-main">
-                        <img id="detail-image" src="" alt="Portfolio Detail Image" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Showreel Modal -->
     <div id="showreel-modal" class="showreel-modal" role="dialog" aria-modal="true" aria-labelledby="showreel-modal-title" aria-hidden="true" hidden>
         <div class="showreel-modal-backdrop" data-showreel-close></div>
@@ -1154,8 +1087,8 @@
                     
                     <!-- Stacked Images Container -->
                     <div class="modal-image-stack">
-                        <img id="modal-project-image-after" src="" alt="Project Image After" class="modal-project-image" />
-                        <img id="modal-project-image-before" src="" alt="Project Image Before" class="modal-project-image" style="opacity: 0; pointer-events: none;" />
+                        <img id="modal-project-image-after" alt="" class="modal-project-image" />
+                        <img id="modal-project-image-before" alt="" class="modal-project-image" style="opacity: 0; pointer-events: none;" />
                     </div>
                     <video id="modal-project-video" class="modal-project-video" controls playsinline preload="metadata" hidden></video>
                     
@@ -1171,10 +1104,8 @@
                 <!-- Right: Content Section -->
                 <div class="project-details-text-section">
                     <div class="project-details-scrollable">
-                        <h1 id="modal-project-title" class="modal-project-title">Project Title</h1>
-                        <div id="modal-project-description" class="modal-project-description">
-                            <p>Project description will appear here...</p>
-                        </div>
+                        <h1 id="modal-project-title" class="modal-project-title"></h1>
+                        <div id="modal-project-description" class="modal-project-description"></div>
                         
                         <!-- Optional Sections -->
                         <div id="modal-project-objective" class="modal-project-section" style="display: none;">
@@ -1201,10 +1132,6 @@
                             <div class="modal-meta-item" id="modal-date-item" style="display: none;">
                                 <span class="modal-meta-label">DATE:</span>
                                 <span id="modal-date" class="modal-meta-value"></span>
-                            </div>
-                            <div class="modal-meta-item" id="modal-url-item" style="display: none;">
-                                <span class="modal-meta-label">PROJECT:</span>
-                                <a id="modal-project-url" href="#" class="modal-meta-value modal-meta-link" target="_blank" rel="noopener"></a>
                             </div>
                         </div>
                     </div>
@@ -1313,16 +1240,6 @@
                 <button class="lightbox-icon-btn" aria-label="Fullscreen" title="Fullscreen" id="lightbox-fullscreen">
                     <i class="fas fa-expand"></i>
                 </button>
-                <div class="lightbox-share-wrapper">
-                    <button id="lightbox-share" class="lightbox-icon-btn" aria-label="Share" aria-haspopup="true" aria-expanded="false" title="Share">
-                        <i class="fas fa-share-alt"></i>
-                    </button>
-                    <ul id="lightbox-share-dropdown" class="lightbox-share-dropdown" style="display: none;">
-                        <li><a id="lightbox-share-facebook" class="lightbox-share-link" href="#" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-                        <li><a id="lightbox-share-twitter" class="lightbox-share-link" href="#" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i><span>Twitter</span></a></li>
-                        <li><a id="lightbox-share-pinterest" class="lightbox-share-link" href="#" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
-                    </ul>
-                </div>
                 <button id="lightbox-close" class="lightbox-icon-btn" aria-label="Close lightbox" title="Close">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1335,8 +1252,8 @@
             <aside class="lightbox-sidebar-left" id="lightbox-sidebar">
                 <div class="lightbox-sidebar-content">
                     <div class="lightbox-info">
-                        <div id="lightbox-title-sidebar" class="info-title">Project Title</div>
-                        <div id="lightbox-category-sidebar" class="info-sub">Category</div>
+                        <div id="lightbox-title-sidebar" class="info-title"></div>
+                        <div id="lightbox-category-sidebar" class="info-sub"></div>
                         <div id="lightbox-role-sidebar" class="info-role" style="display: none;"></div>
                         <div id="lightbox-meta-sidebar" class="info-meta" style="display: none;"></div>
                         <div id="lightbox-desc-sidebar" class="info-desc" style="display: none;"></div>
@@ -1349,7 +1266,7 @@
                 <div class="lightbox-loader" aria-hidden="true">
                     <div class="loader-spinner"></div>
                 </div>
-                <img id="lightbox-image" class="lightbox-image" src="" alt="Lightbox Image" />
+                <img id="lightbox-image" class="lightbox-image" alt="" />
                 <video id="lightbox-video" class="lightbox-video" controls playsinline preload="metadata" hidden></video>
                 <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
