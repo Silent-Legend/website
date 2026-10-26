@@ -425,9 +425,7 @@ p {
 }
 
 .brand-signature {
-    margin: 11px 0 0;
-    padding-top: 9px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 12px 0 0;
     color: #9b9ea8;
     font-family: var(--display);
     font-size: 10px;
