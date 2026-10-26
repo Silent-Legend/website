@@ -184,14 +184,9 @@
             const viewportHeight = window.innerHeight;
 
             if (rect.bottom > 0 && rect.top < viewportHeight) {
-                const sectionCenter = rect.top + (rect.height / 2);
-                const viewportCenter = viewportHeight / 2;
-                const range = (viewportHeight + rect.height) / 2;
-                const progress = Math.max(-1, Math.min(1, (viewportCenter - sectionCenter) / range));
-                // Let the artwork visibly lag behind the document as the full-screen
-                // section crosses the viewport. Overscan prevents exposed edges.
-                const travel = rect.height * (window.innerWidth <= 700 ? 0.16 : 0.12);
-                samuraiImage.style.setProperty("--samurai-parallax-y", `${progress * travel}px`);
+                // Counter the section's document movement so the artwork remains
+                // pinned to the viewport while the quote scrolls across it.
+                samuraiImage.style.setProperty("--samurai-parallax-y", `${-rect.top}px`);
             }
 
             samuraiFrame = 0;
