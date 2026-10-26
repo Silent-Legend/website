@@ -7,6 +7,7 @@
     const projectDialog = document.getElementById("project-dialog");
     const showreelDialog = document.getElementById("showreel-dialog");
     const showreelPlayer = document.getElementById("showreel-player");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const projectData = {
         cyber: {
@@ -63,7 +64,7 @@
     });
 
     const revealItems = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if ("IntersectionObserver" in window && !reducedMotion) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
@@ -172,8 +173,38 @@
         toggleDialogState(false);
     });
 
+    const samuraiSection = document.querySelector(".samurai-interlude");
+    const samuraiImage = document.querySelector(".samurai-image");
+
+    if (samuraiSection && samuraiImage && !reducedMotion) {
+        let samuraiFrame = 0;
+
+        const updateSamuraiParallax = () => {
+            const rect = samuraiSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            if (rect.bottom > 0 && rect.top < viewportHeight) {
+                const sectionCenter = rect.top + (rect.height / 2);
+                const viewportCenter = viewportHeight / 2;
+                const range = (viewportHeight + rect.height) / 2;
+                const progress = Math.max(-1, Math.min(1, (viewportCenter - sectionCenter) / range));
+                const travel = window.innerWidth <= 700 ? 24 : 58;
+                samuraiImage.style.setProperty("--samurai-parallax-y", `${progress * travel}px`);
+            }
+
+            samuraiFrame = 0;
+        };
+
+        const queueSamuraiParallax = () => {
+            if (!samuraiFrame) samuraiFrame = window.requestAnimationFrame(updateSamuraiParallax);
+        };
+
+        updateSamuraiParallax();
+        window.addEventListener("scroll", queueSamuraiParallax, { passive: true });
+        window.addEventListener("resize", queueSamuraiParallax);
+    }
+
     const identityVideo = document.getElementById("identity-video");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     const saveData = Boolean(connection && connection.saveData);
 

@@ -371,15 +371,31 @@ p {
 .featured-actions {
     margin-top: 30px;
     display: flex;
-    align-items: center;
     gap: 24px;
     flex-wrap: wrap;
 }
 
+.hero-actions {
+    align-items: flex-start;
+}
+
+.featured-actions {
+    align-items: center;
+}
+
 .showreel-stack {
-    width: max-content;
+    width: clamp(140px, 38vw, 190px);
     display: grid;
     justify-items: stretch;
+}
+
+.showreel-stack .text-button {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 0;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 18px);
+    white-space: nowrap;
 }
 
 .button,
@@ -853,8 +869,10 @@ p {
 
 .samurai-image {
     z-index: -2;
+    inset: -10% 0;
     background: url("../images/AI_Art/samurai_original.png") center 70% / cover no-repeat;
-    transform: scale(1.02);
+    transform: translate3d(0, var(--samurai-parallax-y, 0px), 0) scale(1.06);
+    will-change: transform;
 }
 
 .samurai-shade {
@@ -1489,6 +1507,11 @@ dialog::backdrop {
 
     .identity-film video {
         display: none;
+    }
+
+    .samurai-image {
+        inset: 0;
+        transform: scale(1.02);
     }
 
     .reveal {
