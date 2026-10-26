@@ -188,9 +188,9 @@
                 const viewportCenter = viewportHeight / 2;
                 const range = (viewportHeight + rect.height) / 2;
                 const progress = Math.max(-1, Math.min(1, (viewportCenter - sectionCenter) / range));
-                // Let the artwork visibly lag behind the document as the section
-                // crosses the viewport. The oversized image prevents exposed edges.
-                const travel = rect.height * (window.innerWidth <= 700 ? 0.34 : 0.28);
+                // Let the artwork visibly lag behind the document as the full-screen
+                // section crosses the viewport. Overscan prevents exposed edges.
+                const travel = rect.height * (window.innerWidth <= 700 ? 0.16 : 0.12);
                 samuraiImage.style.setProperty("--samurai-parallax-y", `${progress * travel}px`);
             }
 

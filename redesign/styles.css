@@ -854,7 +854,8 @@ p {
 
 .samurai-interlude {
     position: relative;
-    min-height: clamp(440px, 64vh, 680px);
+    min-height: 100vh;
+    min-height: 100dvh;
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -869,8 +870,8 @@ p {
 
 .samurai-image {
     z-index: -2;
-    inset: -32% 0;
-    background: url("../images/AI_Art/samurai_original.png") center 70% / cover no-repeat;
+    inset: -18% 0;
+    background: url("../images/AI_Art/samurai_original.png") center / cover no-repeat;
     transform: translate3d(0, var(--samurai-parallax-y, 0px), 0) scale(1.03);
     will-change: transform;
 }
@@ -955,7 +956,8 @@ p {
 
 .identity-film {
     position: relative;
-    height: clamp(260px, 38vw, 500px);
+    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background: #08111c url("../assets/video/logo-storm-poster.webp") center / cover no-repeat;
 }
@@ -1448,12 +1450,13 @@ dialog::backdrop {
     }
 
     .samurai-interlude {
-        min-height: 470px;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .samurai-image {
-        inset: -38% 0;
-        background-position: center 73%;
+        inset: -18% 0;
+        background-position: center;
     }
 
     .samurai-interlude blockquote {
@@ -1461,7 +1464,8 @@ dialog::backdrop {
     }
 
     .identity-film {
-        height: 270px;
+        height: 100vh;
+        height: 100dvh;
     }
 
     .contact-heading h2 {
