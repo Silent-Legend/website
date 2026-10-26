@@ -173,34 +173,6 @@
         toggleDialogState(false);
     });
 
-    const samuraiSection = document.querySelector(".samurai-interlude");
-    const samuraiImage = document.querySelector(".samurai-image");
-
-    if (samuraiSection && samuraiImage && !reducedMotion) {
-        let samuraiFrame = 0;
-
-        const updateSamuraiParallax = () => {
-            const rect = samuraiSection.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-
-            if (rect.bottom > 0 && rect.top < viewportHeight) {
-                // Counter the section's document movement so the artwork remains
-                // pinned to the viewport while the quote scrolls across it.
-                samuraiImage.style.setProperty("--samurai-parallax-y", `${-rect.top}px`);
-            }
-
-            samuraiFrame = 0;
-        };
-
-        const queueSamuraiParallax = () => {
-            if (!samuraiFrame) samuraiFrame = window.requestAnimationFrame(updateSamuraiParallax);
-        };
-
-        updateSamuraiParallax();
-        window.addEventListener("scroll", queueSamuraiParallax, { passive: true });
-        window.addEventListener("resize", queueSamuraiParallax);
-    }
-
     const identityVideo = document.getElementById("identity-video");
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     const saveData = Boolean(connection && connection.saveData);
