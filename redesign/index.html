@@ -54,7 +54,6 @@
     <main id="main-content">
         <section class="hero" id="top" aria-labelledby="hero-title">
             <div class="hero-atmosphere" aria-hidden="true"></div>
-            <img class="hero-emblem" src="../images/Hero/Hero_Logo.webp" alt="" width="1200" height="1200" fetchpriority="high">
 
             <div class="hero-content">
                 <p class="eyebrow">Independent creative studio · Joel Pagán</p>
@@ -62,9 +61,11 @@
                 <p class="hero-intro">Design, motion, and imagery shaped by one creative vision—from the first idea to the final frame.</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
-                    <button class="text-button" type="button" data-open-showreel><span aria-hidden="true">▶</span> Watch the showreel</button>
+                    <div class="showreel-stack">
+                        <button class="text-button" type="button" data-open-showreel><span aria-hidden="true">▶</span> Watch the showreel</button>
+                        <p class="brand-signature"><span>DESIGN</span> <small>re</small>-IMAGINED</p>
+                    </div>
                 </div>
-                <p class="brand-signature"><span>DESIGN</span> <small>re</small>-IMAGINED</p>
             </div>
 
             <div class="hero-footer" aria-hidden="true">
@@ -93,8 +94,15 @@
                 </div>
             </header>
 
+            <div class="work-filters reveal" role="group" aria-label="Filter selected work">
+                <button type="button" class="work-filter is-active" data-filter="all" aria-pressed="true">All work</button>
+                <button type="button" class="work-filter" data-filter="image" aria-pressed="false">Image &amp; imagination</button>
+                <button type="button" class="work-filter" data-filter="design" aria-pressed="false">Design &amp; identity</button>
+                <button type="button" class="work-filter" data-filter="photography" aria-pressed="false">Photography</button>
+            </div>
+
             <div class="project-grid">
-                <button class="project-card project-card-wide reveal" type="button" data-project="cyber" aria-label="View Cyber Composite details">
+                <button class="project-card project-card-wide reveal" type="button" data-project="cyber" data-category="image" aria-label="View Cyber Composite details">
                     <span class="project-image">
                         <img src="../images/Portfolio/Visual_Effects/cyber-composite-poster.webp" alt="Live-action performer composited into a neon city environment" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -105,7 +113,7 @@
                     </span>
                 </button>
 
-                <button class="project-card reveal" type="button" data-project="kingdom" aria-label="View The Kingdom in Her Keeping details">
+                <button class="project-card reveal" type="button" data-project="kingdom" data-category="image" aria-label="View The Kingdom in Her Keeping details">
                     <span class="project-image">
                         <img src="../images/Portfolio/AI_Art_and_Prompt_Design/Royalty.webp" alt="A sovereign woman holding a floating gothic kingdom" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -116,7 +124,7 @@
                     </span>
                 </button>
 
-                <button class="project-card project-card-brand reveal" type="button" data-project="dfw" aria-label="View DFW Games identity details">
+                <button class="project-card project-card-brand reveal" type="button" data-project="dfw" data-category="design" aria-label="View DFW Games identity details">
                     <span class="project-image">
                         <img src="../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-final-silhouette-red.webp" alt="DFW Games logo combining the Dallas skyline with graffiti-inspired lettering" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -127,7 +135,7 @@
                     </span>
                 </button>
 
-                <button class="project-card project-card-wide reveal" type="button" data-project="restoration" aria-label="View Family Portrait Restoration details">
+                <button class="project-card project-card-wide reveal" type="button" data-project="restoration" data-category="photography" aria-label="View Family Portrait Restoration details">
                     <span class="project-image">
                         <img src="../images/Portfolio/Retouching_and_Restoration/Family_Portrait_Restoration/family-portrait-restoration-thumbnail.webp" alt="Restored and colorized family portrait" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>

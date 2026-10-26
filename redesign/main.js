@@ -2,7 +2,6 @@
     "use strict";
 
     const body = document.body;
-    const header = document.getElementById("site-header");
     const menuButton = document.querySelector(".menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
     const projectDialog = document.getElementById("project-dialog");
@@ -63,10 +62,6 @@
         }
     });
 
-    const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 28);
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-
     const revealItems = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -80,6 +75,25 @@
     } else {
         revealItems.forEach((item) => item.classList.add("is-visible"));
     }
+
+    const workFilters = document.querySelectorAll("[data-filter]");
+    const projectCards = document.querySelectorAll(".project-card[data-category]");
+
+    workFilters.forEach((filterButton) => {
+        filterButton.addEventListener("click", () => {
+            const selectedFilter = filterButton.dataset.filter;
+
+            workFilters.forEach((button) => {
+                const isActive = button === filterButton;
+                button.classList.toggle("is-active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+
+            projectCards.forEach((card) => {
+                card.hidden = selectedFilter !== "all" && card.dataset.category !== selectedFilter;
+            });
+        });
+    });
 
     const toggleDialogState = (open) => body.classList.toggle("dialog-open", open);
 

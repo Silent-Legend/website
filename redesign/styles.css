@@ -21,7 +21,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--header-height) + 34px);
+    scroll-padding-top: 24px;
 }
 
 body {
@@ -106,7 +106,7 @@ textarea:focus-visible {
 }
 
 .site-header {
-    position: fixed;
+    position: absolute;
     top: 34px;
     left: 0;
     right: 0;
@@ -117,14 +117,14 @@ textarea:focus-visible {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid transparent;
-    transition: background 220ms ease, border-color 220ms ease, backdrop-filter 220ms ease;
+    transition: background 220ms ease, border-color 220ms ease;
 }
 
-.site-header.scrolled,
 body.menu-open .site-header {
-    background: rgba(8, 10, 15, 0.86);
+    position: fixed;
+    top: 0;
+    background: rgba(8, 10, 15, 0.98);
     border-color: var(--line);
-    backdrop-filter: blur(18px);
 }
 
 .wordmark {
@@ -214,7 +214,8 @@ body.menu-open .site-header {
 .mobile-menu {
     position: fixed;
     z-index: 90;
-    inset: 34px 0 0;
+    inset: 0;
+    padding-top: var(--header-height);
     display: grid;
     place-items: center;
     background:
@@ -278,10 +279,10 @@ body.menu-open .site-header {
     z-index: -3;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(8, 10, 15, 0.98) 0%, rgba(8, 10, 15, 0.83) 38%, rgba(8, 10, 15, 0.25) 72%),
-        linear-gradient(0deg, var(--bg) 0%, transparent 28%),
-        url("../images/Hero/HERO_BG.webp") center / cover no-repeat;
-    opacity: 0.72;
+        linear-gradient(90deg, rgba(8, 10, 15, 0.99) 0%, rgba(8, 10, 15, 0.94) 29%, rgba(8, 10, 15, 0.56) 55%, rgba(8, 10, 15, 0.12) 78%),
+        linear-gradient(0deg, var(--bg) 0%, transparent 32%),
+        url("../images/Portfolio/Visual_Effects/cyber-composite-poster.webp") 65% center / cover no-repeat;
+    opacity: 0.94;
 }
 
 .hero::before {
@@ -309,19 +310,8 @@ body.menu-open .site-header {
     filter: blur(10px);
 }
 
-.hero-emblem {
-    position: absolute;
-    z-index: -1;
-    right: clamp(-180px, -6vw, -70px);
-    top: 50%;
-    width: min(65vw, 900px);
-    transform: translateY(-48%);
-    object-fit: contain;
-    filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.65));
-}
-
 .hero-content {
-    width: min(100%, 920px);
+    width: min(100%, 760px);
     position: relative;
     z-index: 1;
 }
@@ -386,6 +376,12 @@ p {
     flex-wrap: wrap;
 }
 
+.showreel-stack {
+    width: max-content;
+    display: grid;
+    justify-items: stretch;
+}
+
 .button,
 .text-button,
 .text-link {
@@ -429,12 +425,16 @@ p {
 }
 
 .brand-signature {
-    margin: 48px 0 0;
+    margin: 11px 0 0;
+    padding-top: 9px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: #9b9ea8;
     font-family: var(--display);
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.21em;
+    line-height: 1;
+    text-align: center;
 }
 
 .brand-signature span {
@@ -525,6 +525,48 @@ p {
     text-transform: uppercase;
 }
 
+.work-filters {
+    margin: -22px 0 34px;
+    display: flex;
+    align-items: center;
+    gap: 7px 24px;
+    flex-wrap: wrap;
+}
+
+.work-filter {
+    position: relative;
+    padding: 7px 0;
+    border: 0;
+    background: none;
+    color: #777d89;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition: color 180ms ease;
+}
+
+.work-filter::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 2px;
+    height: 1px;
+    background: var(--crimson-bright);
+    transition: right 180ms ease;
+}
+
+.work-filter:hover,
+.work-filter.is-active {
+    color: var(--ink);
+}
+
+.work-filter.is-active::after {
+    right: 0;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: 1.14fr 0.86fr;
@@ -539,6 +581,10 @@ p {
     background: none;
     text-align: left;
     cursor: pointer;
+}
+
+.project-card[hidden] {
+    display: none;
 }
 
 .project-image {
@@ -1182,16 +1228,9 @@ dialog::backdrop {
 
     .hero-atmosphere {
         background:
-            linear-gradient(0deg, var(--bg) 0%, rgba(8,10,15,0.65) 44%, rgba(8,10,15,0.22) 100%),
-            url("../images/Hero/HERO_BG.webp") center / cover no-repeat;
-    }
-
-    .hero-emblem {
-        right: 50%;
-        top: 44%;
-        width: min(88vw, 720px);
-        transform: translate(50%, -62%);
-        opacity: 0.82;
+            linear-gradient(0deg, var(--bg) 0%, rgba(8,10,15,0.82) 40%, rgba(8,10,15,0.08) 78%),
+            linear-gradient(90deg, rgba(8,10,15,0.82) 0%, rgba(8,10,15,0.15) 78%),
+            url("../images/Portfolio/Visual_Effects/cyber-composite-poster.webp") 64% center / cover no-repeat;
     }
 
     .hero-content {
@@ -1278,10 +1317,6 @@ dialog::backdrop {
         font-size: 9px;
     }
 
-    .site-header {
-        top: 34px;
-    }
-
     .hero {
         min-height: 820px;
         padding-top: calc(var(--header-height) + 82px);
@@ -1292,10 +1327,11 @@ dialog::backdrop {
         background-size: 42px 42px;
     }
 
-    .hero-emblem {
-        top: 41%;
-        width: 112vw;
-        opacity: 0.62;
+    .hero-atmosphere {
+        background:
+            linear-gradient(0deg, var(--bg) 0%, rgba(8,10,15,0.9) 43%, rgba(8,10,15,0.12) 82%),
+            linear-gradient(90deg, rgba(8,10,15,0.72) 0%, rgba(8,10,15,0.08) 82%),
+            url("../images/Portfolio/Visual_Effects/cyber-composite-poster.webp") 63% center / cover no-repeat;
     }
 
     .hero h1 {
@@ -1313,7 +1349,13 @@ dialog::backdrop {
     }
 
     .brand-signature {
-        margin-top: 35px;
+        margin-top: 10px;
+    }
+
+    .work-filters {
+        margin-top: -8px;
+        margin-bottom: 28px;
+        gap: 5px 18px;
     }
 
     .hero-footer span:last-child {
