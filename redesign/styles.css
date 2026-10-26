@@ -869,9 +869,9 @@ p {
 
 .samurai-image {
     z-index: -2;
-    inset: -10% 0;
+    inset: -32% 0;
     background: url("../images/AI_Art/samurai_original.png") center 70% / cover no-repeat;
-    transform: translate3d(0, var(--samurai-parallax-y, 0px), 0) scale(1.06);
+    transform: translate3d(0, var(--samurai-parallax-y, 0px), 0) scale(1.03);
     will-change: transform;
 }
 
@@ -1452,6 +1452,7 @@ dialog::backdrop {
     }
 
     .samurai-image {
+        inset: -38% 0;
         background-position: center 73%;
     }
 
