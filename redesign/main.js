@@ -26,18 +26,135 @@
         },
         dfw: {
             title: "DFW Games",
-            type: "Paid professional work / Branding and identity",
+            type: "Client work / Branding and identity",
             description: "A logo redesign that retains the Dallas skyline while introducing a more energetic, graffiti-influenced visual language. Successive variations refined the silhouettes, palette, lettering, and relationship between the skyline and the name.",
-            image: "../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-final-silhouette-red.webp",
-            alt: "DFW Games logo combining the Dallas skyline with graffiti-inspired lettering",
+            stages: [
+                { label: "Original", src: "../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-original.webp", alt: "Original DFW Games logo" },
+                { label: "Purple study", src: "../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-redesign-purple.webp", alt: "Purple DFW Games logo redesign study" },
+                { label: "Green study", src: "../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-redesign-green.webp", alt: "Green DFW Games logo redesign study" },
+                { label: "White study", src: "../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-redesign-white.webp", alt: "White DFW Games logo redesign study" },
+                { label: "Final", src: "../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-final-silhouette-red.webp", alt: "Final DFW Games logo combining the Dallas skyline with graffiti-inspired lettering" }
+            ],
             contain: true
         },
         restoration: {
             title: "Family Portrait Restoration",
             type: "Private client / Restoration and colorization",
             description: "Restoration and colorization of a heavily damaged family portrait. Missing areas, cracks, stains, and tonal damage were repaired while preserving the subject's likeness and the character of the original photograph.",
-            image: "../images/Portfolio/Retouching_and_Restoration/Family_Portrait_Restoration/family-portrait-restoration-colorized.webp",
-            alt: "Restored and colorized family portrait"
+            stages: [
+                { label: "Original", src: "../images/Portfolio/Retouching_and_Restoration/Family_Portrait_Restoration/family-portrait-restoration-before.webp", alt: "Original heavily damaged family portrait" },
+                { label: "Restored B&W", src: "../images/Portfolio/Retouching_and_Restoration/Family_Portrait_Restoration/family-portrait-restoration-restored-bw.webp", alt: "Restored black-and-white family portrait" },
+                { label: "Colorized", src: "../images/Portfolio/Retouching_and_Restoration/Family_Portrait_Restoration/family-portrait-restoration-colorized.webp", alt: "Restored and colorized family portrait" }
+            ]
+        },
+        "digital-iris": {
+            title: "Digital Iris",
+            type: "Motion graphics",
+            description: "An abstract digital-eye animation built around fluid motion, layered geometry, and chromatic transitions.",
+            image: "../images/Portfolio/Motion_Graphics/Digital_Iris.jpg",
+            alt: "Abstract digital iris motion-graphics artwork"
+        },
+        "kate-winslet": {
+            title: "Kate Winslet",
+            type: "Academic project / Typographic portrait",
+            description: "A typographic portrait shaped from passages attributed to Kate Winslet. Layered text follows the portrait's tonal structure so the words construct the likeness rather than simply sitting over it.",
+            stages: [
+                { label: "Color study", src: "../images/Portfolio/Graphic_Design/Kate_Winslet/KW Color.png", alt: "Color study for the Kate Winslet typographic portrait" },
+                { label: "B&W study", src: "../images/Portfolio/Graphic_Design/Kate_Winslet/KW BW.png", alt: "Black-and-white study for the Kate Winslet typographic portrait" },
+                { label: "Final", src: "../images/Portfolio/Graphic_Design/Kate_Winslet/KW Final.png", alt: "Final Kate Winslet typographic portrait" }
+            ]
+        },
+        headshot: {
+            title: "Professional Headshot",
+            type: "Private client / Photography and retouching",
+            description: "A professional portrait photographed against green screen, then extracted, naturally retouched, and finished against a neutral studio background. Additional wardrobe treatments were created later as independent presentation studies.",
+            stages: [
+                { label: "Green screen", src: "../images/Portfolio/Retouching_and_Restoration/Headshot/headshot-before-greenscreen.webp", alt: "Professional portrait photographed against green screen" },
+                { label: "Delivered", src: "../images/Portfolio/Retouching_and_Restoration/Headshot/headshot-delivered.webp", alt: "Finished professional headshot delivered to the client" },
+                { label: "White-shirt study", src: "../images/Portfolio/Retouching_and_Restoration/Headshot/headshot-wardrobe-white.webp", alt: "Independent white-shirt wardrobe treatment" },
+                { label: "Blazer study", src: "../images/Portfolio/Retouching_and_Restoration/Headshot/headshot-wardrobe-blazer.webp", alt: "Independent blazer wardrobe treatment" }
+            ]
+        },
+        "military-composite": {
+            title: "Military Composite",
+            type: "Photo compositing",
+            description: "A military-themed photographic composite focused on bringing separate portrait and environmental elements into one cinematic frame through masking, lighting alignment, and color treatment.",
+            image: "../images/Portfolio/Retouching_and_Restoration/Soldier.jpg",
+            alt: "Military-themed photographic composite"
+        },
+        "studio-retouch": {
+            title: "Studio Retouch",
+            type: "Portrait retouching",
+            description: "A before-and-after portrait study focused on skin correction, color balance, and detail refinement while maintaining a natural result.",
+            stages: [
+                { label: "Before", src: "../images/Portfolio/Retouching_and_Restoration/Retouch/retouch-studio-before.jpg", alt: "Studio portrait before retouching" },
+                { label: "After", src: "../images/Portfolio/Retouching_and_Restoration/retouch-studio-after.webp", alt: "Studio portrait after retouching" }
+            ]
+        },
+        "dual-tone": {
+            title: "Dual-Tone Composition",
+            type: "AI art / Composition study",
+            description: "A split-image generative study using opposing color treatments to explore visual balance, contrast, and rhythm.",
+            image: "../images/Portfolio/AI_Art_and_Prompt_Design/Split.webp",
+            alt: "Dual-tone generative composition"
+        },
+        "drone-embassy": {
+            title: "Drone Embassy View",
+            type: "Aerial photography",
+            description: "An aerial architectural view composed from a drone perspective, with attention to geometry, scale, and the relationship between the building and its surroundings.",
+            image: "../images/Portfolio/Photography/Drone_Embassy.jpeg",
+            alt: "Aerial architectural photograph captured by drone"
+        },
+        "snowy-cabin": {
+            title: "Snowy Cabin Landscape",
+            type: "Landscape photography",
+            description: "A winter landscape photograph centered on a snow-covered cabin and the quiet relationship between the structure, terrain, and surrounding atmosphere.",
+            image: "../images/Portfolio/Photography/Snowy_Cabin.jpeg",
+            alt: "Snow-covered cabin in a winter landscape"
+        },
+        "pride-of-lions": {
+            title: "A Pride of Lions",
+            type: "Graphic design",
+            description: "A lion-centered graphic composition exploring hierarchy, scale, and layered imagery.",
+            image: "../images/Portfolio/Graphic_Design/A_Pride_Of_Lions.png",
+            alt: "A Pride of Lions graphic composition"
+        },
+        baroque: {
+            title: "Baroque Postcard",
+            type: "Academic project / Print and exhibition collateral",
+            description: "A two-sided invitational postcard themed around a Bernini exhibition at The Metropolitan Museum of Art. The design combines Baroque ornament, aged texture, edited sculpture imagery, and functional postal information.",
+            stages: [
+                { label: "Front", src: "../images/Portfolio/Graphic_Design/Baroque/baroque-postcard-front.webp", alt: "Front of the Bernini exhibition postcard" },
+                { label: "Back", src: "../images/Portfolio/Graphic_Design/Baroque/baroque-postcard-back.webp", alt: "Back of the Bernini exhibition postcard" }
+            ]
+        },
+        "aston-martin": {
+            title: "Aston Martin",
+            type: "Self-directed / Speculative concept",
+            description: "A speculative luxury-advertising concept that places the Aston Martin One-77 in an academic environment. It was not commissioned by or affiliated with Aston Martin.",
+            image: "../images/Portfolio/Graphic_Design/GQ_Aston_Martin.png",
+            alt: "Speculative Aston Martin advertising concept"
+        },
+        nadia: {
+            title: "Nadia Comăneci",
+            type: "Academic project / Cover design",
+            description: "A biography-cover concept that uses fractured Olympic rings, gold ribbon forms, and restrained typography to represent achievement, pressure, and legacy through symbolism rather than portraiture.",
+            image: "../images/Portfolio/Graphic_Design/Nadia Comaneci shattered 3.png",
+            alt: "Nadia Comăneci biography cover concept"
+        },
+        "art-exhibit": {
+            title: "Art Exhibit",
+            type: "Graphic design",
+            description: "An exhibition-focused graphic composition exploring image placement, typography, and hierarchy.",
+            image: "../images/Portfolio/Graphic_Design/Art_Exhibit.png",
+            alt: "Art exhibition graphic design composition"
+        },
+        samurai: {
+            title: "Samurai Artwork",
+            type: "AI art / Prompt design",
+            description: "A generative image of a lone samurai framed by a ring of fire. The composition also serves as the visual foundation for the site's Lou Danziger intermission.",
+            image: "../images/Portfolio/AI_Art_and_Prompt_Design/samurai_original.webp",
+            alt: "Samurai standing before a ring of fire"
         }
     };
 
@@ -78,7 +195,7 @@
     }
 
     const workFilters = document.querySelectorAll("[data-filter]");
-    const projectCards = document.querySelectorAll(".project-card[data-category]");
+    const archiveCards = document.querySelectorAll(".archive-card[data-category]");
 
     workFilters.forEach((filterButton) => {
         filterButton.addEventListener("click", () => {
@@ -90,7 +207,7 @@
                 button.setAttribute("aria-pressed", String(isActive));
             });
 
-            projectCards.forEach((card) => {
+            archiveCards.forEach((card) => {
                 card.hidden = selectedFilter !== "all" && card.dataset.category !== selectedFilter;
             });
         });
@@ -126,11 +243,46 @@
                 video.preload = "metadata";
                 video.setAttribute("aria-label", `${project.title} video`);
                 media.append(video);
+            } else if (project.stages) {
+                const viewport = document.createElement("div");
+                viewport.className = "dialog-media-viewport";
+
+                const image = document.createElement("img");
+                if (project.contain) image.classList.add("is-contained");
+                viewport.append(image);
+
+                const stageControls = document.createElement("div");
+                stageControls.className = "media-stage-controls";
+                stageControls.setAttribute("role", "group");
+                stageControls.setAttribute("aria-label", `${project.title} views`);
+
+                const showStage = (stage, activeButton) => {
+                    image.src = stage.src;
+                    image.alt = stage.alt;
+                    stageControls.querySelectorAll("button").forEach((button) => {
+                        const isActive = button === activeButton;
+                        button.classList.toggle("is-active", isActive);
+                        button.setAttribute("aria-pressed", String(isActive));
+                    });
+                };
+
+                project.stages.forEach((stage, index) => {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.textContent = stage.label;
+                    button.setAttribute("aria-pressed", String(index === 0));
+                    if (index === 0) button.classList.add("is-active");
+                    button.addEventListener("click", () => showStage(stage, button));
+                    stageControls.append(button);
+                });
+
+                showStage(project.stages[0], stageControls.firstElementChild);
+                media.append(viewport, stageControls);
             } else {
                 const image = document.createElement("img");
                 image.src = project.image;
                 image.alt = project.alt;
-                if (project.contain) image.style.objectFit = "contain";
+                if (project.contain) image.classList.add("is-contained");
                 media.append(image);
             }
 
@@ -144,6 +296,14 @@
         if (event.target === projectDialog) closeProjectDialog();
     });
     projectDialog.addEventListener("close", () => toggleDialogState(false));
+
+    const completeWork = document.getElementById("all-work");
+    document.querySelectorAll("[data-view-all-work]").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (projectDialog.open) closeProjectDialog();
+            completeWork.open = true;
+        });
+    });
 
     const openShowreel = () => {
         const iframe = document.createElement("iframe");
