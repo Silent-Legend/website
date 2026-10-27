@@ -90,12 +90,24 @@
                     <h2 id="work-title">Different mediums.<br>One creative eye.</h2>
                 </div>
                 <div class="section-heading-side">
-                    <p>A focused selection across compositing, generative imagery, identity, and restoration. Open more work below to explore the rest of the portfolio.</p>
+                    <p>Start with four featured projects, explore all 18, or filter the complete portfolio by discipline.</p>
                 </div>
             </header>
 
-            <div class="project-grid">
-                <button class="project-card project-card-wide reveal" type="button" data-project="cyber" data-category="image" aria-label="View Cyber Composite details">
+            <div class="portfolio-controls reveal" id="all-work">
+                <div class="work-filters" role="group" aria-label="Filter portfolio projects">
+                    <button type="button" class="work-filter is-active" data-filter="featured" aria-pressed="true">Featured</button>
+                    <button type="button" class="work-filter" data-filter="all" aria-pressed="false">All work</button>
+                    <button type="button" class="work-filter" data-filter="motion" aria-pressed="false">Motion &amp; VFX</button>
+                    <button type="button" class="work-filter" data-filter="image" aria-pressed="false">Image &amp; imagination</button>
+                    <button type="button" class="work-filter" data-filter="design" aria-pressed="false">Design &amp; identity</button>
+                    <button type="button" class="work-filter" data-filter="photography" aria-pressed="false">Photography &amp; finishing</button>
+                </div>
+                <span class="portfolio-count" data-result-count aria-live="polite">4 selected projects</span>
+            </div>
+
+            <div class="portfolio-grid is-featured-view" data-portfolio-grid aria-live="polite">
+                <button class="project-card project-card-wide reveal" type="button" data-project="cyber" data-category="motion" data-featured="true" aria-label="View Cyber Composite details">
                     <span class="project-image">
                         <img src="../images/Portfolio/Visual_Effects/cyber-composite-poster.webp" alt="Live-action performer composited into a neon city environment" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -106,7 +118,7 @@
                     </span>
                 </button>
 
-                <button class="project-card reveal" type="button" data-project="kingdom" data-category="image" aria-label="View The Kingdom in Her Keeping details">
+                <button class="project-card reveal" type="button" data-project="kingdom" data-category="image" data-featured="true" aria-label="View The Kingdom in Her Keeping details">
                     <span class="project-image">
                         <img src="../images/Portfolio/AI_Art_and_Prompt_Design/Royalty.webp" alt="A sovereign woman holding a floating gothic kingdom" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -117,7 +129,7 @@
                     </span>
                 </button>
 
-                <button class="project-card project-card-brand reveal" type="button" data-project="dfw" data-category="design" aria-label="View DFW Games identity details">
+                <button class="project-card project-card-brand reveal" type="button" data-project="dfw" data-category="design" data-featured="true" aria-label="View DFW Games identity details">
                     <span class="project-image">
                         <img src="../images/Portfolio/Branding_and_Identity/DFW_Logo/dfw-games-final-silhouette-red.webp" alt="DFW Games logo combining the Dallas skyline with graffiti-inspired lettering" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -128,7 +140,7 @@
                     </span>
                 </button>
 
-                <button class="project-card project-card-wide reveal" type="button" data-project="restoration" data-category="photography" aria-label="View Family Portrait Restoration details">
+                <button class="project-card project-card-wide reveal" type="button" data-project="restoration" data-category="photography" data-featured="true" aria-label="View Family Portrait Restoration details">
                     <span class="project-image">
                         <img src="../images/Portfolio/Retouching_and_Restoration/Family_Portrait_Restoration/family-portrait-restoration-thumbnail.webp" alt="Restored and colorized family portrait" loading="lazy">
                         <span class="project-arrow" aria-hidden="true">↗</span>
@@ -138,23 +150,7 @@
                         <span class="project-number">04</span>
                     </span>
                 </button>
-            </div>
 
-            <details class="complete-work reveal" id="all-work">
-                <summary>
-                    <span><small>More work</small>Explore 14 more projects</span>
-                    <span class="complete-work-icon" aria-hidden="true">+</span>
-                </summary>
-                <div class="complete-work-panel">
-                    <div class="work-filters" role="group" aria-label="Filter additional portfolio projects">
-                        <button type="button" class="work-filter is-active" data-filter="all" aria-pressed="true">All work</button>
-                        <button type="button" class="work-filter" data-filter="motion" aria-pressed="false">Motion &amp; VFX</button>
-                        <button type="button" class="work-filter" data-filter="image" aria-pressed="false">Image &amp; imagination</button>
-                        <button type="button" class="work-filter" data-filter="design" aria-pressed="false">Design &amp; identity</button>
-                        <button type="button" class="work-filter" data-filter="photography" aria-pressed="false">Photography &amp; finishing</button>
-                    </div>
-
-                    <div class="archive-grid" aria-live="polite">
                         <button class="archive-card" type="button" data-project="digital-iris" data-category="motion" aria-label="View Digital Iris details">
                             <span class="archive-image"><img src="../images/Portfolio/Motion_Graphics/Digital_Iris.jpg" alt="Abstract digital iris motion-graphics artwork" loading="lazy"></span>
                             <span class="archive-meta"><strong>Digital Iris</strong><small>Motion graphics</small></span>
@@ -211,9 +207,12 @@
                             <span class="archive-image"><img src="../images/Portfolio/AI_Art_and_Prompt_Design/samurai_original.webp" alt="Samurai standing before a ring of fire" loading="lazy"></span>
                             <span class="archive-meta"><strong>Samurai Artwork</strong><small>AI art / Prompt design</small></span>
                         </button>
-                    </div>
-                </div>
-            </details>
+            </div>
+
+            <button class="portfolio-expand reveal" type="button" data-show-all>
+                <span><small>Complete portfolio</small>View all 18 projects</span>
+                <span class="portfolio-expand-icon" aria-hidden="true">↓</span>
+            </button>
         </section>
 
         <section class="section featured-section" id="featured" aria-labelledby="featured-title">

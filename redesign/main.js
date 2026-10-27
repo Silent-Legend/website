@@ -195,23 +195,45 @@
     }
 
     const workFilters = document.querySelectorAll("[data-filter]");
-    const archiveCards = document.querySelectorAll(".archive-card[data-category]");
+    const portfolioGrid = document.querySelector("[data-portfolio-grid]");
+    const portfolioCards = portfolioGrid.querySelectorAll("[data-project][data-category]");
+    const resultCount = document.querySelector("[data-result-count]");
+    const showAllButton = document.querySelector("[data-show-all]");
+
+    const applyWorkFilter = (selectedFilter) => {
+        workFilters.forEach((button) => {
+            const isActive = button.dataset.filter === selectedFilter;
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        const isFeaturedView = selectedFilter === "featured";
+        portfolioGrid.classList.toggle("is-featured-view", isFeaturedView);
+        portfolioGrid.classList.toggle("is-collection-view", !isFeaturedView);
+
+        let visibleCount = 0;
+        portfolioCards.forEach((card) => {
+            const isVisible = isFeaturedView
+                ? card.dataset.featured === "true"
+                : selectedFilter === "all" || card.dataset.category === selectedFilter;
+            card.hidden = !isVisible;
+            if (isVisible) visibleCount += 1;
+        });
+
+        resultCount.textContent = isFeaturedView
+            ? `${visibleCount} selected projects`
+            : `${visibleCount} project${visibleCount === 1 ? "" : "s"}`;
+        showAllButton.hidden = !isFeaturedView;
+    };
 
     workFilters.forEach((filterButton) => {
         filterButton.addEventListener("click", () => {
-            const selectedFilter = filterButton.dataset.filter;
-
-            workFilters.forEach((button) => {
-                const isActive = button === filterButton;
-                button.classList.toggle("is-active", isActive);
-                button.setAttribute("aria-pressed", String(isActive));
-            });
-
-            archiveCards.forEach((card) => {
-                card.hidden = selectedFilter !== "all" && card.dataset.category !== selectedFilter;
-            });
+            applyWorkFilter(filterButton.dataset.filter);
         });
     });
+
+    showAllButton.addEventListener("click", () => applyWorkFilter("all"));
+    applyWorkFilter("featured");
 
     const toggleDialogState = (open) => body.classList.toggle("dialog-open", open);
 
@@ -297,11 +319,15 @@
     });
     projectDialog.addEventListener("close", () => toggleDialogState(false));
 
-    const completeWork = document.getElementById("all-work");
     document.querySelectorAll("[data-view-all-work]").forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
             if (projectDialog.open) closeProjectDialog();
-            completeWork.open = true;
+            applyWorkFilter("all");
+            document.getElementById("all-work").scrollIntoView({
+                behavior: reducedMotion ? "auto" : "smooth",
+                block: "start"
+            });
         });
     });
 
